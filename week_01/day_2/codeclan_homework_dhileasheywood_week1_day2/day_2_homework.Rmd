@@ -1,0 +1,84 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+I'm creating the vector stock_prices.
+
+```{r}
+stock_prices <- c(23, 27, 23, 21, 34, 24, 25, 30, 37, 30)
+```
+
+I'm creating the vector day_of_week, containing each day twice
+
+```{r}
+day_of_week <- rep(c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday"), times = 2)
+day_of_week
+```
+
+creating a factorial vector called day_of_week_factor
+```{r}
+day_of_week_factor <- as.factor(day_of_week)
+day_of_week_factor
+```
+
+creating a vector of stock prices which has names as days of the week
+```{r}
+named_stock_prices <- stock_prices
+names(named_stock_prices) <- day_of_week
+named_stock_prices
+```
+
+Making a dataframe called stock_data, containing the stock price and day of the week data
+```{r}
+stock_data <- data.frame(day_of_week, stock_prices)
+View(stock_data)
+```
+
+Making a list called stock_list with named elements as follows: the vector of stock_prices, the vector day_of_week, and the data frame you made in question 3. Choose sensible names for the list elements.
+```{r}
+stock_list <- list("stock_prices" = stock_prices, "day_of_week" = day_of_week, "stock_data" = stock_data)
+stock_list
+```
+
+Part two
+I'm selecting the 4th, 5th, and 6th elements from stock_prices
+```{r}
+stock_prices[4:6]
+```
+
+I'm selecting all elements from stock_prices greater than 30
+```{r}
+stock_prices[stock_prices > 30]
+```
+
+I'm selecting the day of week column from the stock_data dataframe
+```{r}
+stock_data[, "day_of_week"]
+```
+
+I'm selecting the rows from stock_data where the stock_price value is less than 25
+```{r}
+stock_data[stock_prices < 25, ]
+```
+
+selecting the first column of stock_data
+```{r}
+stock_data[, 1]
+```
+
+selecting the third row of stock_data
+```{r}
+stock_data[3, ]
+```
+
+selecting the 3rd element from the first row of stock_data
+```{r}
+stock_data[3, 1]
+```
+
+selecting the dataframe from the stocks_list list
+```{r}
+stock_list["stock_data"]
+```
+
