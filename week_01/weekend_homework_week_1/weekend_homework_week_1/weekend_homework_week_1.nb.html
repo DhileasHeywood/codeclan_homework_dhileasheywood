@@ -1749,222 +1749,281 @@ summary {
 
 
 <!-- rnb-text-begin -->
-<p>I’m creating the vector stock_prices.</p>
+<p>2 writing a function that multiplies all numbers by 15, then adds 4</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxuc3RvY2tfcHJpY2VzIDwtIGMoMjMsIDI3LCAyMywgMjEsIDM0LCAyNCwgMjUsIDMwLCAzNywgMzApXG5gYGBcbmBgYCJ9 -->
-<p><code>r</code>r stock_prices &lt;- c(23, 27, 23, 21, 34, 24, 25, 30, 37, 30)</p>
-<pre><code></code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubXVsdGlwbGllcl8xIDwtIGZ1bmN0aW9uKHgpe1xuICBtdWx0aXBsaWVkIDwtIHggKiAxNVxuICBhZGRlZCA8LSBtdWx0aXBsaWVkICsgNFxuICByZXR1cm4oYWRkZWQpXG59XG5tdWx0aXBsaWVyXzEoYygxLCAyLCAzKSlcbmBgYCJ9 -->
+<pre class="r"><code>multiplier_1 &lt;- function(x){
+  multiplied &lt;- x * 15
+  added &lt;- multiplied + 4
+  return(added)
+}
+multiplier_1(c(1, 2, 3))</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<p>I’m creating the vector day_of_week, containing each day twice</p>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZGF5X29mX3dlZWsgPC0gcmVwKGMoXCJNb25kYXlcIiwgXCJUdWVzZGF5XCIsIFwiV2VkbmVzZGF5XCIsIFwiVGh1cnNkYXlcIiwgXCJGcmlkYXlcIiksIHRpbWVzID0gMilcbmRheV9vZl93ZWVrXG5gYGAifQ== -->
-<pre class="r"><code>day_of_week &lt;- rep(c(&quot;Monday&quot;, &quot;Tuesday&quot;, &quot;Wednesday&quot;, &quot;Thursday&quot;, &quot;Friday&quot;), times = 2)
-day_of_week</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiIFsxXSBcIk1vbmRheVwiICAgIFwiVHVlc2RheVwiICAgXCJXZWRuZXNkYXlcIiBcIlRodXJzZGF5XCIgIFwiRnJpZGF5XCIgICAgXCJNb25kYXlcIiAgICBcIlR1ZXNkYXlcIiAgXG4gWzhdIFwiV2VkbmVzZGF5XCIgXCJUaHVyc2RheVwiICBcIkZyaWRheVwiICAgXG4ifQ== -->
-<pre><code> [1] &quot;Monday&quot;    &quot;Tuesday&quot;   &quot;Wednesday&quot; &quot;Thursday&quot;  &quot;Friday&quot;    &quot;Monday&quot;    &quot;Tuesday&quot;  
- [8] &quot;Wednesday&quot; &quot;Thursday&quot;  &quot;Friday&quot;   </code></pre>
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDE5IDM0IDQ5XG4ifQ== -->
+<pre><code>[1] 19 34 49</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
-<p>creating a factorial vector called day_of_week_factor</p>
+<p>writing a function that will return “bird” if the input is a “goose”, “pigeon”, or “duck”, and will return “not a bird” for anything else</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZGF5X29mX3dlZWtfZmFjdG9yIDwtIGFzLmZhY3RvcihkYXlfb2Zfd2VlaylcbmRheV9vZl93ZWVrX2ZhY3RvclxuYGBgIn0= -->
-<pre class="r"><code>day_of_week_factor &lt;- as.factor(day_of_week)
-day_of_week_factor</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaXNfYmlyZCA8LSBmdW5jdGlvbih4KXtcbiAgaWYgKHggPT0gXCJnb29zZVwiIHwgeCA9PSBcInBpZ2VvblwiIHwgeCA9PSBcImR1Y2tcIil7XG4gICAgcmV0dXJuKHBhc3RlKFwiQVwiLCB4LCBcImlzIGEgYmlyZFwiKSlcbiAgfSBlbHNlIHtcbiAgICByZXR1cm4ocGFzdGUoXCJUaGF0J3Mgbm90IGEgYmlyZFwiKSlcbiAgfVxufVxuaXNfYmlyZChjKFwicGlnZW9uXCIpKVxuYGBgIn0= -->
+<pre class="r"><code>is_bird &lt;- function(x){
+  if (x == &quot;goose&quot; | x == &quot;pigeon&quot; | x == &quot;duck&quot;){
+    return(paste(&quot;A&quot;, x, &quot;is a bird&quot;))
+  } else {
+    return(paste(&quot;That's not a bird&quot;))
+  }
+}
+is_bird(c(&quot;pigeon&quot;))</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiIFsxXSBNb25kYXkgICAgVHVlc2RheSAgIFdlZG5lc2RheSBUaHVyc2RheSAgRnJpZGF5ICAgIE1vbmRheSAgICBUdWVzZGF5ICAgV2VkbmVzZGF5XG4gWzldIFRodXJzZGF5ICBGcmlkYXkgICBcbkxldmVsczogRnJpZGF5IE1vbmRheSBUaHVyc2RheSBUdWVzZGF5IFdlZG5lc2RheVxuIn0= -->
-<pre><code> [1] Monday    Tuesday   Wednesday Thursday  Friday    Monday    Tuesday   Wednesday
- [9] Thursday  Friday   
-Levels: Friday Monday Thursday Tuesday Wednesday</code></pre>
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiQSBwaWdlb24gaXMgYSBiaXJkXCJcbiJ9 -->
+<pre><code>[1] &quot;A pigeon is a bird&quot;</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
-<p>creating a vector of stock prices which has names as days of the week</p>
+<p>writing a function which will multiply all numbers by 10. If the input is not a number, the function will return “Invalid input”</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubmFtZWRfc3RvY2tfcHJpY2VzIDwtIHN0b2NrX3ByaWNlc1xubmFtZXMobmFtZWRfc3RvY2tfcHJpY2VzKSA8LSBkYXlfb2Zfd2Vla1xubmFtZWRfc3RvY2tfcHJpY2VzXG5gYGAifQ== -->
-<pre class="r"><code>named_stock_prices &lt;- stock_prices
-names(named_stock_prices) &lt;- day_of_week
-named_stock_prices</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubXVsdGlwbHlfbnVtYmVyX2J5XzEwIDwtIGZ1bmN0aW9uKHgpe1xuICBpZiAoaXMubnVtZXJpYyh4KSA9PSBUUlVFKXtcbiAgICBtdWx0aXBsaWVkID0geCAqIDEwXG4gICAgcmV0dXJuKHBhc3RlKG11bHRpcGxpZWQpKVxuICB9IGVsc2Uge1xuICAgIHJldHVybihwYXN0ZShcIkludmFsaWQgaW5wdXRcIikpXG4gIH1cbn1cbm11bHRpcGx5X251bWJlcl9ieV8xMCgxMC4zKVxuYGBgIn0= -->
+<pre class="r"><code>multiply_number_by_10 &lt;- function(x){
+  if (is.numeric(x) == TRUE){
+    multiplied = x * 10
+    return(paste(multiplied))
+  } else {
+    return(paste(&quot;Invalid input&quot;))
+  }
+}
+multiply_number_by_10(10.3)</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiICAgTW9uZGF5ICAgVHVlc2RheSBXZWRuZXNkYXkgIFRodXJzZGF5ICAgIEZyaWRheSAgICBNb25kYXkgICBUdWVzZGF5IFdlZG5lc2RheSAgVGh1cnNkYXkgXG4gICAgICAgMjMgICAgICAgIDI3ICAgICAgICAyMyAgICAgICAgMjEgICAgICAgIDM0ICAgICAgICAyNCAgICAgICAgMjUgICAgICAgIDMwICAgICAgICAzNyBcbiAgIEZyaWRheSBcbiAgICAgICAzMCBcbiJ9 -->
-<pre><code>   Monday   Tuesday Wednesday  Thursday    Friday    Monday   Tuesday Wednesday  Thursday 
-       23        27        23        21        34        24        25        30        37 
-   Friday 
-       30 </code></pre>
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiMTAzXCJcbiJ9 -->
+<pre><code>[1] &quot;103&quot;</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
-<p>Making a dataframe called stock_data, containing the stock price and day of the week data</p>
+<p>I’m going to code the next section without using if statements or loops. I will provide three solutions to each question: ifelse(), recode() and casewhen(). I will also discuss which is the easiest for each question.</p>
+<p>I’m going to going to use the vector below to make a new vector equal to “Big” every time the element of sizes is greater than 10, and equal to “Small” every time the element of sizes is less than or equal to 10</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3RvY2tfZGF0YSA8LSBkYXRhLmZyYW1lKGRheV9vZl93ZWVrLCBzdG9ja19wcmljZXMpXG5WaWV3KHN0b2NrX2RhdGEpXG5gYGAifQ== -->
-<pre class="r"><code>stock_data &lt;- data.frame(day_of_week, stock_prices)
-View(stock_data)</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc2l6ZXMgPC0gYygxMywgMTUsIDEwLCA4LCAyMilcbmlmZWxzZSAoc2l6ZXMgPD0gMTAsIFwiU21hbGxcIiwgXCJCaWdcIilcbmBgYCJ9 -->
+<pre class="r"><code>sizes &lt;- c(13, 15, 10, 8, 22)
+ifelse (sizes &lt;= 10, &quot;Small&quot;, &quot;Big&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiQmlnXCIgICBcIkJpZ1wiICAgXCJTbWFsbFwiIFwiU21hbGxcIiBcIkJpZ1wiICBcbiJ9 -->
+<pre><code>[1] &quot;Big&quot;   &quot;Big&quot;   &quot;Small&quot; &quot;Small&quot; &quot;Big&quot;  </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxub25lX3RvX3RlbiA8LSAxOjEwXG50ZW5fdG9fbWF4IDwtIDEwOm1heChzaXplcylcbnJlY29kZShzaXplcywgXCI4XCIgPSBcIlNtYWxsXCIsIFwiMTBcIiA9IFwiU21hbGxcIiwgXCIxM1wiID0gXCJCaWdcIiwgXCIxNVwiID0gXCJCaWdcIiwgXCIyMlwiID0gXCJCaWdcIilcbmBgYCJ9 -->
+<pre class="r"><code>one_to_ten &lt;- 1:10
+ten_to_max &lt;- 10:max(sizes)
+recode(sizes, &quot;8&quot; = &quot;Small&quot;, &quot;10&quot; = &quot;Small&quot;, &quot;13&quot; = &quot;Big&quot;, &quot;15&quot; = &quot;Big&quot;, &quot;22&quot; = &quot;Big&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiQmlnXCIgICBcIkJpZ1wiICAgXCJTbWFsbFwiIFwiU21hbGxcIiBcIkJpZ1wiICBcbiJ9 -->
+<pre><code>[1] &quot;Big&quot;   &quot;Big&quot;   &quot;Small&quot; &quot;Small&quot; &quot;Big&quot;  </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2FzZV93aGVuKFxuICBzaXplcyA8PSAxMCB+IFwiU21hbGxcIixcbiAgc2l6ZXMgPiAxMCB+IFwiQmlnXCJcbilcbmBgYCJ9 -->
+<pre class="r"><code>case_when(
+  sizes &lt;= 10 ~ &quot;Small&quot;,
+  sizes &gt; 10 ~ &quot;Big&quot;
+)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiQmlnXCIgICBcIkJpZ1wiICAgXCJTbWFsbFwiIFwiU21hbGxcIiBcIkJpZ1wiICBcbiJ9 -->
+<pre><code>[1] &quot;Big&quot;   &quot;Big&quot;   &quot;Small&quot; &quot;Small&quot; &quot;Big&quot;  </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>in this case, ifelse or case_when are the easiest to use. It’s really hard to use recode, because you have to specify what you’re replacing and what you want to replace it with. If sizes changes, you’d have to change your recode too. I think that ifelse is easier than case_when. Just seems more readable to me, but one could make the same argument with case_when</p>
+<p>for the fruit vector, I will convert apple to alpaca, banana to bonobo, and cherry to chipmunk.</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZnJ1aXRzIDwtIGMoXCJhcHBsZVwiLCBcImFwcGxlXCIsIFwiYmFuYW5hXCIsIFwiY2hlcnJ5XCIsIFwiY2hlcnJ5XCIpXG5mcnVpdHMgPC0gaWZlbHNlKGZydWl0cyA9PSBcImFwcGxlXCIsIFwiYWxwYWNhXCIsIGZydWl0cylcbmZydWl0cyA8LSBpZmVsc2UoZnJ1aXRzID09IFwiYmFuYW5hXCIsIFwiYm9ub2JvXCIsIGZydWl0cylcbmlmZWxzZShmcnVpdHMgPT0gXCJjaGVycnlcIiwgXCJjaGlwbXVua1wiLCBmcnVpdHMpXG5gYGAifQ== -->
+<pre class="r"><code>fruits &lt;- c(&quot;apple&quot;, &quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;, &quot;cherry&quot;)
+fruits &lt;- ifelse(fruits == &quot;apple&quot;, &quot;alpaca&quot;, fruits)
+fruits &lt;- ifelse(fruits == &quot;banana&quot;, &quot;bonobo&quot;, fruits)
+ifelse(fruits == &quot;cherry&quot;, &quot;chipmunk&quot;, fruits)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiYWxwYWNhXCIgICBcImFscGFjYVwiICAgXCJib25vYm9cIiAgIFwiY2hpcG11bmtcIiBcImNoaXBtdW5rXCJcbiJ9 -->
+<pre><code>[1] &quot;alpaca&quot;   &quot;alpaca&quot;   &quot;bonobo&quot;   &quot;chipmunk&quot; &quot;chipmunk&quot;</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZnJ1aXRzIDwtIGMoXCJhcHBsZVwiLCBcImFwcGxlXCIsIFwiYmFuYW5hXCIsIFwiY2hlcnJ5XCIsIFwiY2hlcnJ5XCIpXG5yZWNvZGUoZnJ1aXRzLCBcImFwcGxlXCIgPSBcImFscGFjYVwiLCBcImJhbmFuYVwiID0gXCJib25vYm9cIiwgXCJjaGVycnlcIiA9IFwiY2hpcG11bmtcIilcbmBgYCJ9 -->
+<pre class="r"><code>fruits &lt;- c(&quot;apple&quot;, &quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;, &quot;cherry&quot;)
+recode(fruits, &quot;apple&quot; = &quot;alpaca&quot;, &quot;banana&quot; = &quot;bonobo&quot;, &quot;cherry&quot; = &quot;chipmunk&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiYWxwYWNhXCIgICBcImFscGFjYVwiICAgXCJib25vYm9cIiAgIFwiY2hpcG11bmtcIiBcImNoaXBtdW5rXCJcbiJ9 -->
+<pre><code>[1] &quot;alpaca&quot;   &quot;alpaca&quot;   &quot;bonobo&quot;   &quot;chipmunk&quot; &quot;chipmunk&quot;</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZnJ1aXRzIDwtIGMoXCJhcHBsZVwiLCBcImFwcGxlXCIsIFwiYmFuYW5hXCIsIFwiY2hlcnJ5XCIsIFwiY2hlcnJ5XCIpXG5jYXNlX3doZW4oXG4gIGZydWl0cyA9PSBcImFwcGxlXCIgfiBcImFscGFjYVwiLFxuICBmcnVpdHMgPT0gXCJiYW5hbmFcIiB+IFwiYm9ub2JvXCIsXG4gIGZydWl0cyA9PSBcImNoZXJyeVwiIH4gXCJjaGlwbXVua1wiLFxuICBUUlVFIH4gTkFfY2hhcmFjdGVyX1xuKVxuYGBgIn0= -->
+<pre class="r"><code>fruits &lt;- c(&quot;apple&quot;, &quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;, &quot;cherry&quot;)
+case_when(
+  fruits == &quot;apple&quot; ~ &quot;alpaca&quot;,
+  fruits == &quot;banana&quot; ~ &quot;bonobo&quot;,
+  fruits == &quot;cherry&quot; ~ &quot;chipmunk&quot;,
+  TRUE ~ NA_character_
+)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiYWxwYWNhXCIgICBcImFscGFjYVwiICAgXCJib25vYm9cIiAgIFwiY2hpcG11bmtcIiBcImNoaXBtdW5rXCJcbiJ9 -->
+<pre><code>[1] &quot;alpaca&quot;   &quot;alpaca&quot;   &quot;bonobo&quot;   &quot;chipmunk&quot; &quot;chipmunk&quot;</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>In this case, it’s easier to use recode or case_when to do the substitutions. If you use ifelse, you have to write three seperate ifelse statements to get it to do what you want. Recode is the easiest, because you just take each element type from the vector and assign it a new value, all in one place. case_when is slightly trickier, because you have to have a logical statement, and a catchall at the end (which in this case has to be a character)</p>
+<p>here I’m going to take two vectors which show the ages of marriage of each member of a heterosexual couple. The first elements of each vector correespond to the first couple, and the second elements to the second couple, and so on. I’m going to create a new vector which is equal to wife older whenever the wife’s age is higher, and husband older when the husband’s age is higher. And finally, smae age when both are the same age.</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxud2lmZV9hZ2UgPC0gYygyOUwsIDMwTCwgMzZMLCAzMUwsIDIyTClcbmh1c2JhbmRfYWdlIDwtIGMoMjhMLCAzNUwsIDMyTCwgMzFMLCAyOUwpXG5cbmBgYCJ9 -->
+<pre class="r"><code>wife_age &lt;- c(29L, 30L, 36L, 31L, 22L)
+husband_age &lt;- c(28L, 35L, 32L, 31L, 29L)
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudG90YWxfYWdlIDwtIHdpZmVfYWdlICsgaHVzYmFuZF9hZ2VcbnRvdGFsX2FnZVxuYGBgIn0= -->
+<pre class="r"><code>total_age &lt;- wife_age + husband_age
+total_age</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDU3IDY1IDY4IDYyIDUxXG4ifQ== -->
+<pre><code>[1] 57 65 68 62 51</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudG90YWxfYWdlIC0gd2lmZV9hZ2UgKiAyXG5gYGAifQ== -->
+<pre class="r"><code>total_age - wife_age * 2</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIC0xICA1IC00ICAwICA3XG4ifQ== -->
+<pre><code>[1] -1  5 -4  0  7</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxud2hvX29sZGVyIDwtIGMoXCJ3aG9cIiwgXCJpc1wiLCBcIm9sZGVyXCIpXG53aG9fb2xkZXIgPC0gaWZlbHNlKHRvdGFsX2FnZSAtIHdpZmVfYWdlICogMiA8IDAsIFwiV2lmZSBvbGRlclwiLCB3aG9fb2xkZXIpXG53aG9fb2xkZXIgPC0gaWZlbHNlKHRvdGFsX2FnZSAtIHdpZmVfYWdlICAqIDIgPT0gMCwgXCJTYW1lIGFnZVwiLCB3aG9fb2xkZXIpXG53aG9fb2xkZXIgPC0gaWZlbHNlKHRvdGFsX2FnZSAtIHdpZmVfYWdlICogMj4gMCwgXCJIdXNiYW5kIG9sZGVyXCIsIHdob19vbGRlcilcbndob19vbGRlclxuYGBgIn0= -->
+<pre class="r"><code>who_older &lt;- c(&quot;who&quot;, &quot;is&quot;, &quot;older&quot;)
+who_older &lt;- ifelse(total_age - wife_age * 2 &lt; 0, &quot;Wife older&quot;, who_older)
+who_older &lt;- ifelse(total_age - wife_age  * 2 == 0, &quot;Same age&quot;, who_older)
+who_older &lt;- ifelse(total_age - wife_age * 2&gt; 0, &quot;Husband older&quot;, who_older)
+who_older</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiV2lmZSBvbGRlclwiICAgIFwiSHVzYmFuZCBvbGRlclwiIFwiV2lmZSBvbGRlclwiICAgIFwiU2FtZSBhZ2VcIiAgICAgXG5bNV0gXCJIdXNiYW5kIG9sZGVyXCJcbiJ9 -->
+<pre><code>[1] &quot;Wife older&quot;    &quot;Husband older&quot; &quot;Wife older&quot;    &quot;Same age&quot;     
+[5] &quot;Husband older&quot;</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxud2lmZV9hZ2VcbmBgYCJ9 -->
+<pre class="r"><code>wife_age</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDI5IDMwIDM2IDMxIDIyXG4ifQ== -->
+<pre><code>[1] 29 30 36 31 22</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaHVzYmFuZF9hZ2VcbmBgYCJ9 -->
+<pre class="r"><code>husband_age</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDI4IDM1IDMyIDMxIDI5XG4ifQ== -->
+<pre><code>[1] 28 35 32 31 29</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxud2hvX29sZGVyIDwtIHRvdGFsX2FnZSAtIHdpZmVfYWdlICogMlxud2hvX29sZGVyXG5gYGAifQ== -->
+<pre class="r"><code>who_older &lt;- total_age - wife_age * 2
+who_older</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIC0xICA1IC00ICAwICA3XG4ifQ== -->
+<pre><code>[1] -1  5 -4  0  7</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucmVjb2RlKHdob19vbGRlcixcbiAgICAgICBcIi0xXCIgPSBcIldpZmUgb2xkZXJcIixcbiAgICAgICBcIjVcIiA9IFwiSHVzYmFuZCBvbGRlclwiLFxuICAgICAgIFwiLTRcIiA9IFwiV2lmZSBvbGRlclwiLCBcbiAgICAgICBcIjBcIiA9IFwiU2FtZSBhZ2VcIiwgXG4gICAgICAgXCI3XCIgPSBcIkh1c2JhbmQgb2xkZXJcIlxuKVxuYGBgIn0= -->
+<pre class="r"><code>recode(who_older,
+       &quot;-1&quot; = &quot;Wife older&quot;,
+       &quot;5&quot; = &quot;Husband older&quot;,
+       &quot;-4&quot; = &quot;Wife older&quot;, 
+       &quot;0&quot; = &quot;Same age&quot;, 
+       &quot;7&quot; = &quot;Husband older&quot;
+)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiV2lmZSBvbGRlclwiICAgIFwiSHVzYmFuZCBvbGRlclwiIFwiV2lmZSBvbGRlclwiICAgIFwiU2FtZSBhZ2VcIiAgICAgXG5bNV0gXCJIdXNiYW5kIG9sZGVyXCJcbiJ9 -->
+<pre><code>[1] &quot;Wife older&quot;    &quot;Husband older&quot; &quot;Wife older&quot;    &quot;Same age&quot;     
+[5] &quot;Husband older&quot;</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2FzZV93aGVuKFxuICB3aG9fb2xkZXIgPiAwIH4gXCJIdXNiYW5kIG9sZGVyXCIsXG4gIHdob19vbGRlciA9PSAwIH4gXCJTYW1lIGFnZVwiLFxuICB3aG9fb2xkZXIgPCAwIH4gXCJXaWZlIG9kZXJcIlxuKVxuYGBgIn0= -->
+<pre class="r"><code>case_when(
+  who_older &gt; 0 ~ &quot;Husband older&quot;,
+  who_older == 0 ~ &quot;Same age&quot;,
+  who_older &lt; 0 ~ &quot;Wife oder&quot;
+)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiV2lmZSBvZGVyXCIgICAgIFwiSHVzYmFuZCBvbGRlclwiIFwiV2lmZSBvZGVyXCIgICAgIFwiU2FtZSBhZ2VcIiAgICAgXG5bNV0gXCJIdXNiYW5kIG9sZGVyXCJcbiJ9 -->
+<pre><code>[1] &quot;Wife oder&quot;     &quot;Husband older&quot; &quot;Wife oder&quot;     &quot;Same age&quot;     
+[5] &quot;Husband older&quot;</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>In this case, I like case_when best. It can be done flexibly, so that if either vector changes, it will still work, and can also be done in one statement, rather than 3 in the ifelse case. recode is rubbish here.</p>
+<p>I’m going to make a list, then use some loops on it.</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubXlfbGlzdCA8LSBsaXN0KFxuICA0LCBcbiAgXCJhcHBsZVwiLCBcbiAgMTAuNSxcbiAgYyhcImlzXCIsIFwiYW5cIiwgXCJhcHBsZVwiKSxcbiAgYyhcIklcIiwgXCJsaWtlXCIsIFwiYXBwbGVzXCIpLFxuICA4XG4pXG5gYGAifQ== -->
+<pre class="r"><code>my_list &lt;- list(
+  4, 
+  &quot;apple&quot;, 
+  10.5,
+  c(&quot;is&quot;, &quot;an&quot;, &quot;apple&quot;),
+  c(&quot;I&quot;, &quot;like&quot;, &quot;apples&quot;),
+  8
+)</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
-<p>Making a list called stock_list with named elements as follows: the vector of stock_prices, the vector day_of_week, and the data frame you made in question 3. Choose sensible names for the list elements.</p>
+<p>I’m going to use a for loop to print out ever element of my_list which is of type character</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3RvY2tfbGlzdCA8LSBsaXN0KFwic3RvY2tfcHJpY2VzXCIgPSBzdG9ja19wcmljZXMsIFwiZGF5X29mX3dlZWtcIiA9IGRheV9vZl93ZWVrLCBcInN0b2NrX2RhdGFcIiA9IHN0b2NrX2RhdGEpXG5zdG9ja19saXN0XG5gYGAifQ== -->
-<pre class="r"><code>stock_list &lt;- list(&quot;stock_prices&quot; = stock_prices, &quot;day_of_week&quot; = day_of_week, &quot;stock_data&quot; = stock_data)
-stock_list</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZm9yIChjaGFyYWN0ZXIgaW4gbXlfbGlzdCl7XG4gIGlmIChjbGFzcyhjaGFyYWN0ZXIpID09IFwiY2hhcmFjdGVyXCIpe1xuICAgIHByaW50KGNoYXJhY3RlcilcbiAgfVxufVxuYGBgIn0= -->
+<pre class="r"><code>for (character in my_list){
+  if (class(character) == &quot;character&quot;){
+    print(character)
+  }
+}</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiJHN0b2NrX3ByaWNlc1xuIFsxXSAyMyAyNyAyMyAyMSAzNCAyNCAyNSAzMCAzNyAzMFxuXG4kZGF5X29mX3dlZWtcbiBbMV0gXCJNb25kYXlcIiAgICBcIlR1ZXNkYXlcIiAgIFwiV2VkbmVzZGF5XCIgXCJUaHVyc2RheVwiICBcIkZyaWRheVwiICAgIFwiTW9uZGF5XCIgICAgXCJUdWVzZGF5XCIgIFxuIFs4XSBcIldlZG5lc2RheVwiIFwiVGh1cnNkYXlcIiAgXCJGcmlkYXlcIiAgIFxuXG4kc3RvY2tfZGF0YVxuIn0= -->
-<pre><code>$stock_prices
- [1] 23 27 23 21 34 24 25 30 37 30
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiYXBwbGVcIlxuWzFdIFwiaXNcIiAgICBcImFuXCIgICAgXCJhcHBsZVwiXG5bMV0gXCJJXCIgICAgICBcImxpa2VcIiAgIFwiYXBwbGVzXCJcbiJ9 -->
+<pre><code>[1] &quot;apple&quot;
+[1] &quot;is&quot;    &quot;an&quot;    &quot;apple&quot;
+[1] &quot;I&quot;      &quot;like&quot;   &quot;apples&quot;</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>I’m now going to do the same thing with a while loop</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubXlfbGlzdFtbNF1dXG5gYGAifQ== -->
+<pre class="r"><code>my_list[[4]]</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiaXNcIiAgICBcImFuXCIgICAgXCJhcHBsZVwiXG4ifQ== -->
+<pre><code>[1] &quot;is&quot;    &quot;an&quot;    &quot;apple&quot;</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxueCA8LSAxXG53aGlsZSAoeCA8IGxlbmd0aChteV9saXN0KSl7XG4gIGlmKGNsYXNzKG15X2xpc3RbW3hdXSkgPT0gXCJjaGFyYWN0ZXJcIil7XG4gICAgY2hhcmFjdGVyIDwtIG15X2xpc3RbW3hdXVxuICAgIHByaW50KGNoYXJhY3RlcilcbiAgfVxuICB4IDwtIHggKyAxXG59XG5gYGAifQ== -->
+<pre class="r"><code>x &lt;- 1
+while (x &lt; length(my_list)){
+  if(class(my_list[[x]]) == &quot;character&quot;){
+    character &lt;- my_list[[x]]
+    print(character)
+  }
+  x &lt;- x + 1
+}</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiYXBwbGVcIlxuWzFdIFwiaXNcIiAgICBcImFuXCIgICAgXCJhcHBsZVwiXG5bMV0gXCJJXCIgICAgICBcImxpa2VcIiAgIFwiYXBwbGVzXCJcbiJ9 -->
+<pre><code>[1] &quot;apple&quot;
+[1] &quot;is&quot;    &quot;an&quot;    &quot;apple&quot;
+[1] &quot;I&quot;      &quot;like&quot;   &quot;apples&quot;</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
 
-$day_of_week
- [1] &quot;Monday&quot;    &quot;Tuesday&quot;   &quot;Wednesday&quot; &quot;Thursday&quot;  &quot;Friday&quot;    &quot;Monday&quot;    &quot;Tuesday&quot;  
- [8] &quot;Wednesday&quot; &quot;Thursday&quot;  &quot;Friday&quot;   
-
-$stock_data</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibmNvbCI6MiwibnJvdyI6MTB9LCJyZGYiOiJINHNJQUFBQUFBQUFBMjFSVzArRE1CVHVZR3dPM2JKa3Z3TWVOSXN6Sm1ZYXN6ZGZETWE5a1FxZEkyQzdsT0wwelY4K1BhV25HeEJKNEx0d2VpNDl6NC9ySzMvdEUwSmM0ZzdnNndFbDNrdTBDaGFFOUIwUVBkSW5JNDFmOEhzR0JFeDNET2diRHIvaFJKMUJCLy9ydFJJTkN2YkppaExZdEk1Q2R5V3psSDViOVNUNFNaMUYyMHFXSnoyTUt0YVFvMWVXY21PMEszbEpRVXRiNkZoK1F4TWxKTEFEdkJNOXlQS2ExTS95RnRIcU9lSTk0Z0x4QnZFTzhlR25wYnR0Y1ByQmJCc09tdWZRYml3MjhaNnhISzJMVW9ra2ozY3lTM1I0SzhkSWluMW84K2piZDB4SnZRVWQ2UDUyeHZSVHFtaTRrWERFak5wS054UTdsUWtPeVp3WnJxcDV1Q2M3eHJUaXVuZ2FKTnVLNThIbEhQZmZ3M25IeVAwR2Qwek52dTNzdUduRzN6UE83T1VVOUkwVktDWXdaVDFrQ0pmQWxSMEYzREpVUWxFYjV5ZWlzSTdaNCtFUENWcXZoTW9DQUFBPSJ9 -->
-<div data-pagedtable="false">
-<script data-pagedtable-source type="application/json">
-{"columns":[{"label":["day_of_week"],"name":[1],"type":["fctr"],"align":["left"]},{"label":["stock_prices"],"name":[2],"type":["dbl"],"align":["right"]}],"data":[{"1":"Monday","2":"23"},{"1":"Tuesday","2":"27"},{"1":"Wednesday","2":"23"},{"1":"Thursday","2":"21"},{"1":"Friday","2":"34"},{"1":"Monday","2":"24"},{"1":"Tuesday","2":"25"},{"1":"Wednesday","2":"30"},{"1":"Thursday","2":"37"},{"1":"Friday","2":"30"}],"options":{"columns":{"min":{},"max":[10],"total":[2]},"rows":{"min":[10],"max":[10],"total":[10]},"pages":{}}}
-  </script>
-</div>
-<!-- rnb-frame-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiTkFcbiJ9 -->
-<pre><code>NA</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<p>Part two I’m selecting the 4th, 5th, and 6th elements from stock_prices</p>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3RvY2tfcHJpY2VzWzQ6Nl1cbmBgYCJ9 -->
-<pre class="r"><code>stock_prices[4:6]</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDIxIDM0IDI0XG4ifQ== -->
-<pre><code>[1] 21 34 24</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<p>I’m selecting all elements from stock_prices greater than 30</p>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3RvY2tfcHJpY2VzW3N0b2NrX3ByaWNlcyA+IDMwXVxuYGBgIn0= -->
-<pre class="r"><code>stock_prices[stock_prices &gt; 30]</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDM0IDM3XG4ifQ== -->
-<pre><code>[1] 34 37</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<p>I’m selecting the day of week column from the stock_data dataframe</p>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3RvY2tfZGF0YVssIFwiZGF5X29mX3dlZWtcIl1cbmBgYCJ9 -->
-<pre class="r"><code>stock_data[, &quot;day_of_week&quot;]</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiIFsxXSBNb25kYXkgICAgVHVlc2RheSAgIFdlZG5lc2RheSBUaHVyc2RheSAgRnJpZGF5ICAgIE1vbmRheSAgICBUdWVzZGF5ICAgV2VkbmVzZGF5XG4gWzldIFRodXJzZGF5ICBGcmlkYXkgICBcbkxldmVsczogRnJpZGF5IE1vbmRheSBUaHVyc2RheSBUdWVzZGF5IFdlZG5lc2RheVxuIn0= -->
-<pre><code> [1] Monday    Tuesday   Wednesday Thursday  Friday    Monday    Tuesday   Wednesday
- [9] Thursday  Friday   
-Levels: Friday Monday Thursday Tuesday Wednesday</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<p>I’m selecting the rows from stock_data where the stock_price value is less than 25</p>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3RvY2tfZGF0YVtzdG9ja19wcmljZXMgPCAyNSwgXVxuYGBgIn0= -->
-<pre class="r"><code>stock_data[stock_prices &lt; 25, ]</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibmNvbCI6MiwibnJvdyI6NH0sInJkZiI6Ikg0c0lBQUFBQUFBQUExMVJUVS9ETUF4MVAwY0xUSlAyTzlvRENERnVITkJ1WEZBbmRxdENtcktxSlpuU2xNR2ZIemh0MHEyTDFQcjVKYmFmN2JlWDdYMjhqUUhBQXkvRWY0QVFnazIyVGxZQXZvdU9BejVFMnY3ZzlSSUJrdDR0V24vQUVQVFJQWjRFaEEzN1prMkxhTkcvTXV4YVZnWDV0ZDZyNENmdkt0dDFzajM1czZ4aloyNzB6Z28rRU5OS0FXMUlhd3VONVV0Q2xaQ0lqdmpOdGVEblIralBhQitNWFlFNTA3U2NmREdiMWpYa05aYlBSWmtmR0tzTmRkTXFRZXQ4THl1cW4wOXlSRkljVXB2SFRzMHhFOU00SEFLOHZ3djVjVUVVU1V1Sm9VTUxrN1F6c1ZlVjRKalVYWm9WbkFjNzhvSllkRnlMS0JLNjYzaWQzRDNwQ2thSlk1UTVScEhGWnArK1ZUWnVrUEhQaWpNN3BJWjhzTVk0Yyt5MmJ6YkZZWEJsVzBHMlRaVlF4TDZMcVdnc00rem4rQS95YXIxRmlnSUFBQT09In0= -->
-<div data-pagedtable="false">
-<script data-pagedtable-source type="application/json">
-{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["day_of_week"],"name":[1],"type":["fctr"],"align":["left"]},{"label":["stock_prices"],"name":[2],"type":["dbl"],"align":["right"]}],"data":[{"1":"Monday","2":"23","_rn_":"1"},{"1":"Wednesday","2":"23","_rn_":"3"},{"1":"Thursday","2":"21","_rn_":"4"},{"1":"Monday","2":"24","_rn_":"6"}],"options":{"columns":{"min":{},"max":[10],"total":[2]},"rows":{"min":[10],"max":[10],"total":[4]},"pages":{}}}
-  </script>
-</div>
-<!-- rnb-frame-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3Vic2V0KHN0b2NrX2RhdGEsIHN0b2NrX3ByaWNlcyA8IDI1KVxuYGBgIn0= -->
-<pre class="r"><code>subset(stock_data, stock_prices &lt; 25)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibmNvbCI6MiwibnJvdyI6NH0sInJkZiI6Ikg0c0lBQUFBQUFBQUExMVJUVS9ETUF4MVAwY0xUSlAyTzlvRENERnVITkJ1WEZBbmRxdENtcktxSlpuU2xNR2ZIemh0MHEyTDFQcjVKYmFmN2JlWDdYMjhqUUhBQXkvRWY0QVFnazIyVGxZQXZvdU9BejVFMnY3ZzlSSUJrdDR0V24vQUVQVFJQWjRFaEEzN1prMkxhTkcvTXV4YVZnWDV0ZDZyNENmdkt0dDFzajM1czZ4aloyNzB6Z28rRU5OS0FXMUlhd3VONVV0Q2xaQ0lqdmpOdGVEblIralBhQitNWFlFNTA3U2NmREdiMWpYa05aYlBSWmtmR0tzTmRkTXFRZXQ4THl1cW4wOXlSRkljVXB2SFRzMHhFOU00SEFLOHZ3djVjVUVVU1V1Sm9VTUxrN1F6c1ZlVjRKalVYWm9WbkFjNzhvSllkRnlMS0JLNjYzaWQzRDNwQ2thSlk1UTVScEhGWnArK1ZUWnVrUEhQaWpNN3BJWjhzTVk0Yyt5MmJ6YkZZWEJsVzBHMlRaVlF4TDZMcVdnc00rem4rQS95YXIxRmlnSUFBQT09In0= -->
-<div data-pagedtable="false">
-<script data-pagedtable-source type="application/json">
-{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["day_of_week"],"name":[1],"type":["fctr"],"align":["left"]},{"label":["stock_prices"],"name":[2],"type":["dbl"],"align":["right"]}],"data":[{"1":"Monday","2":"23","_rn_":"1"},{"1":"Wednesday","2":"23","_rn_":"3"},{"1":"Thursday","2":"21","_rn_":"4"},{"1":"Monday","2":"24","_rn_":"6"}],"options":{"columns":{"min":{},"max":[10],"total":[2]},"rows":{"min":[10],"max":[10],"total":[4]},"pages":{}}}
-  </script>
-</div>
-<!-- rnb-frame-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<p>selecting the first column of stock_data</p>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxuc3RvY2tfZGF0YVssIDFdXG5gYGBcbmBgYCJ9 -->
-<p><code>r</code>r stock_data[, 1]</p>
-<pre><code></code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiIFsxXSBNb25kYXkgICAgVHVlc2RheSAgIFdlZG5lc2RheSBUaHVyc2RheSAgRnJpZGF5ICAgIE1vbmRheSAgICBUdWVzZGF5ICAgV2VkbmVzZGF5IFRodXJzZGF5IFxuWzEwXSBGcmlkYXkgICBcbkxldmVsczogRnJpZGF5IE1vbmRheSBUaHVyc2RheSBUdWVzZGF5IFdlZG5lc2RheVxuIn0= -->
-<pre><code> [1] Monday    Tuesday   Wednesday Thursday  Friday    Monday    Tuesday   Wednesday Thursday 
-[10] Friday   
-Levels: Friday Monday Thursday Tuesday Wednesday</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<p>selecting the third row of stock_data</p>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxuc3RvY2tfZGF0YVszLCBdXG5gYGBcbmBgYCJ9 -->
-<p><code>r</code>r stock_data[3, ]</p>
-<pre><code></code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjoiZGF0YS5mcmFtZSIsIm5jb2wiOjIsIm5yb3ciOjF9LCJyZGYiOiJINHNJQUFBQUFBQUFBMTFSc1c2RE1CQTFHSkpDMnloU3ZnT0daR2pIRGxXMkxoVlZzeUhIbUFiaDJKRXhUZnZ6YVE5c0p3QVNjTy9kdTN2bjgvdnJiaFB2WW9RUVJuZ0czeEJDRkg1azIrUVpvY0FINEtFQVJkMy9COUlyQ0lERWozMENsQlBSakxOdnhodUlsbjNXc2x0VkZlVFhvVGNwYnVndU83U3F1ZUY1MXJJQmpENVpJUXd4ZGdvcEo0MHp1dHFYaEdxcElMckF1K2d5TDAvSVB1TnlRWTdNbGZ1V3ZBZWJYSmI1bWJIYVVnK05sclRPVDZxaW5YelVJMUx5bkxvK2JpUFlpUERmWkxTNElKcWtwUUs1R1cvVWFpNVB1cElDR3ZrcnM5WlJzYWNteExJVm5YR1IwRU1yNm1TOTdoenNCTjVnbW1Ic0c4L0FUWGE5SFNhK0tzSGNZampaTTI3QkFrN1lIekNGQlFqdGpnSnNrMnFwaWRQRlZITEhtTjFmL2dHRzRxR0tXZ0lBQUE9PSJ9 -->
-<div data-pagedtable="false">
-<script data-pagedtable-source type="application/json">
-{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["day_of_week"],"name":[1],"type":["fctr"],"align":["left"]},{"label":["stock_prices"],"name":[2],"type":["dbl"],"align":["right"]}],"data":[{"1":"Wednesday","2":"23","_rn_":"3"}],"options":{"columns":{"min":{},"max":[10],"total":[2]},"rows":{"min":[10],"max":[10],"total":[1]},"pages":{}}}
-  </script>
-</div>
-<!-- rnb-frame-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<p>selecting the 3rd element from the first row of stock_data</p>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxuc3RvY2tfZGF0YVszLCAxXVxuYGBgXG5gYGAifQ== -->
-<p><code>r</code>r stock_data[3, 1]</p>
-<pre><code></code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFdlZG5lc2RheVxuTGV2ZWxzOiBGcmlkYXkgTW9uZGF5IFRodXJzZGF5IFR1ZXNkYXkgV2VkbmVzZGF5XG4ifQ== -->
-<pre><code>[1] Wednesday
-Levels: Friday Monday Thursday Tuesday Wednesday</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<p>selecting the dataframe from the stocks_list list</p>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxuc3RvY2tfbGlzdFtcXHN0b2NrX2RhdGFcXF1cbmBgYFxuYGBgIn0= -->
-<p><code>r</code>r stock_list[_data]</p>
-<pre><code></code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiJHN0b2NrX2RhdGFcbk5BXG4ifQ== -->
-<pre><code>$stock_data
-NA</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjoiZGF0YS5mcmFtZSIsIm5jb2wiOjIsIm5yb3ciOjEwfSwicmRmIjoiSDRzSUFBQUFBQUFBQTIxUlcwK0RNQlF1dDAzUUxVdjJPOGFEbHpoallxWXhlL1BGWU53YnFWQWNHYlpMS1U3Zi9PWFRVempkZ0VnQzM0WFRjK2w1Zmx4ZEJLdUFFT0lRWndCZkR5anhYcUxsYkU2SWE0T3dpRXQ4alYvd2V3b0VUR2NFR0RRY2ZzT0pPb01PL3RmckpCb1U3Sk1WSmJCSkhZWHVVdVlwL1RicVNmQ2pPb25XbFN5UGVoaFZyQ1g5VjVieXh1aFc4cEtDbHFiUW9YeEdFeVVrc0QyOFl6M0k0cHJVeitJVzBlZ3J4SHZFT2VJTjRoM2l3MDlIOTl2ZzlJT1pObXcwVDZIZFdHVHhqckVOV21lbEVza20zc284MGVHZEhMNFV1OURrMGJkdk55WDFGblNnODlzYk0waXBvbUVtNFVnemFpZmRVR3hWTGpna3M2ZTRxdlpoUy9hTVNjVjE4WFNXckN1K21aMWY0djR0bkhlRVBHaHh1Nm5wbXM0T20yYjhQZWZNWEU1QjMxaUJZZ3hUMWtPR2NBbGNtVkhBTFVNbEZEVnhRU0lLNHpSNzNQOEJLM2p4NThvQ0FBQT0ifQ== -->
-<div data-pagedtable="false">
-<script data-pagedtable-source type="application/json">
-{"columns":[{"label":["day_of_week"],"name":[1],"type":["fctr"],"align":["left"]},{"label":["stock_prices"],"name":[2],"type":["dbl"],"align":["right"]}],"data":[{"1":"Monday","2":"23"},{"1":"Tuesday","2":"27"},{"1":"Wednesday","2":"23"},{"1":"Thursday","2":"21"},{"1":"Friday","2":"34"},{"1":"Monday","2":"24"},{"1":"Tuesday","2":"25"},{"1":"Wednesday","2":"30"},{"1":"Thursday","2":"37"},{"1":"Friday","2":"30"}],"options":{"columns":{"min":{},"max":[10],"total":[2]},"rows":{"min":[10],"max":[10],"total":[10]},"pages":{}}}
-  </script>
-</div>
-<!-- rnb-frame-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<!-- rnb-text-end -->
-
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiUiBOb3RlYm9vayIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQoKSSdtIGNyZWF0aW5nIHRoZSB2ZWN0b3Igc3RvY2tfcHJpY2VzLgoKYGBge3J9CnN0b2NrX3ByaWNlcyA8LSBjKDIzLCAyNywgMjMsIDIxLCAzNCwgMjQsIDI1LCAzMCwgMzcsIDMwKQpgYGAKCkknbSBjcmVhdGluZyB0aGUgdmVjdG9yIGRheV9vZl93ZWVrLCBjb250YWluaW5nIGVhY2ggZGF5IHR3aWNlCgpgYGB7cn0KZGF5X29mX3dlZWsgPC0gcmVwKGMoIk1vbmRheSIsICJUdWVzZGF5IiwgIldlZG5lc2RheSIsICJUaHVyc2RheSIsICJGcmlkYXkiKSwgdGltZXMgPSAyKQpkYXlfb2Zfd2VlawpgYGAKCmNyZWF0aW5nIGEgZmFjdG9yaWFsIHZlY3RvciBjYWxsZWQgZGF5X29mX3dlZWtfZmFjdG9yCmBgYHtyfQpkYXlfb2Zfd2Vla19mYWN0b3IgPC0gYXMuZmFjdG9yKGRheV9vZl93ZWVrKQpkYXlfb2Zfd2Vla19mYWN0b3IKYGBgCgpjcmVhdGluZyBhIHZlY3RvciBvZiBzdG9jayBwcmljZXMgd2hpY2ggaGFzIG5hbWVzIGFzIGRheXMgb2YgdGhlIHdlZWsKYGBge3J9Cm5hbWVkX3N0b2NrX3ByaWNlcyA8LSBzdG9ja19wcmljZXMKbmFtZXMobmFtZWRfc3RvY2tfcHJpY2VzKSA8LSBkYXlfb2Zfd2VlawpuYW1lZF9zdG9ja19wcmljZXMKYGBgCgpNYWtpbmcgYSBkYXRhZnJhbWUgY2FsbGVkIHN0b2NrX2RhdGEsIGNvbnRhaW5pbmcgdGhlIHN0b2NrIHByaWNlIGFuZCBkYXkgb2YgdGhlIHdlZWsgZGF0YQpgYGB7cn0Kc3RvY2tfZGF0YSA8LSBkYXRhLmZyYW1lKGRheV9vZl93ZWVrLCBzdG9ja19wcmljZXMpClZpZXcoc3RvY2tfZGF0YSkKYGBgCgpNYWtpbmcgYSBsaXN0IGNhbGxlZCBzdG9ja19saXN0IHdpdGggbmFtZWQgZWxlbWVudHMgYXMgZm9sbG93czogdGhlIHZlY3RvciBvZiBzdG9ja19wcmljZXMsIHRoZSB2ZWN0b3IgZGF5X29mX3dlZWssIGFuZCB0aGUgZGF0YSBmcmFtZSB5b3UgbWFkZSBpbiBxdWVzdGlvbiAzLiBDaG9vc2Ugc2Vuc2libGUgbmFtZXMgZm9yIHRoZSBsaXN0IGVsZW1lbnRzLgpgYGB7cn0Kc3RvY2tfbGlzdCA8LSBsaXN0KCJzdG9ja19wcmljZXMiID0gc3RvY2tfcHJpY2VzLCAiZGF5X29mX3dlZWsiID0gZGF5X29mX3dlZWssICJzdG9ja19kYXRhIiA9IHN0b2NrX2RhdGEpCnN0b2NrX2xpc3QKYGBgCgpQYXJ0IHR3bwpJJ20gc2VsZWN0aW5nIHRoZSA0dGgsIDV0aCwgYW5kIDZ0aCBlbGVtZW50cyBmcm9tIHN0b2NrX3ByaWNlcwpgYGB7cn0Kc3RvY2tfcHJpY2VzWzQ6Nl0KYGBgCgpJJ20gc2VsZWN0aW5nIGFsbCBlbGVtZW50cyBmcm9tIHN0b2NrX3ByaWNlcyBncmVhdGVyIHRoYW4gMzAKYGBge3J9CnN0b2NrX3ByaWNlc1tzdG9ja19wcmljZXMgPiAzMF0KYGBgCgpJJ20gc2VsZWN0aW5nIHRoZSBkYXkgb2Ygd2VlayBjb2x1bW4gZnJvbSB0aGUgc3RvY2tfZGF0YSBkYXRhZnJhbWUKYGBge3J9CnN0b2NrX2RhdGFbLCAiZGF5X29mX3dlZWsiXQpgYGAKCkknbSBzZWxlY3RpbmcgdGhlIHJvd3MgZnJvbSBzdG9ja19kYXRhIHdoZXJlIHRoZSBzdG9ja19wcmljZSB2YWx1ZSBpcyBsZXNzIHRoYW4gMjUKYGBge3J9CnN0b2NrX2RhdGFbc3RvY2tfcHJpY2VzIDwgMjUsIF0Kc3Vic2V0KHN0b2NrX2RhdGEsIHN0b2NrX3ByaWNlcyA8IDI1KQpgYGAKCnNlbGVjdGluZyB0aGUgZmlyc3QgY29sdW1uIG9mIHN0b2NrX2RhdGEKYGBge3J9CnN0b2NrX2RhdGFbLCAxXQpgYGAKCnNlbGVjdGluZyB0aGUgdGhpcmQgcm93IG9mIHN0b2NrX2RhdGEKYGBge3J9CnN0b2NrX2RhdGFbMywgXQpgYGAKCnNlbGVjdGluZyB0aGUgM3JkIGVsZW1lbnQgZnJvbSB0aGUgZmlyc3Qgcm93IG9mIHN0b2NrX2RhdGEKYGBge3J9CnN0b2NrX2RhdGFbMywgMV0KYGBgCgpzZWxlY3RpbmcgdGhlIGRhdGFmcmFtZSBmcm9tIHRoZSBzdG9ja3NfbGlzdCBsaXN0CmBgYHtyfQpzdG9ja19saXN0WyJzdG9ja19kYXRhIl0KYGBgCgo=</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiUiBOb3RlYm9vayIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQoKMgp3cml0aW5nIGEgZnVuY3Rpb24gdGhhdCBtdWx0aXBsaWVzIGFsbCBudW1iZXJzIGJ5IDE1LCB0aGVuIGFkZHMgNApgYGB7cn0KbXVsdGlwbGllcl8xIDwtIGZ1bmN0aW9uKHgpewogIG11bHRpcGxpZWQgPC0geCAqIDE1CiAgYWRkZWQgPC0gbXVsdGlwbGllZCArIDQKICByZXR1cm4oYWRkZWQpCn0KbXVsdGlwbGllcl8xKGMoMSwgMiwgMykpCmBgYAoKd3JpdGluZyBhIGZ1bmN0aW9uIHRoYXQgd2lsbCByZXR1cm4gImJpcmQiIGlmIHRoZSBpbnB1dCBpcyBhICJnb29zZSIsICJwaWdlb24iLCBvciAiZHVjayIsIGFuZCB3aWxsIHJldHVybiAibm90IGEgYmlyZCIgZm9yIGFueXRoaW5nIGVsc2UKYGBge3J9CmlzX2JpcmQgPC0gZnVuY3Rpb24oeCl7CiAgaWYgKHggPT0gImdvb3NlIiB8IHggPT0gInBpZ2VvbiIgfCB4ID09ICJkdWNrIil7CiAgICByZXR1cm4ocGFzdGUoIkEiLCB4LCAiaXMgYSBiaXJkIikpCiAgfSBlbHNlIHsKICAgIHJldHVybihwYXN0ZSgiVGhhdCdzIG5vdCBhIGJpcmQiKSkKICB9Cn0KaXNfYmlyZChjKCJwaWdlb24iKSkKYGBgCgp3cml0aW5nIGEgZnVuY3Rpb24gd2hpY2ggd2lsbCBtdWx0aXBseSBhbGwgbnVtYmVycyBieSAxMC4gSWYgdGhlIGlucHV0IGlzIG5vdCBhIG51bWJlciwgdGhlIGZ1bmN0aW9uIHdpbGwgcmV0dXJuICJJbnZhbGlkIGlucHV0IgpgYGB7cn0KbXVsdGlwbHlfbnVtYmVyX2J5XzEwIDwtIGZ1bmN0aW9uKHgpewogIGlmIChpcy5udW1lcmljKHgpID09IFRSVUUpewogICAgbXVsdGlwbGllZCA9IHggKiAxMAogICAgcmV0dXJuKHBhc3RlKG11bHRpcGxpZWQpKQogIH0gZWxzZSB7CiAgICByZXR1cm4ocGFzdGUoIkludmFsaWQgaW5wdXQiKSkKICB9Cn0KbXVsdGlwbHlfbnVtYmVyX2J5XzEwKDEwLjMpCmBgYAoKSSdtIGdvaW5nIHRvIGNvZGUgdGhlIG5leHQgc2VjdGlvbiB3aXRob3V0IHVzaW5nIGlmIHN0YXRlbWVudHMgb3IgbG9vcHMuCkkgd2lsbCBwcm92aWRlIHRocmVlIHNvbHV0aW9ucyB0byBlYWNoIHF1ZXN0aW9uOiBpZmVsc2UoKSwgcmVjb2RlKCkgYW5kIGNhc2V3aGVuKCkuIEkgd2lsbCBhbHNvIGRpc2N1c3Mgd2hpY2ggaXMgdGhlIGVhc2llc3QgZm9yIGVhY2ggcXVlc3Rpb24uCgpJJ20gZ29pbmcgdG8gZ29pbmcgdG8gdXNlIHRoZSB2ZWN0b3IgYmVsb3cgdG8gbWFrZSBhIG5ldyB2ZWN0b3IgZXF1YWwgdG8gIkJpZyIgZXZlcnkgdGltZSB0aGUgZWxlbWVudCBvZiBzaXplcyBpcyBncmVhdGVyIHRoYW4gMTAsIGFuZCBlcXVhbCB0byAiU21hbGwiIGV2ZXJ5IHRpbWUgdGhlIGVsZW1lbnQgb2Ygc2l6ZXMgaXMgbGVzcyB0aGFuIG9yIGVxdWFsIHRvIDEwCmBgYHtyfQpzaXplcyA8LSBjKDEzLCAxNSwgMTAsIDgsIDIyKQppZmVsc2UgKHNpemVzIDw9IDEwLCAiU21hbGwiLCAiQmlnIikKYGBgCmBgYHtyfQpvbmVfdG9fdGVuIDwtIDE6MTAKdGVuX3RvX21heCA8LSAxMDptYXgoc2l6ZXMpCnJlY29kZShzaXplcywgIjgiID0gIlNtYWxsIiwgIjEwIiA9ICJTbWFsbCIsICIxMyIgPSAiQmlnIiwgIjE1IiA9ICJCaWciLCAiMjIiID0gIkJpZyIpCgpgYGAKYGBge3J9CmNhc2Vfd2hlbigKICBzaXplcyA8PSAxMCB+ICJTbWFsbCIsCiAgc2l6ZXMgPiAxMCB+ICJCaWciCikKYGBgCmluIHRoaXMgY2FzZSwgaWZlbHNlIG9yIGNhc2Vfd2hlbiBhcmUgdGhlIGVhc2llc3QgdG8gdXNlLiBJdCdzIHJlYWxseSBoYXJkIHRvIHVzZSByZWNvZGUsIGJlY2F1c2UgeW91IGhhdmUgdG8gc3BlY2lmeSB3aGF0IHlvdSdyZSByZXBsYWNpbmcgYW5kIHdoYXQgeW91IHdhbnQgdG8gcmVwbGFjZSBpdCB3aXRoLiBJZiBzaXplcyBjaGFuZ2VzLCB5b3UnZCBoYXZlIHRvIGNoYW5nZSB5b3VyIHJlY29kZSB0b28uIEkgdGhpbmsgdGhhdCBpZmVsc2UgaXMgZWFzaWVyIHRoYW4gY2FzZV93aGVuLiBKdXN0IHNlZW1zIG1vcmUgcmVhZGFibGUgdG8gbWUsIGJ1dCBvbmUgY291bGQgbWFrZSB0aGUgc2FtZSBhcmd1bWVudCB3aXRoIGNhc2Vfd2hlbgoKZm9yIHRoZSBmcnVpdCB2ZWN0b3IsIEkgd2lsbCBjb252ZXJ0IGFwcGxlIHRvIGFscGFjYSwgYmFuYW5hIHRvIGJvbm9ibywgYW5kIGNoZXJyeSB0byBjaGlwbXVuay4KYGBge3J9CmZydWl0cyA8LSBjKCJhcHBsZSIsICJhcHBsZSIsICJiYW5hbmEiLCAiY2hlcnJ5IiwgImNoZXJyeSIpCmZydWl0cyA8LSBpZmVsc2UoZnJ1aXRzID09ICJhcHBsZSIsICJhbHBhY2EiLCBmcnVpdHMpCmZydWl0cyA8LSBpZmVsc2UoZnJ1aXRzID09ICJiYW5hbmEiLCAiYm9ub2JvIiwgZnJ1aXRzKQppZmVsc2UoZnJ1aXRzID09ICJjaGVycnkiLCAiY2hpcG11bmsiLCBmcnVpdHMpCmBgYApgYGB7cn0KZnJ1aXRzIDwtIGMoImFwcGxlIiwgImFwcGxlIiwgImJhbmFuYSIsICJjaGVycnkiLCAiY2hlcnJ5IikKcmVjb2RlKAogIGZydWl0cywgCiAgImFwcGxlIiA9ICJhbHBhY2EiLCAKICAiYmFuYW5hIiA9ICJib25vYm8iLCAKICAiY2hlcnJ5IiA9ICJjaGlwbXVuayIKKQpgYGAKYGBge3J9CmZydWl0cyA8LSBjKCJhcHBsZSIsICJhcHBsZSIsICJiYW5hbmEiLCAiY2hlcnJ5IiwgImNoZXJyeSIpCmNhc2Vfd2hlbigKICBmcnVpdHMgPT0gImFwcGxlIiB+ICJhbHBhY2EiLAogIGZydWl0cyA9PSAiYmFuYW5hIiB+ICJib25vYm8iLAogIGZydWl0cyA9PSAiY2hlcnJ5IiB+ICJjaGlwbXVuayIsCiAgVFJVRSB+IE5BX2NoYXJhY3Rlcl8KKQpgYGAKSW4gdGhpcyBjYXNlLCBpdCdzIGVhc2llciB0byB1c2UgcmVjb2RlIG9yIGNhc2Vfd2hlbiB0byBkbyB0aGUgc3Vic3RpdHV0aW9ucy4gSWYgeW91IHVzZSBpZmVsc2UsIHlvdSBoYXZlIHRvIHdyaXRlIHRocmVlIHNlcGVyYXRlIGlmZWxzZSBzdGF0ZW1lbnRzIHRvIGdldCBpdCB0byBkbyB3aGF0IHlvdSB3YW50LiBSZWNvZGUgaXMgdGhlIGVhc2llc3QsIGJlY2F1c2UgeW91IGp1c3QgdGFrZSBlYWNoIGVsZW1lbnQgdHlwZSBmcm9tIHRoZSB2ZWN0b3IgYW5kIGFzc2lnbiBpdCBhIG5ldyB2YWx1ZSwgYWxsIGluIG9uZSBwbGFjZS4gY2FzZV93aGVuIGlzIHNsaWdodGx5IHRyaWNraWVyLCBiZWNhdXNlIHlvdSBoYXZlIHRvIGhhdmUgYSBsb2dpY2FsIHN0YXRlbWVudCwgYW5kIGEgY2F0Y2hhbGwgYXQgdGhlIGVuZCAod2hpY2ggaW4gdGhpcyBjYXNlIGhhcyB0byBiZSBhIGNoYXJhY3RlcikKCmhlcmUgSSdtIGdvaW5nIHRvIHRha2UgdHdvIHZlY3RvcnMgd2hpY2ggc2hvdyB0aGUgYWdlcyBvZiBtYXJyaWFnZSBvZiBlYWNoIG1lbWJlciBvZiBhIGhldGVyb3NleHVhbCBjb3VwbGUuIFRoZSBmaXJzdCBlbGVtZW50cyBvZiBlYWNoIHZlY3RvciBjb3JyZWVzcG9uZCB0byB0aGUgZmlyc3QgY291cGxlLCBhbmQgdGhlIHNlY29uZCBlbGVtZW50cyB0byB0aGUgc2Vjb25kIGNvdXBsZSwgYW5kIHNvIG9uLiAKSSdtIGdvaW5nIHRvIGNyZWF0ZSBhIG5ldyB2ZWN0b3Igd2hpY2ggaXMgZXF1YWwgdG8gd2lmZSBvbGRlciB3aGVuZXZlciB0aGUgd2lmZSdzIGFnZSBpcyBoaWdoZXIsIGFuZCBodXNiYW5kIG9sZGVyIHdoZW4gdGhlIGh1c2JhbmQncyBhZ2UgaXMgaGlnaGVyLiBBbmQgZmluYWxseSwgc21hZSBhZ2Ugd2hlbiBib3RoIGFyZSB0aGUgc2FtZSBhZ2UuIApgYGB7cn0Kd2lmZV9hZ2UgPC0gYygyOUwsIDMwTCwgMzZMLCAzMUwsIDIyTCkKaHVzYmFuZF9hZ2UgPC0gYygyOEwsIDM1TCwgMzJMLCAzMUwsIDI5TCkKCmBgYApgYGB7cn0KdG90YWxfYWdlIDwtIHdpZmVfYWdlICsgaHVzYmFuZF9hZ2UKdG90YWxfYWdlCnRvdGFsX2FnZSAtIHdpZmVfYWdlICogMgp3aG9fb2xkZXIgPC0gYygid2hvIiwgImlzIiwgIm9sZGVyIikKd2hvX29sZGVyIDwtIGlmZWxzZSh0b3RhbF9hZ2UgLSB3aWZlX2FnZSAqIDIgPCAwLCAiV2lmZSBvbGRlciIsIHdob19vbGRlcikKd2hvX29sZGVyIDwtIGlmZWxzZSh0b3RhbF9hZ2UgLSB3aWZlX2FnZSAgKiAyID09IDAsICJTYW1lIGFnZSIsIHdob19vbGRlcikKd2hvX29sZGVyIDwtIGlmZWxzZSh0b3RhbF9hZ2UgLSB3aWZlX2FnZSAqIDI+IDAsICJIdXNiYW5kIG9sZGVyIiwgd2hvX29sZGVyKQp3aG9fb2xkZXIKYGBgCmBgYHtyfQp3aWZlX2FnZQpodXNiYW5kX2FnZQoKd2hvX29sZGVyIDwtIHRvdGFsX2FnZSAtIHdpZmVfYWdlICogMgp3aG9fb2xkZXIKcmVjb2RlKHdob19vbGRlciwKICAgICAgICItMSIgPSAiV2lmZSBvbGRlciIsCiAgICAgICAiNSIgPSAiSHVzYmFuZCBvbGRlciIsCiAgICAgICAiLTQiID0gIldpZmUgb2xkZXIiLCAKICAgICAgICIwIiA9ICJTYW1lIGFnZSIsIAogICAgICAgIjciID0gIkh1c2JhbmQgb2xkZXIiCikKYGBgCmBgYHtyfQpjYXNlX3doZW4oCiAgd2hvX29sZGVyID4gMCB+ICJIdXNiYW5kIG9sZGVyIiwKICB3aG9fb2xkZXIgPT0gMCB+ICJTYW1lIGFnZSIsCiAgd2hvX29sZGVyIDwgMCB+ICJXaWZlIG9kZXIiCikKYGBgCkluIHRoaXMgY2FzZSwgSSBsaWtlIGNhc2Vfd2hlbiBiZXN0LiBJdCBjYW4gYmUgZG9uZSBmbGV4aWJseSwgc28gdGhhdCBpZiBlaXRoZXIgdmVjdG9yIGNoYW5nZXMsIGl0IHdpbGwgc3RpbGwgd29yaywgYW5kIGNhbiBhbHNvIGJlIGRvbmUgaW4gb25lIHN0YXRlbWVudCwgcmF0aGVyIHRoYW4gMyBpbiB0aGUgaWZlbHNlIGNhc2UuIHJlY29kZSBpcyBydWJiaXNoIGhlcmUuIAoKSSdtIGdvaW5nIHRvIG1ha2UgYSBsaXN0LCB0aGVuIHVzZSBzb21lIGxvb3BzIG9uIGl0LiAKYGBge3J9Cm15X2xpc3QgPC0gbGlzdCgKICA0LCAKICAiYXBwbGUiLCAKICAxMC41LAogIGMoImlzIiwgImFuIiwgImFwcGxlIiksCiAgYygiSSIsICJsaWtlIiwgImFwcGxlcyIpLAogIDgKKQpgYGAKSSdtIGdvaW5nIHRvIHVzZSBhIGZvciBsb29wIHRvIHByaW50IG91dCBldmVyIGVsZW1lbnQgb2YgbXlfbGlzdCB3aGljaCBpcyBvZiB0eXBlIGNoYXJhY3RlcgpgYGB7cn0KZm9yIChjaGFyYWN0ZXIgaW4gbXlfbGlzdCl7CiAgaWYgKGNsYXNzKGNoYXJhY3RlcikgPT0gImNoYXJhY3RlciIpewogICAgcHJpbnQoY2hhcmFjdGVyKQogIH0KfQpgYGAKSSdtIG5vdyBnb2luZyB0byBkbyB0aGUgc2FtZSB0aGluZyB3aXRoIGEgd2hpbGUgbG9vcApgYGB7cn0KbXlfbGlzdFtbNF1dCmBgYAoKYGBge3J9CnggPC0gMQp3aGlsZSAoeCA8IGxlbmd0aChteV9saXN0KSl7CiAgaWYoY2xhc3MobXlfbGlzdFtbeF1dKSA9PSAiY2hhcmFjdGVyIil7CiAgICBjaGFyYWN0ZXIgPC0gbXlfbGlzdFtbeF1dCiAgICBwcmludChjaGFyYWN0ZXIpCiAgfQogIHggPC0geCArIDEKfQpgYGAKCgoKCgoKCgoKCgoKCgoKCgoKCgo=</div>
 
 
 
@@ -2011,7 +2070,7 @@ $(document).ready(function () {
 <!-- code folding -->
 <script>
 $(document).ready(function () {
-  window.initializeSourceEmbed("day_2_homework.Rmd");
+  window.initializeSourceEmbed("weekend_homework_week_1.Rmd");
   window.initializeCodeFolding("show" === "show");
 });
 </script>

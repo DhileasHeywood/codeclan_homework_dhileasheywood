@@ -1,0 +1,184 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+2
+writing a function that multiplies all numbers by 15, then adds 4
+```{r}
+multiplier_1 <- function(x){
+  multiplied <- x * 15
+  added <- multiplied + 4
+  return(added)
+}
+multiplier_1(c(1, 2, 3))
+```
+
+writing a function that will return "bird" if the input is a "goose", "pigeon", or "duck", and will return "not a bird" for anything else
+```{r}
+is_bird <- function(x){
+  if (x == "goose" | x == "pigeon" | x == "duck"){
+    return(paste("A", x, "is a bird"))
+  } else {
+    return(paste("That's not a bird"))
+  }
+}
+is_bird(c("pigeon"))
+```
+
+writing a function which will multiply all numbers by 10. If the input is not a number, the function will return "Invalid input"
+```{r}
+multiply_number_by_10 <- function(x){
+  if (is.numeric(x) == TRUE){
+    multiplied = x * 10
+    return(paste(multiplied))
+  } else {
+    return(paste("Invalid input"))
+  }
+}
+multiply_number_by_10(10.3)
+```
+
+I'm going to code the next section without using if statements or loops.
+I will provide three solutions to each question: ifelse(), recode() and casewhen(). I will also discuss which is the easiest for each question.
+
+I'm going to going to use the vector below to make a new vector equal to "Big" every time the element of sizes is greater than 10, and equal to "Small" every time the element of sizes is less than or equal to 10
+```{r}
+sizes <- c(13, 15, 10, 8, 22)
+ifelse (sizes <= 10, "Small", "Big")
+```
+```{r}
+one_to_ten <- 1:10
+ten_to_max <- 10:max(sizes)
+recode(sizes, "8" = "Small", "10" = "Small", "13" = "Big", "15" = "Big", "22" = "Big")
+
+```
+```{r}
+case_when(
+  sizes <= 10 ~ "Small",
+  sizes > 10 ~ "Big"
+)
+```
+in this case, ifelse or case_when are the easiest to use. It's really hard to use recode, because you have to specify what you're replacing and what you want to replace it with. If sizes changes, you'd have to change your recode too. I think that ifelse is easier than case_when. Just seems more readable to me, but one could make the same argument with case_when
+
+for the fruit vector, I will convert apple to alpaca, banana to bonobo, and cherry to chipmunk.
+```{r}
+fruits <- c("apple", "apple", "banana", "cherry", "cherry")
+fruits <- ifelse(fruits == "apple", "alpaca", fruits)
+fruits <- ifelse(fruits == "banana", "bonobo", fruits)
+ifelse(fruits == "cherry", "chipmunk", fruits)
+```
+```{r}
+fruits <- c("apple", "apple", "banana", "cherry", "cherry")
+recode(
+  fruits, 
+  "apple" = "alpaca", 
+  "banana" = "bonobo", 
+  "cherry" = "chipmunk"
+)
+```
+```{r}
+fruits <- c("apple", "apple", "banana", "cherry", "cherry")
+case_when(
+  fruits == "apple" ~ "alpaca",
+  fruits == "banana" ~ "bonobo",
+  fruits == "cherry" ~ "chipmunk",
+  TRUE ~ NA_character_
+)
+```
+In this case, it's easier to use recode or case_when to do the substitutions. If you use ifelse, you have to write three seperate ifelse statements to get it to do what you want. Recode is the easiest, because you just take each element type from the vector and assign it a new value, all in one place. case_when is slightly trickier, because you have to have a logical statement, and a catchall at the end (which in this case has to be a character)
+
+here I'm going to take two vectors which show the ages of marriage of each member of a heterosexual couple. The first elements of each vector correespond to the first couple, and the second elements to the second couple, and so on. 
+I'm going to create a new vector which is equal to wife older whenever the wife's age is higher, and husband older when the husband's age is higher. And finally, smae age when both are the same age. 
+```{r}
+wife_age <- c(29L, 30L, 36L, 31L, 22L)
+husband_age <- c(28L, 35L, 32L, 31L, 29L)
+
+```
+```{r}
+total_age <- wife_age + husband_age
+total_age
+total_age - wife_age * 2
+who_older <- c("who", "is", "older")
+who_older <- ifelse(total_age - wife_age * 2 < 0, "Wife older", who_older)
+who_older <- ifelse(total_age - wife_age  * 2 == 0, "Same age", who_older)
+who_older <- ifelse(total_age - wife_age * 2> 0, "Husband older", who_older)
+who_older
+```
+```{r}
+wife_age
+husband_age
+
+who_older <- total_age - wife_age * 2
+who_older
+recode(who_older,
+       "-1" = "Wife older",
+       "5" = "Husband older",
+       "-4" = "Wife older", 
+       "0" = "Same age", 
+       "7" = "Husband older"
+)
+```
+```{r}
+case_when(
+  who_older > 0 ~ "Husband older",
+  who_older == 0 ~ "Same age",
+  who_older < 0 ~ "Wife oder"
+)
+```
+In this case, I like case_when best. It can be done flexibly, so that if either vector changes, it will still work, and can also be done in one statement, rather than 3 in the ifelse case. recode is rubbish here. 
+
+I'm going to make a list, then use some loops on it. 
+```{r}
+my_list <- list(
+  4, 
+  "apple", 
+  10.5,
+  c("is", "an", "apple"),
+  c("I", "like", "apples"),
+  8
+)
+```
+I'm going to use a for loop to print out ever element of my_list which is of type character
+```{r}
+for (character in my_list){
+  if (class(character) == "character"){
+    print(character)
+  }
+}
+```
+I'm now going to do the same thing with a while loop
+```{r}
+my_list[[4]]
+```
+
+```{r}
+x <- 1
+while (x < length(my_list)){
+  if(class(my_list[[x]]) == "character"){
+    character <- my_list[[x]]
+    print(character)
+  }
+  x <- x + 1
+}
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

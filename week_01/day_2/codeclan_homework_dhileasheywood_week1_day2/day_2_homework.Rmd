@@ -60,6 +60,7 @@ stock_data[, "day_of_week"]
 I'm selecting the rows from stock_data where the stock_price value is less than 25
 ```{r}
 stock_data[stock_prices < 25, ]
+subset(stock_data, stock_prices < 25)
 ```
 
 selecting the first column of stock_data
