@@ -188,6 +188,16 @@ while (y <= length(my_list)){
 }
 ```
 
+extra stuff
+writing code that prints a miltiplicatio table for numbers up to 12. i.e. there will be 12 rows, and 12 columns, and each element should be the row number multiplied by the column number.
+```{r}
+one_to_twelve <- 1:12
+one_to_twelve + one_to_twelve
+my_matrix <- matrix(one_to_twelve, nrow = 12, ncol = 12, byrow = TRUE)
+my_squared_matrix <- my_matrix * one_to_twelve
+my_squared_matrix
+```
+
 
 
 
