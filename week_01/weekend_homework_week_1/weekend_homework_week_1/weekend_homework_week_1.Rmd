@@ -198,8 +198,56 @@ my_squared_matrix <- my_matrix * one_to_twelve
 my_squared_matrix
 ```
 
+writing a function that takes a vector, and creates a text art histogram.
+```{r}
+#some testing to get some thoughts out. Please ignore
+my_vector <- c(10, 2, 3, 5)
 
+asterisk <- c("*")
 
+asterisks <- rep("*", times = my_vector[1])
+paste(asterisks, collapse = "")
+
+```
+```{r}
+make_text_art_histogram <- function(x){
+  if(class(x) != "numeric"){
+    print("Input must be numeric vector")
+  } else{
+    loop_number <- 1
+    while (loop_number <= length(x)){
+      asterisks <- rep("*", times = x[loop_number])
+      cat(loop_number, " | ", asterisks, fill = TRUE, sep = "")
+      loop_number <- loop_number + 1
+    }
+  }
+}
+make_text_art_histogram(c(1, 2, 4, 10, 1, 11, 2))
+```
+
+writing a guessing game where the user has to guess a secret number. After each guess, the program will tell the user whether their number was too large or too small. At the end, the number of tries the user needed will be printed.
+```{r}
+guessing_game <- function(x){
+  number_of_guesses <- 1
+  sample_from <- 1:1000
+  number_to_guess <- sample(sample_from, size = 1)
+  if (x != number_to_guess){
+    while (x != number_to_guess){
+      if (x > number_to_guess){
+      print(paste("Too big. You've had", number_of_guesses, "guesses."))
+      } else if (x < number_to_guess){
+      print(paste("Too small. You've had", number_of_guesses, "guesses."))
+      }
+      number_of_guesses <- number_of_guesses + 1
+      x <- readline("Try again > ")
+    }
+  }
+  if (x == number_to_guess){
+    print(paste("Congratulations! You took", number_of_guesses, "guesses."))
+  }
+}
+guessing_game(500)
+```
 
 
 
