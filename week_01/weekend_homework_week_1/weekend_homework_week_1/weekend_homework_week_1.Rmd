@@ -149,7 +149,7 @@ for (character in my_list){
 ```
 I'm now going to do the same thing with a while loop
 ```{r}
-my_list[[4]]
+my_list[[4]][1]
 ```
 
 ```{r}
@@ -163,7 +163,30 @@ while (x < length(my_list)){
 }
 ```
 
+I'm going to write another while loop, where if the element has a length() >1, it will paste all of the elements in that vector into one big character vector.
+```{r}
 
+four <- my_list[[4]]
+print(paste(my_list[[4]][1], my_list[[4]][]))
+```
+
+```{r}
+y <- 1
+while (y <= length(my_list)){
+  if(class(my_list[[y]]) == "character"){
+    if(length(my_list[[y]]) == 1){
+      print((my_list[[y]]))
+    } else if (length(my_list[[y]]) == 2){
+      print(paste(my_list[[y]][1],  my_list[[y]][2]))
+    } else if (length(my_list[[y]]) >= 3){
+      print(paste(my_list[[y]][1], my_list[[y]][2], my_list[[y]][3]))
+    } else if (length(my_list[[y]]) == 4){
+      print(paste(my_list[[y]][1], my_list[[y]][2], my_list[[y]][3], my_list[[y]][4]))
+    }
+  }
+  y <- y + 1
+}
+```
 
 
 
