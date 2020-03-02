@@ -1,0 +1,55 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+```{r}
+library(readr)
+library(readxl)
+library(openxlsx)
+library(jsonlite)
+library(dplyr)
+library(haven)
+```
+
+```{r}
+state_income <- read_csv("data/state_income_data.csv", skip = 1, col_names = c(
+  "Index", 
+  "State", 
+  "2002",
+  "2003", 
+  "2004",
+  "2005", 
+  "2006",
+  "2007",
+  "2008",
+  "2009",
+  "2010",
+  "2011",
+  "2012",
+  "2013",
+  "2014",
+  "2015"
+))
+```
+
+```{r}
+cars <- read_csv("data/cars.csv", col_types = cols(X1 = col_character(), vs = col_logical(), .default = col_double()))
+```
+
+```{r}
+scotland <- read_delim("data/scotland.txt", delim = ";", skip = 1)
+scotland
+```
+
+5: you read text into a one element character vector by using read_file()
+
+```{r}
+steam_200k <- read_csv("data/steam-200k-sample.csv", skip = 4)
+steam_200k
+```
+
+```{r}
+historic_eu_payments <- read_tsv("data/historic_eu_payments.tsv")
+```
+
