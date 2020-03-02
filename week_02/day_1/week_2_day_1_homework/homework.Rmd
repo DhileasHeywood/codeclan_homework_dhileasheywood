@@ -53,3 +53,20 @@ steam_200k
 historic_eu_payments <- read_tsv("data/historic_eu_payments.tsv")
 ```
 
+7. You can use the read_lines() function to read text into a multi-element character vector
+
+```{r}
+africa_health_data <- read_stata("data/africa_health_data.dta")
+```
+
+```{r}
+json_sample_raw <- read_file("http://makemeanalyst.com/wp-content/uploads/2017/06/sample_json.txt")
+prettify(json_sample_raw)
+```
+
+```{r}
+json_sample <- parse_json(json_sample_raw)
+json_sample
+
+```
+

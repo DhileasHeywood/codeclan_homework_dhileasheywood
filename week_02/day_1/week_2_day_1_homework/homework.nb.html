@@ -1908,9 +1908,112 @@ cols(
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
+<ol start="7" style="list-style-type: decimal">
+<li>You can use the read_lines() function to read text into a multi-element character vector</li>
+</ol>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYWZyaWNhX2hlYWx0aF9kYXRhIDwtIHJlYWRfc3RhdGEoXCJkYXRhL2FmcmljYV9oZWFsdGhfZGF0YS5kdGFcIilcbmBgYCJ9 -->
+<pre class="r"><code>africa_health_data &lt;- read_stata(&quot;data/africa_health_data.dta&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuanNvbl9zYW1wbGVfcmF3IDwtIHJlYWRfZmlsZShcImh0dHA6Ly9tYWtlbWVhbmFseXN0LmNvbS93cC1jb250ZW50L3VwbG9hZHMvMjAxNy8wNi9zYW1wbGVfanNvbi50eHRcIilcbnByZXR0aWZ5KGpzb25fc2FtcGxlX3JhdylcbmBgYCJ9 -->
+<pre class="r"><code>json_sample_raw &lt;- read_file(&quot;http://makemeanalyst.com/wp-content/uploads/2017/06/sample_json.txt&quot;)
+prettify(json_sample_raw)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoie1xuICAgIFwiRW1wIElkXCI6IFtcbiAgICAgICAgXCIxXCIsXG4gICAgICAgIFwiMlwiLFxuICAgICAgICBcIjNcIixcbiAgICAgICAgXCI0XCIsXG4gICAgICAgIFwiNVwiXG4gICAgXSxcbiAgICBcIk5hbWVcIjogW1xuICAgICAgICBcIk1yLiBYXCIsXG4gICAgICAgIFwiTXIuIFlcIixcbiAgICAgICAgXCJNci4gWlwiLFxuICAgICAgICBcIk1yLiBLXCIsXG4gICAgICAgIFwiTXIuIFNcIlxuICAgIF0sXG4gICAgXCJEZXB0XCI6IFtcbiAgICAgICAgXCJBbmFseXRpY3NcIixcbiAgICAgICAgXCJDbG91ZCBXaW5nc1wiLFxuICAgICAgICBcIkJpZyBEYXRhIEFuYWx5dGljc1wiLFxuICAgICAgICBcIklkZW50aXR5IE1hbmFnZW1lbnRcIixcbiAgICAgICAgXCJIUlwiXG4gICAgXVxufVxuIFxuIn0= -->
+<pre><code>{
+    &quot;Emp Id&quot;: [
+        &quot;1&quot;,
+        &quot;2&quot;,
+        &quot;3&quot;,
+        &quot;4&quot;,
+        &quot;5&quot;
+    ],
+    &quot;Name&quot;: [
+        &quot;Mr. X&quot;,
+        &quot;Mr. Y&quot;,
+        &quot;Mr. Z&quot;,
+        &quot;Mr. K&quot;,
+        &quot;Mr. S&quot;
+    ],
+    &quot;Dept&quot;: [
+        &quot;Analytics&quot;,
+        &quot;Cloud Wings&quot;,
+        &quot;Big Data Analytics&quot;,
+        &quot;Identity Management&quot;,
+        &quot;HR&quot;
+    ]
+}
+ </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuanNvbl9zYW1wbGUgPC0gcGFyc2VfanNvbihqc29uX3NhbXBsZV9yYXcpXG5qc29uX3NhbXBsZVxuYGBgIn0= -->
+<pre class="r"><code>json_sample &lt;- parse_json(json_sample_raw)
+json_sample</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiJGBFbXAgSWRgXG4kYEVtcCBJZGBbWzFdXVxuWzFdIFwiMVwiXG5cbiRgRW1wIElkYFtbMl1dXG5bMV0gXCIyXCJcblxuJGBFbXAgSWRgW1szXV1cblsxXSBcIjNcIlxuXG4kYEVtcCBJZGBbWzRdXVxuWzFdIFwiNFwiXG5cbiRgRW1wIElkYFtbNV1dXG5bMV0gXCI1XCJcblxuXG4kTmFtZVxuJE5hbWVbWzFdXVxuWzFdIFwiTXIuIFhcIlxuXG4kTmFtZVtbMl1dXG5bMV0gXCJNci4gWVwiXG5cbiROYW1lW1szXV1cblsxXSBcIk1yLiBaXCJcblxuJE5hbWVbWzRdXVxuWzFdIFwiTXIuIEtcIlxuXG4kTmFtZVtbNV1dXG5bMV0gXCJNci4gU1wiXG5cblxuJERlcHRcbiREZXB0W1sxXV1cblsxXSBcIkFuYWx5dGljc1wiXG5cbiREZXB0W1syXV1cblsxXSBcIkNsb3VkIFdpbmdzXCJcblxuJERlcHRbWzNdXVxuWzFdIFwiQmlnIERhdGEgQW5hbHl0aWNzXCJcblxuJERlcHRbWzRdXVxuWzFdIFwiSWRlbnRpdHkgTWFuYWdlbWVudFwiXG5cbiREZXB0W1s1XV1cblsxXSBcIkhSXCJcbiJ9 -->
+<pre><code>$`Emp Id`
+$`Emp Id`[[1]]
+[1] &quot;1&quot;
+
+$`Emp Id`[[2]]
+[1] &quot;2&quot;
+
+$`Emp Id`[[3]]
+[1] &quot;3&quot;
+
+$`Emp Id`[[4]]
+[1] &quot;4&quot;
+
+$`Emp Id`[[5]]
+[1] &quot;5&quot;
+
+
+$Name
+$Name[[1]]
+[1] &quot;Mr. X&quot;
+
+$Name[[2]]
+[1] &quot;Mr. Y&quot;
+
+$Name[[3]]
+[1] &quot;Mr. Z&quot;
+
+$Name[[4]]
+[1] &quot;Mr. K&quot;
+
+$Name[[5]]
+[1] &quot;Mr. S&quot;
+
+
+$Dept
+$Dept[[1]]
+[1] &quot;Analytics&quot;
+
+$Dept[[2]]
+[1] &quot;Cloud Wings&quot;
+
+$Dept[[3]]
+[1] &quot;Big Data Analytics&quot;
+
+$Dept[[4]]
+[1] &quot;Identity Management&quot;
+
+$Dept[[5]]
+[1] &quot;HR&quot;</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiUiBOb3RlYm9vayIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQoKYGBge3J9CmxpYnJhcnkocmVhZHIpCmxpYnJhcnkocmVhZHhsKQpsaWJyYXJ5KG9wZW54bHN4KQpsaWJyYXJ5KGpzb25saXRlKQpsaWJyYXJ5KGRwbHlyKQpsaWJyYXJ5KGhhdmVuKQpgYGAKCmBgYHtyfQpzdGF0ZV9pbmNvbWUgPC0gcmVhZF9jc3YoImRhdGEvc3RhdGVfaW5jb21lX2RhdGEuY3N2Iiwgc2tpcCA9IDEsIGNvbF9uYW1lcyA9IGMoCiAgIkluZGV4IiwgCiAgIlN0YXRlIiwgCiAgIjIwMDIiLAogICIyMDAzIiwgCiAgIjIwMDQiLAogICIyMDA1IiwgCiAgIjIwMDYiLAogICIyMDA3IiwKICAiMjAwOCIsCiAgIjIwMDkiLAogICIyMDEwIiwKICAiMjAxMSIsCiAgIjIwMTIiLAogICIyMDEzIiwKICAiMjAxNCIsCiAgIjIwMTUiCikpCmBgYAoKYGBge3J9CmNhcnMgPC0gcmVhZF9jc3YoImRhdGEvY2Fycy5jc3YiLCBjb2xfdHlwZXMgPSBjb2xzKFgxID0gY29sX2NoYXJhY3RlcigpLCB2cyA9IGNvbF9sb2dpY2FsKCksIC5kZWZhdWx0ID0gY29sX2RvdWJsZSgpKSkKYGBgCgpgYGB7cn0Kc2NvdGxhbmQgPC0gcmVhZF9kZWxpbSgiZGF0YS9zY290bGFuZC50eHQiLCBkZWxpbSA9ICI7Iiwgc2tpcCA9IDEpCnNjb3RsYW5kCmBgYAoKNTogeW91IHJlYWQgdGV4dCBpbnRvIGEgb25lIGVsZW1lbnQgY2hhcmFjdGVyIHZlY3RvciBieSB1c2luZyByZWFkX2ZpbGUoKQoKYGBge3J9CnN0ZWFtXzIwMGsgPC0gcmVhZF9jc3YoImRhdGEvc3RlYW0tMjAway1zYW1wbGUuY3N2Iiwgc2tpcCA9IDQpCnN0ZWFtXzIwMGsKYGBgCgpgYGB7cn0KaGlzdG9yaWNfZXVfcGF5bWVudHMgPC0gcmVhZF90c3YoImRhdGEvaGlzdG9yaWNfZXVfcGF5bWVudHMudHN2IikKYGBgCgo=</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiUiBOb3RlYm9vayIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQoKYGBge3J9CmxpYnJhcnkocmVhZHIpCmxpYnJhcnkocmVhZHhsKQpsaWJyYXJ5KG9wZW54bHN4KQpsaWJyYXJ5KGpzb25saXRlKQpsaWJyYXJ5KGRwbHlyKQpsaWJyYXJ5KGhhdmVuKQpgYGAKCmBgYHtyfQpzdGF0ZV9pbmNvbWUgPC0gcmVhZF9jc3YoImRhdGEvc3RhdGVfaW5jb21lX2RhdGEuY3N2Iiwgc2tpcCA9IDEsIGNvbF9uYW1lcyA9IGMoCiAgIkluZGV4IiwgCiAgIlN0YXRlIiwgCiAgIjIwMDIiLAogICIyMDAzIiwgCiAgIjIwMDQiLAogICIyMDA1IiwgCiAgIjIwMDYiLAogICIyMDA3IiwKICAiMjAwOCIsCiAgIjIwMDkiLAogICIyMDEwIiwKICAiMjAxMSIsCiAgIjIwMTIiLAogICIyMDEzIiwKICAiMjAxNCIsCiAgIjIwMTUiCikpCmBgYAoKYGBge3J9CmNhcnMgPC0gcmVhZF9jc3YoImRhdGEvY2Fycy5jc3YiLCBjb2xfdHlwZXMgPSBjb2xzKFgxID0gY29sX2NoYXJhY3RlcigpLCB2cyA9IGNvbF9sb2dpY2FsKCksIC5kZWZhdWx0ID0gY29sX2RvdWJsZSgpKSkKYGBgCgpgYGB7cn0Kc2NvdGxhbmQgPC0gcmVhZF9kZWxpbSgiZGF0YS9zY290bGFuZC50eHQiLCBkZWxpbSA9ICI7Iiwgc2tpcCA9IDEpCnNjb3RsYW5kCmBgYAoKNTogeW91IHJlYWQgdGV4dCBpbnRvIGEgb25lIGVsZW1lbnQgY2hhcmFjdGVyIHZlY3RvciBieSB1c2luZyByZWFkX2ZpbGUoKQoKYGBge3J9CnN0ZWFtXzIwMGsgPC0gcmVhZF9jc3YoImRhdGEvc3RlYW0tMjAway1zYW1wbGUuY3N2Iiwgc2tpcCA9IDQpCnN0ZWFtXzIwMGsKYGBgCgpgYGB7cn0KaGlzdG9yaWNfZXVfcGF5bWVudHMgPC0gcmVhZF90c3YoImRhdGEvaGlzdG9yaWNfZXVfcGF5bWVudHMudHN2IikKYGBgCgo3LiBZb3UgY2FuIHVzZSB0aGUgcmVhZF9saW5lcygpIGZ1bmN0aW9uIHRvIHJlYWQgdGV4dCBpbnRvIGEgbXVsdGktZWxlbWVudCBjaGFyYWN0ZXIgdmVjdG9yCgpgYGB7cn0KYWZyaWNhX2hlYWx0aF9kYXRhIDwtIHJlYWRfc3RhdGEoImRhdGEvYWZyaWNhX2hlYWx0aF9kYXRhLmR0YSIpCmBgYAoKYGBge3J9Cmpzb25fc2FtcGxlX3JhdyA8LSByZWFkX2ZpbGUoImh0dHA6Ly9tYWtlbWVhbmFseXN0LmNvbS93cC1jb250ZW50L3VwbG9hZHMvMjAxNy8wNi9zYW1wbGVfanNvbi50eHQiKQpwcmV0dGlmeShqc29uX3NhbXBsZV9yYXcpCmBgYAoKYGBge3J9Cmpzb25fc2FtcGxlIDwtIHBhcnNlX2pzb24oanNvbl9zYW1wbGVfcmF3KQpqc29uX3NhbXBsZQoKYGBgCgo=</div>
 
 
 
