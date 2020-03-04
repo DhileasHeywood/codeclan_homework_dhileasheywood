@@ -99,6 +99,9 @@ dbGetQuery(remote_db_connection, "SELECT * FROM wrestlers WHERE born NOT LIKE 'I
 
 
 
+```{r}
+dbDisconnect(remote_db_connection)
+```
 
 ```{r}
 dbDisconnect(db_connect_local)
