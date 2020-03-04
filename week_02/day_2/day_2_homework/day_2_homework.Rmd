@@ -1,0 +1,92 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+first, I'm going to set up a connection to a remote PostgreSQL database.
+
+```{r}
+keyring_create(keyring = "remote")
+key_set(service = "omni_postgresql_username", keyring = "remote")
+key_set(service = "omni_postgresql_password", keyring = "remote")
+keyring_lock(keyring = "remote")
+```
+
+
+
+
+```{r}
+library(keyring)
+library(RPostgreSQL)
+keyring_unlock("remote")
+username <- key_get("omni_postgresql_username", keyring = "remote") 
+password <- key_get("omni_postgresql_password", keyring = "remote")
+keyring_lock("remote")
+db_connect <- dbConnect(drv = PostgreSQL(), user = username, password = password, dbname = "cjitjeca", host = "34.245.37.126")
+rm(username, password)
+```
+
+```{r}
+dbGetQuery(db_connect, "SELECT * FROM employees LIMIT 1")
+```
+
+```{r}
+dbDisconnect(db_connect)
+```
+
+```{r}
+keyring_unlock(keyring = "local")
+username <- key_get("postgresql_username", keyring = "local")
+password <- key_get("postgresql_password", keyring = "local")
+keyring_lock(keyring = "local")
+
+```
+```{r}
+db_connect_local <- dbConnect(drv = PostgreSQL(max.con = 2), user = username, password = password, dbname = "wrestling", host = "localhost")
+rm(username, password)
+```
+
+```{r}
+dbGetQuery(db_connect_local, "SELECT * FROM wrestlers")
+```
+id stores integers
+born stores character vectors
+name stores wrestlers' names (character vetors)
+gender stores character vectors
+win_percent stores doubles
+total_matches stores integers
+
+```{r}
+keyring_unlock("remote")
+username <- key_get("wrestler_postgresql_username", keyring = "remote")
+password <- key_get("wrestler_postgresql_password", keyring = "remote")
+keyring_lock("remote")
+remote_db_connection <- dbConnect(drv = PostgreSQL(max.con = 2), user = username, password = password, dbname = "mvhbdgdk", host = "34.245.37.126")
+rm(username, password)
+```
+
+```{r}
+dbGetQuery(remote_db_connection, "SELECT * FROM wrestlers")
+```
+
+```{r}
+dbGetQuery(remote_db_connection, "SELECT * FROM wrestlers WHERE born = 'United Kingdom'")
+```
+
+```{r}
+dbGetQuery(remote_db_connection, "SELECT * FROM wrestlers WHERE ")
+```
+
+
+
+
+
+
+
+
+
+
+```{r}
+dbDisconnect(db_connect_local)
+```
+

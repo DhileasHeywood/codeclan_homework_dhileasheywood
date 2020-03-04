@@ -69,4 +69,11 @@ json_sample <- parse_json(json_sample_raw)
 json_sample
 
 ```
+```{r}
+green_bindle_consulting <- list()
+green_bindle_consulting_sheets <- excel_sheets("data/green_bindle_consulting.xlsx")
+for (data in green_bindle_consulting_sheets){
+  green_bindle_consulting <- read_excel("data/green_bindle_consulting.xlsx", sheet = data)
+}
+```
 
