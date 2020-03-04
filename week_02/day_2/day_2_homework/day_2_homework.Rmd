@@ -74,11 +74,25 @@ dbGetQuery(remote_db_connection, "SELECT * FROM wrestlers WHERE born = 'United K
 ```
 
 ```{r}
-dbGetQuery(remote_db_connection, "SELECT * FROM wrestlers WHERE ")
+dbGetQuery(remote_db_connection, "SELECT * FROM wrestlers WHERE born = 'Japan' AND total_matches >= 40")
+```
+
+```{r}
+dbGetQuery(remote_db_connection, "SELECT * FROM wrestlers WHERE win_percent BETWEEN 50 AND 60")
+```
+
+```{r}
+dbGetQuery(remote_db_connection, "SELECT * FROM wrestlers WHERE name LIKE 'X%'")
+```
+
+```{r}
+dbGetQuery(remote_db_connection, "SELECT * FROM wrestlers WHERE born LIKE 'I%'")
 ```
 
 
-
+```{r}
+dbGetQuery(remote_db_connection, "SELECT * FROM wrestlers WHERE born NOT LIKE 'I%'")
+```
 
 
 
