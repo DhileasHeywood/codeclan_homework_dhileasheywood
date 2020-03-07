@@ -244,7 +244,7 @@ guessing_game <- function(x){
     print(paste("Congratulations! You took", number_of_guesses, "guesses."))
   }
 }
-guessing_game(766)
+guessing_game(269)
 ```
 
 

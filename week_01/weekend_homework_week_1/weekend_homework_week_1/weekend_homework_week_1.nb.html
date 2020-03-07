@@ -1752,13 +1752,9 @@ summary {
 <p>2 writing a function that multiplies all numbers by 15, then adds 4</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubXVsdGlwbGllcl8xIDwtIGZ1bmN0aW9uKHgpe1xuICBtdWx0aXBsaWVkIDwtIHggKiAxNVxuICBhZGRlZCA8LSBtdWx0aXBsaWVkICsgNFxuICByZXR1cm4oYWRkZWQpXG59XG5tdWx0aXBsaWVyXzEoYygxLCAyLCAzKSlcbmBgYCJ9 -->
-<pre class="r"><code>multiplier_1 &lt;- function(x){
-  multiplied &lt;- x * 15
-  added &lt;- multiplied + 4
-  return(added)
-}
-multiplier_1(c(1, 2, 3))</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxubXVsdGlwbGllcl8xIDwtIGZ1bmN0aW9uKHgpe1xuICBtdWx0aXBsaWVkIDwtIHggKiAxNVxuICBhZGRlZCA8LSBtdWx0aXBsaWVkICsgNFxuICByZXR1cm4oYWRkZWQpXG59XG5tdWx0aXBsaWVyXzEoYygxLCAyLCAzKSlcbmBgYFxuYGBgIn0= -->
+<p><code>r</code>r multiplier_1 &lt;- function(x){ multiplied &lt;- x * 15 added &lt;- multiplied + 4 return(added) } multiplier_1(c(1, 2, 3))</p>
+<pre><code></code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-output-begin eyJkYXRhIjoiWzFdIDE5IDM0IDQ5XG4ifQ== -->
 <pre><code>[1] 19 34 49</code></pre>
@@ -1768,37 +1764,24 @@ multiplier_1(c(1, 2, 3))</code></pre>
 <p>writing a function that will return “bird” if the input is a “goose”, “pigeon”, or “duck”, and will return “not a bird” for anything else</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaXNfYmlyZCA8LSBmdW5jdGlvbih4KXtcbiAgaWYgKHggPT0gXCJnb29zZVwiIHwgeCA9PSBcInBpZ2VvblwiIHwgeCA9PSBcImR1Y2tcIil7XG4gICAgcmV0dXJuKHBhc3RlKFwiQVwiLCB4LCBcImlzIGEgYmlyZFwiKSlcbiAgfSBlbHNlIHtcbiAgICByZXR1cm4ocGFzdGUoXCJUaGF0J3Mgbm90IGEgYmlyZFwiKSlcbiAgfVxufVxuaXNfYmlyZChjKFwicGlnZW9uXCIpKVxuYGBgIn0= -->
-<pre class="r"><code>is_bird &lt;- function(x){
-  if (x == &quot;goose&quot; | x == &quot;pigeon&quot; | x == &quot;duck&quot;){
-    return(paste(&quot;A&quot;, x, &quot;is a bird&quot;))
-  } else {
-    return(paste(&quot;That's not a bird&quot;))
-  }
-}
-is_bird(c(&quot;pigeon&quot;))</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxuaXNfYmlyZCA8LSBmdW5jdGlvbih4KXtcbiAgaWYgKHggPT0gXFxnb29zZVxcIHwgeCA9PSBcXHBpZ2VvblxcIHwgeCA9PSBcXGR1Y2tcXCl7XG4gICAgcmV0dXJuKHBhc3RlKFxcQVxcLCB4LCBcXGlzIGEgYmlyZFxcKSlcbiAgfSBlbHNlIHtcbiAgICByZXR1cm4ocGFzdGUoXFxUaGF0J3Mgbm90IGEgYmlyZFxcKSlcbiAgfVxufVxuaXNfYmlyZChjKFxccGlnZW9uXFwpKVxuYGBgXG5gYGAifQ== -->
+<p><code>r</code>r is_bird &lt;- function(x){ if (x ==  | x ==  | x == ){ return(paste(, x, a bird)) } else { return(paste(’s not a bird)) } } is_bird(c())</p>
+<pre><code></code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiQSBwaWdlb24gaXMgYSBiaXJkXCJcbiJ9 -->
-<pre><code>[1] &quot;A pigeon is a bird&quot;</code></pre>
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFxcQSBwaWdlb24gaXMgYSBiaXJkXFxcbiJ9 -->
+<pre><code>[1] \A pigeon is a bird\</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <p>writing a function which will multiply all numbers by 10. If the input is not a number, the function will return “Invalid input”</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubXVsdGlwbHlfbnVtYmVyX2J5XzEwIDwtIGZ1bmN0aW9uKHgpe1xuICBpZiAoaXMubnVtZXJpYyh4KSl7XG4gICAgbXVsdGlwbGllZCA9IHggKiAxMFxuICAgIHJldHVybihwYXN0ZShtdWx0aXBsaWVkKSlcbiAgfSBlbHNlIHtcbiAgICByZXR1cm4ocGFzdGUoXCJJbnZhbGlkIGlucHV0XCIpKVxuICB9XG59XG5tdWx0aXBseV9udW1iZXJfYnlfMTAoMTAuMylcbmBgYCJ9 -->
-<pre class="r"><code>multiply_number_by_10 &lt;- function(x){
-  if (is.numeric(x)){
-    multiplied = x * 10
-    return(paste(multiplied))
-  } else {
-    return(paste(&quot;Invalid input&quot;))
-  }
-}
-multiply_number_by_10(10.3)</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxubXVsdGlwbHlfbnVtYmVyX2J5XzEwIDwtIGZ1bmN0aW9uKHgpe1xuICBpZiAoaXMubnVtZXJpYyh4KSl7XG4gICAgbXVsdGlwbGllZCA9IHggKiAxMFxuICAgIHJldHVybihwYXN0ZShtdWx0aXBsaWVkKSlcbiAgfSBlbHNlIHtcbiAgICByZXR1cm4ocGFzdGUoXFxJbnZhbGlkIGlucHV0XFwpKVxuICB9XG59XG5tdWx0aXBseV9udW1iZXJfYnlfMTAoMTAuMylcbmBgYFxuYGBgIn0= -->
+<p><code>r</code>r multiply_number_by_10 &lt;- function(x){ if (is.numeric(x)){ multiplied = x * 10 return(paste(multiplied)) } else { return(paste(input)) } } multiply_number_by_10(10.3)</p>
+<pre><code></code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiMTAzXCJcbiJ9 -->
-<pre><code>[1] &quot;103&quot;</code></pre>
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFxcMTAzXFxcbiJ9 -->
+<pre><code>[1] \103\</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
@@ -1806,33 +1789,31 @@ multiply_number_by_10(10.3)</code></pre>
 <p>I’m going to going to use the vector below to make a new vector equal to “Big” every time the element of sizes is greater than 10, and equal to “Small” every time the element of sizes is less than or equal to 10</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc2l6ZXMgPC0gYygxMywgMTUsIDEwLCA4LCAyMilcbmlmZWxzZSAoc2l6ZXMgPD0gMTAsIFwiU21hbGxcIiwgXCJCaWdcIilcbmBgYCJ9 -->
-<pre class="r"><code>sizes &lt;- c(13, 15, 10, 8, 22)
-ifelse (sizes &lt;= 10, &quot;Small&quot;, &quot;Big&quot;)</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxuc2l6ZXMgPC0gYygxMywgMTUsIDEwLCA4LCAyMilcbmlmZWxzZSAoc2l6ZXMgPD0gMTAsIFxcU21hbGxcXCwgXFxCaWdcXClcbmBgYFxuYGBgIn0= -->
+<p><code>r</code>r sizes &lt;- c(13, 15, 10, 8, 22) ifelse (sizes &lt;= 10, , )</p>
+<pre><code></code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiQmlnXCIgICBcIkJpZ1wiICAgXCJTbWFsbFwiIFwiU21hbGxcIiBcIkJpZ1wiICBcbiJ9 -->
-<pre><code>[1] &quot;Big&quot;   &quot;Big&quot;   &quot;Small&quot; &quot;Small&quot; &quot;Big&quot;  </code></pre>
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFxcQmlnXFwgICBcXEJpZ1xcICAgXFxTbWFsbFxcIFxcU21hbGxcXCBcXEJpZ1xcICBcbiJ9 -->
+<pre><code>[1] \Big\   \Big\   \Small\ \Small\ \Big\  </code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxub25lX3RvX3RlbiA8LSAxOjEwXG50ZW5fdG9fbWF4IDwtIDEwOm1heChzaXplcylcbnJlY29kZShzaXplcywgXCI4XCIgPSBcIlNtYWxsXCIsIFwiMTBcIiA9IFwiU21hbGxcIiwgXCIxM1wiID0gXCJCaWdcIiwgXCIxNVwiID0gXCJCaWdcIiwgXCIyMlwiID0gXCJCaWdcIilcbmBgYCJ9 -->
-<pre class="r"><code>one_to_ten &lt;- 1:10
-ten_to_max &lt;- 10:max(sizes)
-recode(sizes, &quot;8&quot; = &quot;Small&quot;, &quot;10&quot; = &quot;Small&quot;, &quot;13&quot; = &quot;Big&quot;, &quot;15&quot; = &quot;Big&quot;, &quot;22&quot; = &quot;Big&quot;)</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxub25lX3RvX3RlbiA8LSAxOjEwXG50ZW5fdG9fbWF4IDwtIDEwOm1heChzaXplcylcbnJlY29kZShzaXplcywgXFw4XFwgPSBcXFNtYWxsXFwsIFxcMTBcXCA9IFxcU21hbGxcXCwgXFwxM1xcID0gXFxCaWdcXCwgXFwxNVxcID0gXFxCaWdcXCwgXFwyMlxcID0gXFxCaWdcXClcbmBgYFxuYGBgIn0= -->
+<p><code>r</code>r one_to_ten &lt;- 1:10 ten_to_max &lt;- 10:max(sizes) recode(sizes, \8 = , \10 = , \13 = , \15 = , \22 = )</p>
+<pre><code></code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiQmlnXCIgICBcIkJpZ1wiICAgXCJTbWFsbFwiIFwiU21hbGxcIiBcIkJpZ1wiICBcbiJ9 -->
-<pre><code>[1] &quot;Big&quot;   &quot;Big&quot;   &quot;Small&quot; &quot;Small&quot; &quot;Big&quot;  </code></pre>
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFxcQmlnXFwgICBcXEJpZ1xcICAgXFxTbWFsbFxcIFxcU21hbGxcXCBcXEJpZ1xcICBcbiJ9 -->
+<pre><code>[1] \Big\   \Big\   \Small\ \Small\ \Big\  </code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2FzZV93aGVuKFxuICBzaXplcyA8PSAxMCB+IFwiU21hbGxcIixcbiAgc2l6ZXMgPiAxMCB+IFwiQmlnXCJcbilcbmBgYCJ9 -->
-<pre class="r"><code>case_when(
-  sizes &lt;= 10 ~ &quot;Small&quot;,
-  sizes &gt; 10 ~ &quot;Big&quot;
-)</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxuY2FzZV93aGVuKFxuICBzaXplcyA8PSAxMCB+IFxcU21hbGxcXCxcbiAgc2l6ZXMgPiAxMCB+IFxcQmlnXFxcbilcbmBgYFxuYGBgIn0= -->
+<p><code>r</code>r case_when( sizes &lt;= 10 ~ , sizes &gt; 10 ~ <br />
+)</p>
+<pre><code></code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiQmlnXCIgICBcIkJpZ1wiICAgXCJTbWFsbFwiIFwiU21hbGxcIiBcIkJpZ1wiICBcbiJ9 -->
-<pre><code>[1] &quot;Big&quot;   &quot;Big&quot;   &quot;Small&quot; &quot;Small&quot; &quot;Big&quot;  </code></pre>
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFxcQmlnXFwgICBcXEJpZ1xcICAgXFxTbWFsbFxcIFxcU21hbGxcXCBcXEJpZ1xcICBcbiJ9 -->
+<pre><code>[1] \Big\   \Big\   \Small\ \Small\ \Big\  </code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
@@ -1840,37 +1821,30 @@ recode(sizes, &quot;8&quot; = &quot;Small&quot;, &quot;10&quot; = &quot;Small&qu
 <p>for the fruit vector, I will convert apple to alpaca, banana to bonobo, and cherry to chipmunk.</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZnJ1aXRzIDwtIGMoXCJhcHBsZVwiLCBcImFwcGxlXCIsIFwiYmFuYW5hXCIsIFwiY2hlcnJ5XCIsIFwiY2hlcnJ5XCIpXG5mcnVpdHMgPC0gaWZlbHNlKGZydWl0cyA9PSBcImFwcGxlXCIsIFwiYWxwYWNhXCIsIGZydWl0cylcbmZydWl0cyA8LSBpZmVsc2UoZnJ1aXRzID09IFwiYmFuYW5hXCIsIFwiYm9ub2JvXCIsIGZydWl0cylcbmlmZWxzZShmcnVpdHMgPT0gXCJjaGVycnlcIiwgXCJjaGlwbXVua1wiLCBmcnVpdHMpXG5gYGAifQ== -->
-<pre class="r"><code>fruits &lt;- c(&quot;apple&quot;, &quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;, &quot;cherry&quot;)
-fruits &lt;- ifelse(fruits == &quot;apple&quot;, &quot;alpaca&quot;, fruits)
-fruits &lt;- ifelse(fruits == &quot;banana&quot;, &quot;bonobo&quot;, fruits)
-ifelse(fruits == &quot;cherry&quot;, &quot;chipmunk&quot;, fruits)</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxuZnJ1aXRzIDwtIGMoXFxhcHBsZVxcLCBcXGFwcGxlXFwsIFxcYmFuYW5hXFwsIFxcY2hlcnJ5XFwsIFxcY2hlcnJ5XFwpXG5mcnVpdHMgPC0gaWZlbHNlKGZydWl0cyA9PSBcXGFwcGxlXFwsIFxcYWxwYWNhXFwsIGZydWl0cylcbmZydWl0cyA8LSBpZmVsc2UoZnJ1aXRzID09IFxcYmFuYW5hXFwsIFxcYm9ub2JvXFwsIGZydWl0cylcbmlmZWxzZShmcnVpdHMgPT0gXFxjaGVycnlcXCwgXFxjaGlwbXVua1xcLCBmcnVpdHMpXG5gYGBcbmBgYCJ9 -->
+<p><code>r</code>r fruits &lt;- c(, , , , ) fruits &lt;- ifelse(fruits == , , fruits) fruits &lt;- ifelse(fruits == , , fruits) ifelse(fruits == , , fruits)</p>
+<pre><code></code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiYWxwYWNhXCIgICBcImFscGFjYVwiICAgXCJib25vYm9cIiAgIFwiY2hpcG11bmtcIiBcImNoaXBtdW5rXCJcbiJ9 -->
-<pre><code>[1] &quot;alpaca&quot;   &quot;alpaca&quot;   &quot;bonobo&quot;   &quot;chipmunk&quot; &quot;chipmunk&quot;</code></pre>
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFxcYWxwYWNhXFwgICBcXGFscGFjYVxcICAgXFxib25vYm9cXCAgIFxcY2hpcG11bmtcXCBcXGNoaXBtdW5rXFxcbiJ9 -->
+<pre><code>[1] \alpaca\   \alpaca\   \bonobo\   \chipmunk\ \chipmunk\</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZnJ1aXRzIDwtIGMoXCJhcHBsZVwiLCBcImFwcGxlXCIsIFwiYmFuYW5hXCIsIFwiY2hlcnJ5XCIsIFwiY2hlcnJ5XCIpXG5yZWNvZGUoZnJ1aXRzLCBcImFwcGxlXCIgPSBcImFscGFjYVwiLCBcImJhbmFuYVwiID0gXCJib25vYm9cIiwgXCJjaGVycnlcIiA9IFwiY2hpcG11bmtcIilcbmBgYCJ9 -->
-<pre class="r"><code>fruits &lt;- c(&quot;apple&quot;, &quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;, &quot;cherry&quot;)
-recode(fruits, &quot;apple&quot; = &quot;alpaca&quot;, &quot;banana&quot; = &quot;bonobo&quot;, &quot;cherry&quot; = &quot;chipmunk&quot;)</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxuZnJ1aXRzIDwtIGMoXFxhcHBsZVxcLCBcXGFwcGxlXFwsIFxcYmFuYW5hXFwsIFxcY2hlcnJ5XFwsIFxcY2hlcnJ5XFwpXG5yZWNvZGUoZnJ1aXRzLCBcXGFwcGxlXFwgPSBcXGFscGFjYVxcLCBcXGJhbmFuYVxcID0gXFxib25vYm9cXCwgXFxjaGVycnlcXCA9IFxcY2hpcG11bmtcXClcbmBgYFxuYGBgIn0= -->
+<p><code>r</code>r fruits &lt;- c(, , , , ) recode(fruits,  = ,  = ,  = )</p>
+<pre><code></code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiYWxwYWNhXCIgICBcImFscGFjYVwiICAgXCJib25vYm9cIiAgIFwiY2hpcG11bmtcIiBcImNoaXBtdW5rXCJcbiJ9 -->
-<pre><code>[1] &quot;alpaca&quot;   &quot;alpaca&quot;   &quot;bonobo&quot;   &quot;chipmunk&quot; &quot;chipmunk&quot;</code></pre>
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFxcYWxwYWNhXFwgICBcXGFscGFjYVxcICAgXFxib25vYm9cXCAgIFxcY2hpcG11bmtcXCBcXGNoaXBtdW5rXFxcbiJ9 -->
+<pre><code>[1] \alpaca\   \alpaca\   \bonobo\   \chipmunk\ \chipmunk\</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZnJ1aXRzIDwtIGMoXCJhcHBsZVwiLCBcImFwcGxlXCIsIFwiYmFuYW5hXCIsIFwiY2hlcnJ5XCIsIFwiY2hlcnJ5XCIpXG5jYXNlX3doZW4oXG4gIGZydWl0cyA9PSBcImFwcGxlXCIgfiBcImFscGFjYVwiLFxuICBmcnVpdHMgPT0gXCJiYW5hbmFcIiB+IFwiYm9ub2JvXCIsXG4gIGZydWl0cyA9PSBcImNoZXJyeVwiIH4gXCJjaGlwbXVua1wiLFxuICBUUlVFIH4gTkFfY2hhcmFjdGVyX1xuKVxuYGBgIn0= -->
-<pre class="r"><code>fruits &lt;- c(&quot;apple&quot;, &quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;, &quot;cherry&quot;)
-case_when(
-  fruits == &quot;apple&quot; ~ &quot;alpaca&quot;,
-  fruits == &quot;banana&quot; ~ &quot;bonobo&quot;,
-  fruits == &quot;cherry&quot; ~ &quot;chipmunk&quot;,
-  TRUE ~ NA_character_
-)</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxuZnJ1aXRzIDwtIGMoXFxhcHBsZVxcLCBcXGFwcGxlXFwsIFxcYmFuYW5hXFwsIFxcY2hlcnJ5XFwsIFxcY2hlcnJ5XFwpXG5jYXNlX3doZW4oXG4gIGZydWl0cyA9PSBcXGFwcGxlXFwgfiBcXGFscGFjYVxcLFxuICBmcnVpdHMgPT0gXFxiYW5hbmFcXCB+IFxcYm9ub2JvXFwsXG4gIGZydWl0cyA9PSBcXGNoZXJyeVxcIH4gXFxjaGlwbXVua1xcLFxuICBUUlVFIH4gTkFfY2hhcmFjdGVyX1xuKVxuYGBgXG5gYGAifQ== -->
+<p><code>r</code>r fruits &lt;- c(, , , , ) case_when( fruits ==  ~ , fruits ==  ~ , fruits ==  ~ , TRUE ~ NA_character_ )</p>
+<pre><code></code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiYWxwYWNhXCIgICBcImFscGFjYVwiICAgXCJib25vYm9cIiAgIFwiY2hpcG11bmtcIiBcImNoaXBtdW5rXCJcbiJ9 -->
-<pre><code>[1] &quot;alpaca&quot;   &quot;alpaca&quot;   &quot;bonobo&quot;   &quot;chipmunk&quot; &quot;chipmunk&quot;</code></pre>
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFxcYWxwYWNhXFwgICBcXGFscGFjYVxcICAgXFxib25vYm9cXCAgIFxcY2hpcG11bmtcXCBcXGNoaXBtdW5rXFxcbiJ9 -->
+<pre><code>[1] \alpaca\   \alpaca\   \bonobo\   \chipmunk\ \chipmunk\</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
@@ -1878,83 +1852,76 @@ case_when(
 <p>here I’m going to take two vectors which show the ages of marriage of each member of a heterosexual couple. The first elements of each vector correespond to the first couple, and the second elements to the second couple, and so on. I’m going to create a new vector which is equal to wife older whenever the wife’s age is higher, and husband older when the husband’s age is higher. And finally, smae age when both are the same age.</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxud2lmZV9hZ2UgPC0gYygyOUwsIDMwTCwgMzZMLCAzMUwsIDIyTClcbmh1c2JhbmRfYWdlIDwtIGMoMjhMLCAzNUwsIDMyTCwgMzFMLCAyOUwpXG5cbmBgYCJ9 -->
-<pre class="r"><code>wife_age &lt;- c(29L, 30L, 36L, 31L, 22L)
-husband_age &lt;- c(28L, 35L, 32L, 31L, 29L)
-</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxud2lmZV9hZ2UgPC0gYygyOUwsIDMwTCwgMzZMLCAzMUwsIDIyTClcbmh1c2JhbmRfYWdlIDwtIGMoMjhMLCAzNUwsIDMyTCwgMzFMLCAyOUwpXG5cbmBgYFxuYGBgIn0= -->
+<p><code>r</code>r wife_age &lt;- c(29L, 30L, 36L, 31L, 22L) husband_age &lt;- c(28L, 35L, 32L, 31L, 29L)</p>
+<pre><code></code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudG90YWxfYWdlIDwtIHdpZmVfYWdlICsgaHVzYmFuZF9hZ2VcbnRvdGFsX2FnZVxuYGBgIn0= -->
-<pre class="r"><code>total_age &lt;- wife_age + husband_age
-total_age</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxudG90YWxfYWdlIDwtIHdpZmVfYWdlICsgaHVzYmFuZF9hZ2VcbnRvdGFsX2FnZVxuYGBgXG5gYGAifQ== -->
+<p><code>r</code>r total_age &lt;- wife_age + husband_age total_age</p>
+<pre><code></code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-output-begin eyJkYXRhIjoiWzFdIDU3IDY1IDY4IDYyIDUxXG4ifQ== -->
 <pre><code>[1] 57 65 68 62 51</code></pre>
 <!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudG90YWxfYWdlIC0gd2lmZV9hZ2UgKiAyXG5gYGAifQ== -->
-<pre class="r"><code>total_age - wife_age * 2</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxudG90YWxfYWdlIC0gd2lmZV9hZ2UgKiAyXG5gYGBcbmBgYCJ9 -->
+<p><code>r</code>r total_age - wife_age * 2</p>
+<pre><code></code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-output-begin eyJkYXRhIjoiWzFdIC0xICA1IC00ICAwICA3XG4ifQ== -->
 <pre><code>[1] -1  5 -4  0  7</code></pre>
 <!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxud2hvX29sZGVyIDwtIGMoXCJ3aG9cIiwgXCJpc1wiLCBcIm9sZGVyXCIpXG53aG9fb2xkZXIgPC0gaWZlbHNlKHRvdGFsX2FnZSAtIHdpZmVfYWdlICogMiA8IDAsIFwiV2lmZSBvbGRlclwiLCB3aG9fb2xkZXIpXG53aG9fb2xkZXIgPC0gaWZlbHNlKHRvdGFsX2FnZSAtIHdpZmVfYWdlICAqIDIgPT0gMCwgXCJTYW1lIGFnZVwiLCB3aG9fb2xkZXIpXG53aG9fb2xkZXIgPC0gaWZlbHNlKHRvdGFsX2FnZSAtIHdpZmVfYWdlICogMj4gMCwgXCJIdXNiYW5kIG9sZGVyXCIsIHdob19vbGRlcilcbndob19vbGRlclxuYGBgIn0= -->
-<pre class="r"><code>who_older &lt;- c(&quot;who&quot;, &quot;is&quot;, &quot;older&quot;)
-who_older &lt;- ifelse(total_age - wife_age * 2 &lt; 0, &quot;Wife older&quot;, who_older)
-who_older &lt;- ifelse(total_age - wife_age  * 2 == 0, &quot;Same age&quot;, who_older)
-who_older &lt;- ifelse(total_age - wife_age * 2&gt; 0, &quot;Husband older&quot;, who_older)
-who_older</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxud2hvX29sZGVyIDwtIGMoXFx3aG9cXCwgXFxpc1xcLCBcXG9sZGVyXFwpXG53aG9fb2xkZXIgPC0gaWZlbHNlKHRvdGFsX2FnZSAtIHdpZmVfYWdlICogMiA8IDAsIFxcV2lmZSBvbGRlclxcLCB3aG9fb2xkZXIpXG53aG9fb2xkZXIgPC0gaWZlbHNlKHRvdGFsX2FnZSAtIHdpZmVfYWdlICAqIDIgPT0gMCwgXFxTYW1lIGFnZVxcLCB3aG9fb2xkZXIpXG53aG9fb2xkZXIgPC0gaWZlbHNlKHRvdGFsX2FnZSAtIHdpZmVfYWdlICogMj4gMCwgXFxIdXNiYW5kIG9sZGVyXFwsIHdob19vbGRlcilcbndob19vbGRlclxuYGBgXG5gYGAifQ== -->
+<p><code>r</code>r who_older &lt;- c(, , ) who_older &lt;- ifelse(total_age - wife_age * 2 &lt; 0, older, who_older) who_older &lt;- ifelse(total_age - wife_age * 2 == 0, age, who_older) who_older &lt;- ifelse(total_age - wife_age * 2&gt; 0, older, who_older) who_older</p>
+<pre><code></code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiV2lmZSBvbGRlclwiICAgIFwiSHVzYmFuZCBvbGRlclwiIFwiV2lmZSBvbGRlclwiICAgIFwiU2FtZSBhZ2VcIiAgICAgXG5bNV0gXCJIdXNiYW5kIG9sZGVyXCJcbiJ9 -->
-<pre><code>[1] &quot;Wife older&quot;    &quot;Husband older&quot; &quot;Wife older&quot;    &quot;Same age&quot;     
-[5] &quot;Husband older&quot;</code></pre>
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFxcV2lmZSBvbGRlclxcICAgIFxcSHVzYmFuZCBvbGRlclxcIFxcV2lmZSBvbGRlclxcICAgIFxcU2FtZSBhZ2VcXCAgICAgXG5bNV0gXFxIdXNiYW5kIG9sZGVyXFxcbiJ9 -->
+<pre><code>[1] \Wife older\    \Husband older\ \Wife older\    \Same age\     
+[5] \Husband older\</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxud2lmZV9hZ2VcbmBgYCJ9 -->
-<pre class="r"><code>wife_age</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxud2lmZV9hZ2VcbmBgYFxuYGBgIn0= -->
+<p><code>r</code>r wife_age</p>
+<pre><code></code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-output-begin eyJkYXRhIjoiWzFdIDI5IDMwIDM2IDMxIDIyXG4ifQ== -->
 <pre><code>[1] 29 30 36 31 22</code></pre>
 <!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaHVzYmFuZF9hZ2VcbmBgYCJ9 -->
-<pre class="r"><code>husband_age</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxuaHVzYmFuZF9hZ2VcbmBgYFxuYGBgIn0= -->
+<p><code>r</code>r husband_age</p>
+<pre><code></code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-output-begin eyJkYXRhIjoiWzFdIDI4IDM1IDMyIDMxIDI5XG4ifQ== -->
 <pre><code>[1] 28 35 32 31 29</code></pre>
 <!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxud2hvX29sZGVyIDwtIHRvdGFsX2FnZSAtIHdpZmVfYWdlICogMlxud2hvX29sZGVyXG5gYGAifQ== -->
-<pre class="r"><code>who_older &lt;- total_age - wife_age * 2
-who_older</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxud2hvX29sZGVyIDwtIHRvdGFsX2FnZSAtIHdpZmVfYWdlICogMlxud2hvX29sZGVyXG5gYGBcbmBgYCJ9 -->
+<p><code>r</code>r who_older &lt;- total_age - wife_age * 2 who_older</p>
+<pre><code></code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-output-begin eyJkYXRhIjoiWzFdIC0xICA1IC00ICAwICA3XG4ifQ== -->
 <pre><code>[1] -1  5 -4  0  7</code></pre>
 <!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucmVjb2RlKHdob19vbGRlcixcbiAgICAgICBcIi0xXCIgPSBcIldpZmUgb2xkZXJcIixcbiAgICAgICBcIjVcIiA9IFwiSHVzYmFuZCBvbGRlclwiLFxuICAgICAgIFwiLTRcIiA9IFwiV2lmZSBvbGRlclwiLCBcbiAgICAgICBcIjBcIiA9IFwiU2FtZSBhZ2VcIiwgXG4gICAgICAgXCI3XCIgPSBcIkh1c2JhbmQgb2xkZXJcIlxuKVxuYGBgIn0= -->
-<pre class="r"><code>recode(who_older,
-       &quot;-1&quot; = &quot;Wife older&quot;,
-       &quot;5&quot; = &quot;Husband older&quot;,
-       &quot;-4&quot; = &quot;Wife older&quot;, 
-       &quot;0&quot; = &quot;Same age&quot;, 
-       &quot;7&quot; = &quot;Husband older&quot;
-)</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxucmVjb2RlKHdob19vbGRlcixcbiAgICAgICBcXC0xXFwgPSBcXFdpZmUgb2xkZXJcXCxcbiAgICAgICBcXDVcXCA9IFxcSHVzYmFuZCBvbGRlclxcLFxuICAgICAgIFxcLTRcXCA9IFxcV2lmZSBvbGRlclxcLCBcbiAgICAgICBcXDBcXCA9IFxcU2FtZSBhZ2VcXCwgXG4gICAgICAgXFw3XFwgPSBcXEh1c2JhbmQgb2xkZXJcXFxuKVxuYGBgXG5gYGAifQ== -->
+<p><code>r</code>r recode(who_older, -1 = older, \5 = older, -4 = older, \0 = age, \7 = older<br />
+)</p>
+<pre><code></code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiV2lmZSBvbGRlclwiICAgIFwiSHVzYmFuZCBvbGRlclwiIFwiV2lmZSBvbGRlclwiICAgIFwiU2FtZSBhZ2VcIiAgICAgXG5bNV0gXCJIdXNiYW5kIG9sZGVyXCJcbiJ9 -->
-<pre><code>[1] &quot;Wife older&quot;    &quot;Husband older&quot; &quot;Wife older&quot;    &quot;Same age&quot;     
-[5] &quot;Husband older&quot;</code></pre>
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFxcV2lmZSBvbGRlclxcICAgIFxcSHVzYmFuZCBvbGRlclxcIFxcV2lmZSBvbGRlclxcICAgIFxcU2FtZSBhZ2VcXCAgICAgXG5bNV0gXFxIdXNiYW5kIG9sZGVyXFxcbiJ9 -->
+<pre><code>[1] \Wife older\    \Husband older\ \Wife older\    \Same age\     
+[5] \Husband older\</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2FzZV93aGVuKFxuICB3aG9fb2xkZXIgPiAwIH4gXCJIdXNiYW5kIG9sZGVyXCIsXG4gIHdob19vbGRlciA9PSAwIH4gXCJTYW1lIGFnZVwiLFxuICB3aG9fb2xkZXIgPCAwIH4gXCJXaWZlIG9kZXJcIlxuKVxuYGBgIn0= -->
-<pre class="r"><code>case_when(
-  who_older &gt; 0 ~ &quot;Husband older&quot;,
-  who_older == 0 ~ &quot;Same age&quot;,
-  who_older &lt; 0 ~ &quot;Wife oder&quot;
-)</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxuY2FzZV93aGVuKFxuICB3aG9fb2xkZXIgPiAwIH4gXFxIdXNiYW5kIG9sZGVyXFwsXG4gIHdob19vbGRlciA9PSAwIH4gXFxTYW1lIGFnZVxcLFxuICB3aG9fb2xkZXIgPCAwIH4gXFxXaWZlIG9kZXJcXFxuKVxuYGBgXG5gYGAifQ== -->
+<p><code>r</code>r case_when( who_older &gt; 0 ~ older, who_older == 0 ~ age, who_older &lt; 0 ~ oder<br />
+)</p>
+<pre><code></code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiV2lmZSBvZGVyXCIgICAgIFwiSHVzYmFuZCBvbGRlclwiIFwiV2lmZSBvZGVyXCIgICAgIFwiU2FtZSBhZ2VcIiAgICAgXG5bNV0gXCJIdXNiYW5kIG9sZGVyXCJcbiJ9 -->
-<pre><code>[1] &quot;Wife oder&quot;     &quot;Husband older&quot; &quot;Wife oder&quot;     &quot;Same age&quot;     
-[5] &quot;Husband older&quot;</code></pre>
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFxcV2lmZSBvZGVyXFwgICAgIFxcSHVzYmFuZCBvbGRlclxcIFxcV2lmZSBvZGVyXFwgICAgIFxcU2FtZSBhZ2VcXCAgICAgXG5bNV0gXFxIdXNiYW5kIG9sZGVyXFxcbiJ9 -->
+<pre><code>[1] \Wife oder\     \Husband older\ \Wife oder\     \Same age\     
+[5] \Husband older\</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
@@ -1962,115 +1929,89 @@ who_older</code></pre>
 <p>I’m going to make a list, then use some loops on it.</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubXlfbGlzdCA8LSBsaXN0KFxuICA0LCBcbiAgXCJhcHBsZVwiLCBcbiAgMTAuNSxcbiAgYyhcImlzXCIsIFwiYW5cIiwgXCJhcHBsZVwiKSxcbiAgYyhcIklcIiwgXCJsaWtlXCIsIFwiYXBwbGVzXCIpLFxuICA4XG4pXG5gYGAifQ== -->
-<pre class="r"><code>my_list &lt;- list(
-  4, 
-  &quot;apple&quot;, 
-  10.5,
-  c(&quot;is&quot;, &quot;an&quot;, &quot;apple&quot;),
-  c(&quot;I&quot;, &quot;like&quot;, &quot;apples&quot;),
-  8
-)</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxubXlfbGlzdCA8LSBsaXN0KFxuICA0LCBcbiAgXFxhcHBsZVxcLCBcbiAgMTAuNSxcbiAgYyhcXGlzXFwsIFxcYW5cXCwgXFxhcHBsZVxcKSxcbiAgYyhcXElcXCwgXFxsaWtlXFwsIFxcYXBwbGVzXFwpLFxuICA4XG4pXG5gYGBcbmBgYCJ9 -->
+<p><code>r</code>r my_list &lt;- list( 4, , 10.5, c(, , ), c(, , ), 8 )</p>
+<pre><code></code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <p>I’m going to use a for loop to print out ever element of my_list which is of type character</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZm9yIChjaGFyYWN0ZXIgaW4gbXlfbGlzdCl7XG4gIGlmIChjbGFzcyhjaGFyYWN0ZXIpID09IFwiY2hhcmFjdGVyXCIpe1xuICAgIHByaW50KGNoYXJhY3RlcilcbiAgfVxufVxuYGBgIn0= -->
-<pre class="r"><code>for (character in my_list){
-  if (class(character) == &quot;character&quot;){
-    print(character)
-  }
-}</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxuZm9yIChjaGFyYWN0ZXIgaW4gbXlfbGlzdCl7XG4gIGlmIChjbGFzcyhjaGFyYWN0ZXIpID09IFxcY2hhcmFjdGVyXFwpe1xuICAgIHByaW50KGNoYXJhY3RlcilcbiAgfVxufVxuYGBgXG5gYGAifQ== -->
+<p><code>r</code>r for (character in my_list){ if (class(character) == ){ print(character) } }</p>
+<pre><code></code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiYXBwbGVcIlxuWzFdIFwiaXNcIiAgICBcImFuXCIgICAgXCJhcHBsZVwiXG5bMV0gXCJJXCIgICAgICBcImxpa2VcIiAgIFwiYXBwbGVzXCJcbiJ9 -->
-<pre><code>[1] &quot;apple&quot;
-[1] &quot;is&quot;    &quot;an&quot;    &quot;apple&quot;
-[1] &quot;I&quot;      &quot;like&quot;   &quot;apples&quot;</code></pre>
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFxcYXBwbGVcXFxuWzFdIFxcaXNcXCAgICBcXGFuXFwgICAgXFxhcHBsZVxcXG5bMV0gXFxJXFwgICAgICBcXGxpa2VcXCAgIFxcYXBwbGVzXFxcbiJ9 -->
+<pre><code>[1] \apple\
+[1] \is\    \an\    \apple\
+[1] \I\      \like\   \apples\</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <p>I’m now going to do the same thing with a while loop</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubXlfbGlzdFtbNF1dWzFdXG5gYGAifQ== -->
-<pre class="r"><code>my_list[[4]][1]</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxubXlfbGlzdFtbNF1dWzFdXG5gYGBcbmBgYCJ9 -->
+<p><code>r</code>r my_list[[4]][1]</p>
+<pre><code></code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiaXNcIlxuIn0= -->
-<pre><code>[1] &quot;is&quot;</code></pre>
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFxcaXNcXFxuIn0= -->
+<pre><code>[1] \is\</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxueCA8LSAxXG53aGlsZSAoeCA8IGxlbmd0aChteV9saXN0KSl7XG4gIGlmKGNsYXNzKG15X2xpc3RbW3hdXSkgPT0gXCJjaGFyYWN0ZXJcIil7XG4gICAgY2hhcmFjdGVyIDwtIG15X2xpc3RbW3hdXVxuICAgIHByaW50KGNoYXJhY3RlcilcbiAgfVxuICB4IDwtIHggKyAxXG59XG5gYGAifQ== -->
-<pre class="r"><code>x &lt;- 1
-while (x &lt; length(my_list)){
-  if(class(my_list[[x]]) == &quot;character&quot;){
-    character &lt;- my_list[[x]]
-    print(character)
-  }
-  x &lt;- x + 1
-}</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxueCA8LSAxXG53aGlsZSAoeCA8IGxlbmd0aChteV9saXN0KSl7XG4gIGlmKGNsYXNzKG15X2xpc3RbW3hdXSkgPT0gXFxjaGFyYWN0ZXJcXCl7XG4gICAgY2hhcmFjdGVyIDwtIG15X2xpc3RbW3hdXVxuICAgIHByaW50KGNoYXJhY3RlcilcbiAgfVxuICB4IDwtIHggKyAxXG59XG5gYGBcbmBgYCJ9 -->
+<p><code>r</code>r x &lt;- 1 while (x &lt; length(my_list)){ if(class(my_list[[x]]) == ){ character &lt;- my_list[[x]] print(character) } x &lt;- x + 1 }</p>
+<pre><code></code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiYXBwbGVcIlxuWzFdIFwiaXNcIiAgICBcImFuXCIgICAgXCJhcHBsZVwiXG5bMV0gXCJJXCIgICAgICBcImxpa2VcIiAgIFwiYXBwbGVzXCJcbiJ9 -->
-<pre><code>[1] &quot;apple&quot;
-[1] &quot;is&quot;    &quot;an&quot;    &quot;apple&quot;
-[1] &quot;I&quot;      &quot;like&quot;   &quot;apples&quot;</code></pre>
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFxcYXBwbGVcXFxuWzFdIFxcaXNcXCAgICBcXGFuXFwgICAgXFxhcHBsZVxcXG5bMV0gXFxJXFwgICAgICBcXGxpa2VcXCAgIFxcYXBwbGVzXFxcbiJ9 -->
+<pre><code>[1] \apple\
+[1] \is\    \an\    \apple\
+[1] \I\      \like\   \apples\</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <p>I’m going to write another while loop, where if the element has a length() &gt;1, it will paste all of the elements in that vector into one big character vector.</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG5mb3VyIDwtIG15X2xpc3RbWzRdXVxucHJpbnQocGFzdGUobXlfbGlzdFtbNF1dWzFdLCBteV9saXN0W1s0XV1bNV0pKVxuYGBgIn0= -->
-<pre class="r"><code>
-four &lt;- my_list[[4]]
-print(paste(my_list[[4]][1], my_list[[4]][5]))</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxuXG5mb3VyIDwtIG15X2xpc3RbWzRdXVxucHJpbnQocGFzdGUobXlfbGlzdFtbNF1dWzFdLCBteV9saXN0W1s0XV1bNV0pKVxuYGBgXG5gYGAifQ== -->
+<p><code>r</code>r</p>
+<p>four &lt;- my_list[[4]] print(paste(my_list[[4]][1], my_list[[4]][5]))</p>
+<pre><code></code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiaXMgTkFcIlxuIn0= -->
-<pre><code>[1] &quot;is NA&quot;</code></pre>
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFxcaXMgTkFcXFxuIn0= -->
+<pre><code>[1] \is NA\</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxueSA8LSAxXG53aGlsZSAoeSA8PSBsZW5ndGgobXlfbGlzdCkpe1xuICBpZihjbGFzcyhteV9saXN0W1t5XV0pID09IFwiY2hhcmFjdGVyXCIpe1xuICAgIGlmIChsZW5ndGgobXlfbGlzdFtbeV1dKSA9PSAyKXtcbiAgICAgIHByaW50KHBhc3RlKG15X2xpc3RbW3ldXVsxXSwgIG15X2xpc3RbW3ldXVsyXSkpXG4gICAgfSBlbHNlIGlmIChsZW5ndGgobXlfbGlzdFtbeV1dKSA+PSAzKXtcbiAgICAgIHByaW50KHBhc3RlKG15X2xpc3RbW3ldXVsxXSwgbXlfbGlzdFtbeV1dWzJdLCBteV9saXN0W1t5XV1bM10pKVxuICAgIH0gZWxzZSBpZiAobGVuZ3RoKG15X2xpc3RbW3ldXSkgPT0gNCl7XG4gICAgICBwcmludChwYXN0ZShteV9saXN0W1t5XV1bMV0sIG15X2xpc3RbW3ldXVsyXSwgbXlfbGlzdFtbeV1dWzNdLCBteV9saXN0W1t5XV1bNF0pKVxuICAgIH1cbiAgfVxuICB5IDwtIHkgKyAxXG59XG5gYGAifQ== -->
-<pre class="r"><code>y &lt;- 1
-while (y &lt;= length(my_list)){
-  if(class(my_list[[y]]) == &quot;character&quot;){
-    if (length(my_list[[y]]) == 2){
-      print(paste(my_list[[y]][1],  my_list[[y]][2]))
-    } else if (length(my_list[[y]]) &gt;= 3){
-      print(paste(my_list[[y]][1], my_list[[y]][2], my_list[[y]][3]))
-    } else if (length(my_list[[y]]) == 4){
-      print(paste(my_list[[y]][1], my_list[[y]][2], my_list[[y]][3], my_list[[y]][4]))
-    }
-  }
-  y &lt;- y + 1
-}</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxueSA8LSAxXG53aGlsZSAoeSA8PSBsZW5ndGgobXlfbGlzdCkpe1xuICBpZihjbGFzcyhteV9saXN0W1t5XV0pID09IFxcY2hhcmFjdGVyXFwpe1xuICAgIGlmIChsZW5ndGgobXlfbGlzdFtbeV1dKSA9PSAyKXtcbiAgICAgIHByaW50KHBhc3RlKG15X2xpc3RbW3ldXVsxXSwgIG15X2xpc3RbW3ldXVsyXSkpXG4gICAgfSBlbHNlIGlmIChsZW5ndGgobXlfbGlzdFtbeV1dKSA+PSAzKXtcbiAgICAgIHByaW50KHBhc3RlKG15X2xpc3RbW3ldXVsxXSwgbXlfbGlzdFtbeV1dWzJdLCBteV9saXN0W1t5XV1bM10pKVxuICAgIH0gZWxzZSBpZiAobGVuZ3RoKG15X2xpc3RbW3ldXSkgPT0gNCl7XG4gICAgICBwcmludChwYXN0ZShteV9saXN0W1t5XV1bMV0sIG15X2xpc3RbW3ldXVsyXSwgbXlfbGlzdFtbeV1dWzNdLCBteV9saXN0W1t5XV1bNF0pKVxuICAgIH1cbiAgfVxuICB5IDwtIHkgKyAxXG59XG5gYGBcbmBgYCJ9 -->
+<p><code>r</code>r y &lt;- 1 while (y &lt;= length(my_list)){ if(class(my_list[[y]]) == ){ if (length(my_list[[y]]) == 2){ print(paste(my_list[[y]][1], my_list[[y]][2])) } else if (length(my_list[[y]]) &gt;= 3){ print(paste(my_list[[y]][1], my_list[[y]][2], my_list[[y]][3])) } else if (length(my_list[[y]]) == 4){ print(paste(my_list[[y]][1], my_list[[y]][2], my_list[[y]][3], my_list[[y]][4])) } } y &lt;- y + 1 }</p>
+<pre><code></code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiaXMgYW4gYXBwbGVcIlxuWzFdIFwiSSBsaWtlIGFwcGxlc1wiXG4ifQ== -->
-<pre><code>[1] &quot;is an apple&quot;
-[1] &quot;I like apples&quot;</code></pre>
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFxcaXMgYW4gYXBwbGVcXFxuWzFdIFxcSSBsaWtlIGFwcGxlc1xcXG4ifQ== -->
+<pre><code>[1] \is an apple\
+[1] \I like apples\</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <p>extra stuff writing code that prints a miltiplicatio table for numbers up to 12. i.e. there will be 12 rows, and 12 columns, and each element should be the row number multiplied by the column number.</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxub25lX3RvX3R3ZWx2ZSA8LSAxOjEyXG5vbmVfdG9fdHdlbHZlICsgb25lX3RvX3R3ZWx2ZVxuYGBgIn0= -->
-<pre class="r"><code>one_to_twelve &lt;- 1:12
-one_to_twelve + one_to_twelve</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxub25lX3RvX3R3ZWx2ZSA8LSAxOjEyXG5vbmVfdG9fdHdlbHZlICsgb25lX3RvX3R3ZWx2ZVxuYGBgXG5gYGAifQ== -->
+<p><code>r</code>r one_to_twelve &lt;- 1:12 one_to_twelve + one_to_twelve</p>
+<pre><code></code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-output-begin eyJkYXRhIjoiIFsxXSAgMiAgNCAgNiAgOCAxMCAxMiAxNCAxNiAxOCAyMCAyMiAyNFxuIn0= -->
 <pre><code> [1]  2  4  6  8 10 12 14 16 18 20 22 24</code></pre>
 <!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubXlfbWF0cml4IDwtIG1hdHJpeChvbmVfdG9fdHdlbHZlLCBucm93ID0gMTIsIG5jb2wgPSAxMiwgYnlyb3cgPSBUUlVFKVxubXlfc3F1YXJlZF9tYXRyaXggPC0gbXlfbWF0cml4ICogb25lX3RvX3R3ZWx2ZVxubXlfc3F1YXJlZF9tYXRyaXhcbmBgYCJ9 -->
-<pre class="r"><code>my_matrix &lt;- matrix(one_to_twelve, nrow = 12, ncol = 12, byrow = TRUE)
-my_squared_matrix &lt;- my_matrix * one_to_twelve
-my_squared_matrix</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxubXlfbWF0cml4IDwtIG1hdHJpeChvbmVfdG9fdHdlbHZlLCBucm93ID0gMTIsIG5jb2wgPSAxMiwgYnlyb3cgPSBUUlVFKVxubXlfc3F1YXJlZF9tYXRyaXggPC0gbXlfbWF0cml4ICogb25lX3RvX3R3ZWx2ZVxubXlfc3F1YXJlZF9tYXRyaXhcbmBgYFxuYGBgIn0= -->
+<p><code>r</code>r my_matrix &lt;- matrix(one_to_twelve, nrow = 12, ncol = 12, byrow = TRUE) my_squared_matrix &lt;- my_matrix * one_to_twelve my_squared_matrix</p>
+<pre><code></code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-output-begin eyJkYXRhIjoiICAgICAgWywxXSBbLDJdIFssM10gWyw0XSBbLDVdIFssNl0gWyw3XSBbLDhdIFssOV0gWywxMF0gWywxMV0gWywxMl1cbiBbMSxdICAgIDEgICAgMiAgICAzICAgIDQgICAgNSAgICA2ICAgIDcgICAgOCAgICA5ICAgIDEwICAgIDExICAgIDEyXG4gWzIsXSAgICAyICAgIDQgICAgNiAgICA4ICAgMTAgICAxMiAgIDE0ICAgMTYgICAxOCAgICAyMCAgICAyMiAgICAyNFxuIFszLF0gICAgMyAgICA2ICAgIDkgICAxMiAgIDE1ICAgMTggICAyMSAgIDI0ICAgMjcgICAgMzAgICAgMzMgICAgMzZcbiBbNCxdICAgIDQgICAgOCAgIDEyICAgMTYgICAyMCAgIDI0ICAgMjggICAzMiAgIDM2ICAgIDQwICAgIDQ0ICAgIDQ4XG4gWzUsXSAgICA1ICAgMTAgICAxNSAgIDIwICAgMjUgICAzMCAgIDM1ICAgNDAgICA0NSAgICA1MCAgICA1NSAgICA2MFxuIFs2LF0gICAgNiAgIDEyICAgMTggICAyNCAgIDMwICAgMzYgICA0MiAgIDQ4ICAgNTQgICAgNjAgICAgNjYgICAgNzJcbiBbNyxdICAgIDcgICAxNCAgIDIxICAgMjggICAzNSAgIDQyICAgNDkgICA1NiAgIDYzICAgIDcwICAgIDc3ICAgIDg0XG4gWzgsXSAgICA4ICAgMTYgICAyNCAgIDMyICAgNDAgICA0OCAgIDU2ICAgNjQgICA3MiAgICA4MCAgICA4OCAgICA5NlxuIFs5LF0gICAgOSAgIDE4ICAgMjcgICAzNiAgIDQ1ICAgNTQgICA2MyAgIDcyICAgODEgICAgOTAgICAgOTkgICAxMDhcblsxMCxdICAgMTAgICAyMCAgIDMwICAgNDAgICA1MCAgIDYwICAgNzAgICA4MCAgIDkwICAgMTAwICAgMTEwICAgMTIwXG5bMTEsXSAgIDExICAgMjIgICAzMyAgIDQ0ICAgNTUgICA2NiAgIDc3ICAgODggICA5OSAgIDExMCAgIDEyMSAgIDEzMlxuWzEyLF0gICAxMiAgIDI0ICAgMzYgICA0OCAgIDYwICAgNzIgICA4NCAgIDk2ICAxMDggICAxMjAgICAxMzIgICAxNDRcbiJ9 -->
 <pre><code>      [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9] [,10] [,11] [,12]
@@ -2092,33 +2033,20 @@ my_squared_matrix</code></pre>
 <p>writing a function that takes a vector, and creates a text art histogram.</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubXlfdmVjdG9yIDwtIGMoMTAsIDIsIDMsIDUpXG5cbmFzdGVyaXNrIDwtIGMoXCIqXCIpXG5cbmFzdGVyaXNrcyA8LSByZXAoXCIqXCIsIHRpbWVzID0gbXlfdmVjdG9yWzFdKVxucGFzdGUoYXN0ZXJpc2tzLCBjb2xsYXBzZSA9IFwiXCIpXG5gYGAifQ== -->
-<pre class="r"><code>my_vector &lt;- c(10, 2, 3, 5)
-
-asterisk &lt;- c(&quot;*&quot;)
-
-asterisks &lt;- rep(&quot;*&quot;, times = my_vector[1])
-paste(asterisks, collapse = &quot;&quot;)</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxubXlfdmVjdG9yIDwtIGMoMTAsIDIsIDMsIDUpXG5cbmFzdGVyaXNrIDwtIGMoXFwqXFwpXG5cbmFzdGVyaXNrcyA8LSByZXAoXFwqXFwsIHRpbWVzID0gbXlfdmVjdG9yWzFdKVxucGFzdGUoYXN0ZXJpc2tzLCBjb2xsYXBzZSA9IFxcXFwpXG5gYGBcbmBgYCJ9 -->
+<p><code>r</code>r my_vector &lt;- c(10, 2, 3, 5)</p>
+<p>asterisk &lt;- c(*)</p>
+<p>asterisks &lt;- rep(*, times = my_vector[1]) paste(asterisks, collapse = \)</p>
+<pre><code></code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiKioqKioqKioqKlwiXG4ifQ== -->
-<pre><code>[1] &quot;**********&quot;</code></pre>
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFxcKioqKioqKioqKlxcXG4ifQ== -->
+<pre><code>[1] \**********\</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubWFrZV90ZXh0X2FydF9oaXN0b2dyYW0gPC0gZnVuY3Rpb24oeCl7XG4gIGlmKGNsYXNzKHgpICE9IFwibnVtZXJpY1wiKXtcbiAgICBwcmludChcIklucHV0IG11c3QgYmUgbnVtZXJpYyB2ZWN0b3JcIilcbiAgfSBlbHNle1xuICAgIGxvb3BfbnVtYmVyIDwtIDFcbiAgICB3aGlsZSAobG9vcF9udW1iZXIgPD0gbGVuZ3RoKHgpKXtcbiAgICAgIGFzdGVyaXNrcyA8LSByZXAoXCIqXCIsIHRpbWVzID0geFtsb29wX251bWJlcl0pXG4gICAgICBjYXQobG9vcF9udW1iZXIsIFwiIHwgXCIsIGFzdGVyaXNrcywgZmlsbCA9IFRSVUUsIHNlcCA9IFwiXCIpXG4gICAgICBsb29wX251bWJlciA8LSBsb29wX251bWJlciArIDFcbiAgICB9XG4gIH1cbn1cbm1ha2VfdGV4dF9hcnRfaGlzdG9ncmFtKGMoMSwgMiwgNCwgMTAsIDEsIDExLCAyKSlcbmBgYCJ9 -->
-<pre class="r"><code>make_text_art_histogram &lt;- function(x){
-  if(class(x) != &quot;numeric&quot;){
-    print(&quot;Input must be numeric vector&quot;)
-  } else{
-    loop_number &lt;- 1
-    while (loop_number &lt;= length(x)){
-      asterisks &lt;- rep(&quot;*&quot;, times = x[loop_number])
-      cat(loop_number, &quot; | &quot;, asterisks, fill = TRUE, sep = &quot;&quot;)
-      loop_number &lt;- loop_number + 1
-    }
-  }
-}
-make_text_art_histogram(c(1, 2, 4, 10, 1, 11, 2))</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxubWFrZV90ZXh0X2FydF9oaXN0b2dyYW0gPC0gZnVuY3Rpb24oeCl7XG4gIGlmKGNsYXNzKHgpICE9IFxcbnVtZXJpY1xcKXtcbiAgICBwcmludChcXElucHV0IG11c3QgYmUgbnVtZXJpYyB2ZWN0b3JcXClcbiAgfSBlbHNle1xuICAgIGxvb3BfbnVtYmVyIDwtIDFcbiAgICB3aGlsZSAobG9vcF9udW1iZXIgPD0gbGVuZ3RoKHgpKXtcbiAgICAgIGFzdGVyaXNrcyA8LSByZXAoXFwqXFwsIHRpbWVzID0geFtsb29wX251bWJlcl0pXG4gICAgICBjYXQobG9vcF9udW1iZXIsIFxcIHwgXFwsIGFzdGVyaXNrcywgZmlsbCA9IFRSVUUsIHNlcCA9IFxcXFwpXG4gICAgICBsb29wX251bWJlciA8LSBsb29wX251bWJlciArIDFcbiAgICB9XG4gIH1cbn1cbm1ha2VfdGV4dF9hcnRfaGlzdG9ncmFtKGMoMSwgMiwgNCwgMTAsIDEsIDExLCAyKSlcbmBgYFxuYGBgIn0= -->
+<p><code>r</code>r make_text_art_histogram &lt;- function(x){ if(class(x) != ){ print(must be numeric vector) } else{ loop_number &lt;- 1 while (loop_number &lt;= length(x)){ asterisks &lt;- rep(*, times = x[loop_number]) cat(loop_number,  | , asterisks, fill = TRUE, sep = \) loop_number &lt;- loop_number + 1 } } } make_text_art_histogram(c(1, 2, 4, 10, 1, 11, 2))</p>
+<pre><code></code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-output-begin eyJkYXRhIjoiMSB8ICpcbjIgfCAqKlxuMyB8ICoqKipcbjQgfCAqKioqKioqKioqXG41IHwgKlxuNiB8ICoqKioqKioqKioqXG43IHwgKipcbiJ9 -->
 <pre><code>1 | *
@@ -2134,7 +2062,7 @@ make_text_art_histogram(c(1, 2, 4, 10, 1, 11, 2))</code></pre>
 <p>writing a guessing game where the user has to guess a secret number. After each guess, the program will tell the user whether their number was too large or too small. At the end, the number of tries the user needed will be printed.</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZ3Vlc3NpbmdfZ2FtZSA8LSBmdW5jdGlvbih4KXtcbiAgbnVtYmVyX29mX2d1ZXNzZXMgPC0gMVxuICBzYW1wbGVfZnJvbSA8LSAxOjEwMDBcbiAgbnVtYmVyX3RvX2d1ZXNzIDwtIHNhbXBsZShzYW1wbGVfZnJvbSwgc2l6ZSA9IDEpXG4gIGlmICh4ICE9IG51bWJlcl90b19ndWVzcyl7XG4gICAgd2hpbGUgKHggIT0gbnVtYmVyX3RvX2d1ZXNzKXtcbiAgICAgIGlmICh4ID4gbnVtYmVyX3RvX2d1ZXNzKXtcbiAgICAgIHByaW50KHBhc3RlKFwiVG9vIGJpZy4gWW91J3ZlIGhhZFwiLCBudW1iZXJfb2ZfZ3Vlc3NlcywgXCJndWVzc2VzLlwiKSlcbiAgICAgIH0gZWxzZSBpZiAoeCA8IG51bWJlcl90b19ndWVzcyl7XG4gICAgICBwcmludChwYXN0ZShcIlRvbyBzbWFsbC4gWW91J3ZlIGhhZFwiLCBudW1iZXJfb2ZfZ3Vlc3NlcywgXCJndWVzc2VzLlwiKSlcbiAgICAgIH1cbiAgICAgIG51bWJlcl9vZl9ndWVzc2VzIDwtIG51bWJlcl9vZl9ndWVzc2VzICsgMVxuICAgICAgeCA8LSByZWFkbGluZShcIlRyeSBhZ2FpbiA+IFwiKVxuICAgIH1cbiAgfVxuICBpZiAoeCA9PSBudW1iZXJfdG9fZ3Vlc3Mpe1xuICAgIHByaW50KHBhc3RlKFwiQ29uZ3JhdHVsYXRpb25zISBZb3UgdG9va1wiLCBudW1iZXJfb2ZfZ3Vlc3NlcywgXCJndWVzc2VzLlwiKSlcbiAgfVxufVxuZ3Vlc3NpbmdfZ2FtZSg3NilcbmBgYCJ9 -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZ3Vlc3NpbmdfZ2FtZSA8LSBmdW5jdGlvbih4KXtcbiAgbnVtYmVyX29mX2d1ZXNzZXMgPC0gMVxuICBzYW1wbGVfZnJvbSA8LSAxOjEwMDBcbiAgbnVtYmVyX3RvX2d1ZXNzIDwtIHNhbXBsZShzYW1wbGVfZnJvbSwgc2l6ZSA9IDEpXG4gIGlmICh4ICE9IG51bWJlcl90b19ndWVzcyl7XG4gICAgd2hpbGUgKHggIT0gbnVtYmVyX3RvX2d1ZXNzKXtcbiAgICAgIGlmICh4ID4gbnVtYmVyX3RvX2d1ZXNzKXtcbiAgICAgIHByaW50KHBhc3RlKFwiVG9vIGJpZy4gWW91J3ZlIGhhZFwiLCBudW1iZXJfb2ZfZ3Vlc3NlcywgXCJndWVzc2VzLlwiKSlcbiAgICAgIH0gZWxzZSBpZiAoeCA8IG51bWJlcl90b19ndWVzcyl7XG4gICAgICBwcmludChwYXN0ZShcIlRvbyBzbWFsbC4gWW91J3ZlIGhhZFwiLCBudW1iZXJfb2ZfZ3Vlc3NlcywgXCJndWVzc2VzLlwiKSlcbiAgICAgIH1cbiAgICAgIG51bWJlcl9vZl9ndWVzc2VzIDwtIG51bWJlcl9vZl9ndWVzc2VzICsgMVxuICAgICAgeCA8LSByZWFkbGluZShcIlRyeSBhZ2FpbiA+IFwiKVxuICAgIH1cbiAgfVxuICBpZiAoeCA9PSBudW1iZXJfdG9fZ3Vlc3Mpe1xuICAgIHByaW50KHBhc3RlKFwiQ29uZ3JhdHVsYXRpb25zISBZb3UgdG9va1wiLCBudW1iZXJfb2ZfZ3Vlc3NlcywgXCJndWVzc2VzLlwiKSlcbiAgfVxufVxuZ3Vlc3NpbmdfZ2FtZSgyNjkpXG5gYGAifQ== -->
 <pre class="r"><code>guessing_game &lt;- function(x){
   number_of_guesses &lt;- 1
   sample_from &lt;- 1:1000
@@ -2154,25 +2082,25 @@ make_text_art_histogram(c(1, 2, 4, 10, 1, 11, 2))</code></pre>
     print(paste(&quot;Congratulations! You took&quot;, number_of_guesses, &quot;guesses.&quot;))
   }
 }
-guessing_game(76)</code></pre>
+guessing_game(269)</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiVG9vIHNtYWxsLiBZb3UndmUgaGFkIDEgZ3Vlc3Nlcy5cIlxuIn0= -->
 <pre><code>[1] &quot;Too small. You've had 1 guesses.&quot;</code></pre>
 <!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuODAwXG5gYGAifQ== -->
-<pre class="r"><code>800</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuNjY2XG5gYGAifQ== -->
+<pre class="r"><code>666</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiVG9vIGJpZy4gWW91J3ZlIGhhZCAyIGd1ZXNzZXMuXCJcbiJ9 -->
 <pre><code>[1] &quot;Too big. You've had 2 guesses.&quot;</code></pre>
 <!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuNzAwXG5gYGAifQ== -->
-<pre class="r"><code>700</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuNTAwXG5gYGAifQ== -->
+<pre class="r"><code>500</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiVG9vIGJpZy4gWW91J3ZlIGhhZCAzIGd1ZXNzZXMuXCJcbiJ9 -->
 <pre><code>[1] &quot;Too big. You've had 3 guesses.&quot;</code></pre>
 <!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuNTAwXG5gYGAifQ== -->
-<pre class="r"><code>500</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuNDAwXG5gYGAifQ== -->
+<pre class="r"><code>400</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiVG9vIGJpZy4gWW91J3ZlIGhhZCA0IGd1ZXNzZXMuXCJcbiJ9 -->
 <pre><code>[1] &quot;Too big. You've had 4 guesses.&quot;</code></pre>
@@ -2186,80 +2114,26 @@ guessing_game(76)</code></pre>
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuMzUwXG5gYGAifQ== -->
 <pre class="r"><code>350</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiVG9vIHNtYWxsLiBZb3UndmUgaGFkIDYgZ3Vlc3Nlcy5cIlxuIn0= -->
-<pre><code>[1] &quot;Too small. You've had 6 guesses.&quot;</code></pre>
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiVG9vIGJpZy4gWW91J3ZlIGhhZCA2IGd1ZXNzZXMuXCJcbiJ9 -->
+<pre><code>[1] &quot;Too big. You've had 6 guesses.&quot;</code></pre>
 <!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuNDAwXG5gYGAifQ== -->
-<pre class="r"><code>400</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuMzI1XG5gYGAifQ== -->
+<pre class="r"><code>325</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiVG9vIGJpZy4gWW91J3ZlIGhhZCA3IGd1ZXNzZXMuXCJcbiJ9 -->
 <pre><code>[1] &quot;Too big. You've had 7 guesses.&quot;</code></pre>
 <!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuMzc1XG5gYGAifQ== -->
-<pre class="r"><code>375</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuMzE1XG5gYGAifQ== -->
+<pre class="r"><code>315</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiVG9vIGJpZy4gWW91J3ZlIGhhZCA4IGd1ZXNzZXMuXCJcbiJ9 -->
-<pre><code>[1] &quot;Too big. You've had 8 guesses.&quot;</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuMzcwXG5gYGAifQ== -->
-<pre class="r"><code>370</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiVG9vIGJpZy4gWW91J3ZlIGhhZCA5IGd1ZXNzZXMuXCJcbiJ9 -->
-<pre><code>[1] &quot;Too big. You've had 9 guesses.&quot;</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuMzY1XG5gYGAifQ== -->
-<pre class="r"><code>365</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiVG9vIGJpZy4gWW91J3ZlIGhhZCAxMCBndWVzc2VzLlwiXG4ifQ== -->
-<pre><code>[1] &quot;Too big. You've had 10 guesses.&quot;</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuMzUwXG5gYGAifQ== -->
-<pre class="r"><code>350</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiVG9vIHNtYWxsLiBZb3UndmUgaGFkIDExIGd1ZXNzZXMuXCJcbiJ9 -->
-<pre><code>[1] &quot;Too small. You've had 11 guesses.&quot;</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuMzU1XG5gYGAifQ== -->
-<pre class="r"><code>355</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiVG9vIHNtYWxsLiBZb3UndmUgaGFkIDEyIGd1ZXNzZXMuXCJcbiJ9 -->
-<pre><code>[1] &quot;Too small. You've had 12 guesses.&quot;</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuMzU2XG5gYGAifQ== -->
-<pre class="r"><code>356</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiVG9vIHNtYWxsLiBZb3UndmUgaGFkIDEzIGd1ZXNzZXMuXCJcbiJ9 -->
-<pre><code>[1] &quot;Too small. You've had 13 guesses.&quot;</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuMzU3XVxuYGBgIn0= -->
-<pre class="r"><code>357]</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiVG9vIHNtYWxsLiBZb3UndmUgaGFkIDE0IGd1ZXNzZXMuXCJcbiJ9 -->
-<pre><code>[1] &quot;Too small. You've had 14 guesses.&quot;</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuMzU4XG5gYGAifQ== -->
-<pre class="r"><code>358</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiVG9vIHNtYWxsLiBZb3UndmUgaGFkIDE1IGd1ZXNzZXMuXCJcbiJ9 -->
-<pre><code>[1] &quot;Too small. You've had 15 guesses.&quot;</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuMzU5XG5gYGAifQ== -->
-<pre class="r"><code>359</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiVG9vIHNtYWxsLiBZb3UndmUgaGFkIDE2IGd1ZXNzZXMuXCJcbiJ9 -->
-<pre><code>[1] &quot;Too small. You've had 16 guesses.&quot;</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuMzYwXG5gYGAifQ== -->
-<pre class="r"><code>360</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiQ29uZ3JhdHVsYXRpb25zISBZb3UgdG9vayAxNyBndWVzc2VzLlwiXG4ifQ== -->
-<pre><code>[1] &quot;Congratulations! You took 17 guesses.&quot;</code></pre>
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiQ29uZ3JhdHVsYXRpb25zISBZb3UgdG9vayA4IGd1ZXNzZXMuXCJcbiJ9 -->
+<pre><code>[1] &quot;Congratulations! You took 8 guesses.&quot;</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiUiBOb3RlYm9vayIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQoKMgp3cml0aW5nIGEgZnVuY3Rpb24gdGhhdCBtdWx0aXBsaWVzIGFsbCBudW1iZXJzIGJ5IDE1LCB0aGVuIGFkZHMgNApgYGB7cn0KbXVsdGlwbGllcl8xIDwtIGZ1bmN0aW9uKHgpewogIG11bHRpcGxpZWQgPC0geCAqIDE1CiAgYWRkZWQgPC0gbXVsdGlwbGllZCArIDQKICByZXR1cm4oYWRkZWQpCn0KbXVsdGlwbGllcl8xKGMoMSwgMiwgMykpCmBgYAoKd3JpdGluZyBhIGZ1bmN0aW9uIHRoYXQgd2lsbCByZXR1cm4gImJpcmQiIGlmIHRoZSBpbnB1dCBpcyBhICJnb29zZSIsICJwaWdlb24iLCBvciAiZHVjayIsIGFuZCB3aWxsIHJldHVybiAibm90IGEgYmlyZCIgZm9yIGFueXRoaW5nIGVsc2UKYGBge3J9CmlzX2JpcmQgPC0gZnVuY3Rpb24oeCl7CiAgaWYgKHggPT0gImdvb3NlIiB8IHggPT0gInBpZ2VvbiIgfCB4ID09ICJkdWNrIil7CiAgICByZXR1cm4ocGFzdGUoIkEiLCB4LCAiaXMgYSBiaXJkIikpCiAgfSBlbHNlIHsKICAgIHJldHVybihwYXN0ZSgiVGhhdCdzIG5vdCBhIGJpcmQiKSkKICB9Cn0KaXNfYmlyZChjKCJwaWdlb24iKSkKYGBgCgp3cml0aW5nIGEgZnVuY3Rpb24gd2hpY2ggd2lsbCBtdWx0aXBseSBhbGwgbnVtYmVycyBieSAxMC4gSWYgdGhlIGlucHV0IGlzIG5vdCBhIG51bWJlciwgdGhlIGZ1bmN0aW9uIHdpbGwgcmV0dXJuICJJbnZhbGlkIGlucHV0IgpgYGB7cn0KbXVsdGlwbHlfbnVtYmVyX2J5XzEwIDwtIGZ1bmN0aW9uKHgpewogIGlmIChpcy5udW1lcmljKHgpKXsKICAgIG11bHRpcGxpZWQgPSB4ICogMTAKICAgIHJldHVybihwYXN0ZShtdWx0aXBsaWVkKSkKICB9IGVsc2UgewogICAgcmV0dXJuKHBhc3RlKCJJbnZhbGlkIGlucHV0IikpCiAgfQp9Cm11bHRpcGx5X251bWJlcl9ieV8xMCgxMC4zKQpgYGAKCkknbSBnb2luZyB0byBjb2RlIHRoZSBuZXh0IHNlY3Rpb24gd2l0aG91dCB1c2luZyBpZiBzdGF0ZW1lbnRzIG9yIGxvb3BzLgpJIHdpbGwgcHJvdmlkZSB0aHJlZSBzb2x1dGlvbnMgdG8gZWFjaCBxdWVzdGlvbjogaWZlbHNlKCksIHJlY29kZSgpIGFuZCBjYXNld2hlbigpLiBJIHdpbGwgYWxzbyBkaXNjdXNzIHdoaWNoIGlzIHRoZSBlYXNpZXN0IGZvciBlYWNoIHF1ZXN0aW9uLgoKSSdtIGdvaW5nIHRvIGdvaW5nIHRvIHVzZSB0aGUgdmVjdG9yIGJlbG93IHRvIG1ha2UgYSBuZXcgdmVjdG9yIGVxdWFsIHRvICJCaWciIGV2ZXJ5IHRpbWUgdGhlIGVsZW1lbnQgb2Ygc2l6ZXMgaXMgZ3JlYXRlciB0aGFuIDEwLCBhbmQgZXF1YWwgdG8gIlNtYWxsIiBldmVyeSB0aW1lIHRoZSBlbGVtZW50IG9mIHNpemVzIGlzIGxlc3MgdGhhbiBvciBlcXVhbCB0byAxMApgYGB7cn0Kc2l6ZXMgPC0gYygxMywgMTUsIDEwLCA4LCAyMikKaWZlbHNlIChzaXplcyA8PSAxMCwgIlNtYWxsIiwgIkJpZyIpCmBgYApgYGB7cn0Kb25lX3RvX3RlbiA8LSAxOjEwCnRlbl90b19tYXggPC0gMTA6bWF4KHNpemVzKQpyZWNvZGUoc2l6ZXMsICI4IiA9ICJTbWFsbCIsICIxMCIgPSAiU21hbGwiLCAiMTMiID0gIkJpZyIsICIxNSIgPSAiQmlnIiwgIjIyIiA9ICJCaWciKQoKYGBgCmBgYHtyfQpjYXNlX3doZW4oCiAgc2l6ZXMgPD0gMTAgfiAiU21hbGwiLAogIHNpemVzID4gMTAgfiAiQmlnIgopCmBgYAppbiB0aGlzIGNhc2UsIGlmZWxzZSBvciBjYXNlX3doZW4gYXJlIHRoZSBlYXNpZXN0IHRvIHVzZS4gSXQncyByZWFsbHkgaGFyZCB0byB1c2UgcmVjb2RlLCBiZWNhdXNlIHlvdSBoYXZlIHRvIHNwZWNpZnkgd2hhdCB5b3UncmUgcmVwbGFjaW5nIGFuZCB3aGF0IHlvdSB3YW50IHRvIHJlcGxhY2UgaXQgd2l0aC4gSWYgc2l6ZXMgY2hhbmdlcywgeW91J2QgaGF2ZSB0byBjaGFuZ2UgeW91ciByZWNvZGUgdG9vLiBJIHRoaW5rIHRoYXQgaWZlbHNlIGlzIGVhc2llciB0aGFuIGNhc2Vfd2hlbi4gSnVzdCBzZWVtcyBtb3JlIHJlYWRhYmxlIHRvIG1lLCBidXQgb25lIGNvdWxkIG1ha2UgdGhlIHNhbWUgYXJndW1lbnQgd2l0aCBjYXNlX3doZW4KCmZvciB0aGUgZnJ1aXQgdmVjdG9yLCBJIHdpbGwgY29udmVydCBhcHBsZSB0byBhbHBhY2EsIGJhbmFuYSB0byBib25vYm8sIGFuZCBjaGVycnkgdG8gY2hpcG11bmsuCmBgYHtyfQpmcnVpdHMgPC0gYygiYXBwbGUiLCAiYXBwbGUiLCAiYmFuYW5hIiwgImNoZXJyeSIsICJjaGVycnkiKQpmcnVpdHMgPC0gaWZlbHNlKGZydWl0cyA9PSAiYXBwbGUiLCAiYWxwYWNhIiwgZnJ1aXRzKQpmcnVpdHMgPC0gaWZlbHNlKGZydWl0cyA9PSAiYmFuYW5hIiwgImJvbm9ibyIsIGZydWl0cykKaWZlbHNlKGZydWl0cyA9PSAiY2hlcnJ5IiwgImNoaXBtdW5rIiwgZnJ1aXRzKQpgYGAKYGBge3J9CmZydWl0cyA8LSBjKCJhcHBsZSIsICJhcHBsZSIsICJiYW5hbmEiLCAiY2hlcnJ5IiwgImNoZXJyeSIpCnJlY29kZSgKICBmcnVpdHMsIAogICJhcHBsZSIgPSAiYWxwYWNhIiwgCiAgImJhbmFuYSIgPSAiYm9ub2JvIiwgCiAgImNoZXJyeSIgPSAiY2hpcG11bmsiCikKYGBgCmBgYHtyfQpmcnVpdHMgPC0gYygiYXBwbGUiLCAiYXBwbGUiLCAiYmFuYW5hIiwgImNoZXJyeSIsICJjaGVycnkiKQpjYXNlX3doZW4oCiAgZnJ1aXRzID09ICJhcHBsZSIgfiAiYWxwYWNhIiwKICBmcnVpdHMgPT0gImJhbmFuYSIgfiAiYm9ub2JvIiwKICBmcnVpdHMgPT0gImNoZXJyeSIgfiAiY2hpcG11bmsiLAogIFRSVUUgfiBOQV9jaGFyYWN0ZXJfCikKYGBgCkluIHRoaXMgY2FzZSwgaXQncyBlYXNpZXIgdG8gdXNlIHJlY29kZSBvciBjYXNlX3doZW4gdG8gZG8gdGhlIHN1YnN0aXR1dGlvbnMuIElmIHlvdSB1c2UgaWZlbHNlLCB5b3UgaGF2ZSB0byB3cml0ZSB0aHJlZSBzZXBlcmF0ZSBpZmVsc2Ugc3RhdGVtZW50cyB0byBnZXQgaXQgdG8gZG8gd2hhdCB5b3Ugd2FudC4gUmVjb2RlIGlzIHRoZSBlYXNpZXN0LCBiZWNhdXNlIHlvdSBqdXN0IHRha2UgZWFjaCBlbGVtZW50IHR5cGUgZnJvbSB0aGUgdmVjdG9yIGFuZCBhc3NpZ24gaXQgYSBuZXcgdmFsdWUsIGFsbCBpbiBvbmUgcGxhY2UuIGNhc2Vfd2hlbiBpcyBzbGlnaHRseSB0cmlja2llciwgYmVjYXVzZSB5b3UgaGF2ZSB0byBoYXZlIGEgbG9naWNhbCBzdGF0ZW1lbnQsIGFuZCBhIGNhdGNoYWxsIGF0IHRoZSBlbmQgKHdoaWNoIGluIHRoaXMgY2FzZSBoYXMgdG8gYmUgYSBjaGFyYWN0ZXIpCgpoZXJlIEknbSBnb2luZyB0byB0YWtlIHR3byB2ZWN0b3JzIHdoaWNoIHNob3cgdGhlIGFnZXMgb2YgbWFycmlhZ2Ugb2YgZWFjaCBtZW1iZXIgb2YgYSBoZXRlcm9zZXh1YWwgY291cGxlLiBUaGUgZmlyc3QgZWxlbWVudHMgb2YgZWFjaCB2ZWN0b3IgY29ycmVlc3BvbmQgdG8gdGhlIGZpcnN0IGNvdXBsZSwgYW5kIHRoZSBzZWNvbmQgZWxlbWVudHMgdG8gdGhlIHNlY29uZCBjb3VwbGUsIGFuZCBzbyBvbi4gCkknbSBnb2luZyB0byBjcmVhdGUgYSBuZXcgdmVjdG9yIHdoaWNoIGlzIGVxdWFsIHRvIHdpZmUgb2xkZXIgd2hlbmV2ZXIgdGhlIHdpZmUncyBhZ2UgaXMgaGlnaGVyLCBhbmQgaHVzYmFuZCBvbGRlciB3aGVuIHRoZSBodXNiYW5kJ3MgYWdlIGlzIGhpZ2hlci4gQW5kIGZpbmFsbHksIHNtYWUgYWdlIHdoZW4gYm90aCBhcmUgdGhlIHNhbWUgYWdlLiAKYGBge3J9CndpZmVfYWdlIDwtIGMoMjlMLCAzMEwsIDM2TCwgMzFMLCAyMkwpCmh1c2JhbmRfYWdlIDwtIGMoMjhMLCAzNUwsIDMyTCwgMzFMLCAyOUwpCgpgYGAKYGBge3J9CnRvdGFsX2FnZSA8LSB3aWZlX2FnZSArIGh1c2JhbmRfYWdlCnRvdGFsX2FnZQp0b3RhbF9hZ2UgLSB3aWZlX2FnZSAqIDIKd2hvX29sZGVyIDwtIGMoIndobyIsICJpcyIsICJvbGRlciIpCndob19vbGRlciA8LSBpZmVsc2UodG90YWxfYWdlIC0gd2lmZV9hZ2UgKiAyIDwgMCwgIldpZmUgb2xkZXIiLCB3aG9fb2xkZXIpCndob19vbGRlciA8LSBpZmVsc2UodG90YWxfYWdlIC0gd2lmZV9hZ2UgICogMiA9PSAwLCAiU2FtZSBhZ2UiLCB3aG9fb2xkZXIpCndob19vbGRlciA8LSBpZmVsc2UodG90YWxfYWdlIC0gd2lmZV9hZ2UgKiAyPiAwLCAiSHVzYmFuZCBvbGRlciIsIHdob19vbGRlcikKd2hvX29sZGVyCmBgYApgYGB7cn0Kd2lmZV9hZ2UKaHVzYmFuZF9hZ2UKCndob19vbGRlciA8LSB0b3RhbF9hZ2UgLSB3aWZlX2FnZSAqIDIKd2hvX29sZGVyCnJlY29kZSh3aG9fb2xkZXIsCiAgICAgICAiLTEiID0gIldpZmUgb2xkZXIiLAogICAgICAgIjUiID0gIkh1c2JhbmQgb2xkZXIiLAogICAgICAgIi00IiA9ICJXaWZlIG9sZGVyIiwgCiAgICAgICAiMCIgPSAiU2FtZSBhZ2UiLCAKICAgICAgICI3IiA9ICJIdXNiYW5kIG9sZGVyIgopCmBgYApgYGB7cn0KY2FzZV93aGVuKAogIHdob19vbGRlciA+IDAgfiAiSHVzYmFuZCBvbGRlciIsCiAgd2hvX29sZGVyID09IDAgfiAiU2FtZSBhZ2UiLAogIHdob19vbGRlciA8IDAgfiAiV2lmZSBvZGVyIgopCmBgYApJbiB0aGlzIGNhc2UsIEkgbGlrZSBjYXNlX3doZW4gYmVzdC4gSXQgY2FuIGJlIGRvbmUgZmxleGlibHksIHNvIHRoYXQgaWYgZWl0aGVyIHZlY3RvciBjaGFuZ2VzLCBpdCB3aWxsIHN0aWxsIHdvcmssIGFuZCBjYW4gYWxzbyBiZSBkb25lIGluIG9uZSBzdGF0ZW1lbnQsIHJhdGhlciB0aGFuIDMgaW4gdGhlIGlmZWxzZSBjYXNlLiByZWNvZGUgaXMgcnViYmlzaCBoZXJlLiAKCkknbSBnb2luZyB0byBtYWtlIGEgbGlzdCwgdGhlbiB1c2Ugc29tZSBsb29wcyBvbiBpdC4gCmBgYHtyfQpteV9saXN0IDwtIGxpc3QoCiAgNCwgCiAgImFwcGxlIiwgCiAgMTAuNSwKICBjKCJpcyIsICJhbiIsICJhcHBsZSIpLAogIGMoIkkiLCAibGlrZSIsICJhcHBsZXMiKSwKICA4CikKYGBgCkknbSBnb2luZyB0byB1c2UgYSBmb3IgbG9vcCB0byBwcmludCBvdXQgZXZlciBlbGVtZW50IG9mIG15X2xpc3Qgd2hpY2ggaXMgb2YgdHlwZSBjaGFyYWN0ZXIKYGBge3J9CmZvciAoY2hhcmFjdGVyIGluIG15X2xpc3QpewogIGlmIChjbGFzcyhjaGFyYWN0ZXIpID09ICJjaGFyYWN0ZXIiKXsKICAgIHByaW50KGNoYXJhY3RlcikKICB9Cn0KYGBgCkknbSBub3cgZ29pbmcgdG8gZG8gdGhlIHNhbWUgdGhpbmcgd2l0aCBhIHdoaWxlIGxvb3AKYGBge3J9Cm15X2xpc3RbWzRdXVsxXQpgYGAKCmBgYHtyfQp4IDwtIDEKd2hpbGUgKHggPD0gbGVuZ3RoKG15X2xpc3QpKXsKICBpZihjbGFzcyhteV9saXN0W1t4XV0pID09ICJjaGFyYWN0ZXIiKXsKICAgIGNoYXJhY3RlciA8LSBteV9saXN0W1t4XV0KICAgIHByaW50KGNoYXJhY3RlcikKICB9CiAgeCA8LSB4ICsgMQp9CmBgYAoKSSdtIGdvaW5nIHRvIHdyaXRlIGFub3RoZXIgd2hpbGUgbG9vcCwgd2hlcmUgaWYgdGhlIGVsZW1lbnQgaGFzIGEgbGVuZ3RoKCkgPjEsIGl0IHdpbGwgcGFzdGUgYWxsIG9mIHRoZSBlbGVtZW50cyBpbiB0aGF0IHZlY3RvciBpbnRvIG9uZSBiaWcgY2hhcmFjdGVyIHZlY3Rvci4KYGBge3J9Cgpmb3VyIDwtIG15X2xpc3RbWzRdXQpwcmludChwYXN0ZShteV9saXN0W1s0XV1bMV0sIG15X2xpc3RbWzRdXVtdKSkKYGBgCgpgYGB7cn0KeSA8LSAxCndoaWxlICh5IDw9IGxlbmd0aChteV9saXN0KSl7CiAgaWYoY2xhc3MobXlfbGlzdFtbeV1dKSA9PSAiY2hhcmFjdGVyIil7CiAgICBpZiAobGVuZ3RoKG15X2xpc3RbW3ldXSkgPT0gMil7CiAgICAgIHByaW50KHBhc3RlKG15X2xpc3RbW3ldXVsxXSwgIG15X2xpc3RbW3ldXVsyXSkpCiAgICB9IGVsc2UgaWYgKGxlbmd0aChteV9saXN0W1t5XV0pID49IDMpewogICAgICBwcmludChwYXN0ZShteV9saXN0W1t5XV1bMV0sIG15X2xpc3RbW3ldXVsyXSwgbXlfbGlzdFtbeV1dWzNdKSkKICAgIH0gZWxzZSBpZiAobGVuZ3RoKG15X2xpc3RbW3ldXSkgPT0gNCl7CiAgICAgIHByaW50KHBhc3RlKG15X2xpc3RbW3ldXVsxXSwgbXlfbGlzdFtbeV1dWzJdLCBteV9saXN0W1t5XV1bM10sIG15X2xpc3RbW3ldXVs0XSkpCiAgICB9CiAgfQogIHkgPC0geSArIDEKfQpgYGAKCmV4dHJhIHN0dWZmCndyaXRpbmcgY29kZSB0aGF0IHByaW50cyBhIG1pbHRpcGxpY2F0aW8gdGFibGUgZm9yIG51bWJlcnMgdXAgdG8gMTIuIGkuZS4gdGhlcmUgd2lsbCBiZSAxMiByb3dzLCBhbmQgMTIgY29sdW1ucywgYW5kIGVhY2ggZWxlbWVudCBzaG91bGQgYmUgdGhlIHJvdyBudW1iZXIgbXVsdGlwbGllZCBieSB0aGUgY29sdW1uIG51bWJlci4KYGBge3J9Cm9uZV90b190d2VsdmUgPC0gMToxMgpvbmVfdG9fdHdlbHZlICsgb25lX3RvX3R3ZWx2ZQpteV9tYXRyaXggPC0gbWF0cml4KG9uZV90b190d2VsdmUsIG5yb3cgPSAxMiwgbmNvbCA9IDEyLCBieXJvdyA9IFRSVUUpCm15X3NxdWFyZWRfbWF0cml4IDwtIG15X21hdHJpeCAqIG9uZV90b190d2VsdmUKbXlfc3F1YXJlZF9tYXRyaXgKYGBgCgp3cml0aW5nIGEgZnVuY3Rpb24gdGhhdCB0YWtlcyBhIHZlY3RvciwgYW5kIGNyZWF0ZXMgYSB0ZXh0IGFydCBoaXN0b2dyYW0uCmBgYHtyfQojc29tZSB0ZXN0aW5nIHRvIGdldCBzb21lIHRob3VnaHRzIG91dC4gUGxlYXNlIGlnbm9yZQpteV92ZWN0b3IgPC0gYygxMCwgMiwgMywgNSkKCmFzdGVyaXNrIDwtIGMoIioiKQoKYXN0ZXJpc2tzIDwtIHJlcCgiKiIsIHRpbWVzID0gbXlfdmVjdG9yWzFdKQpwYXN0ZShhc3Rlcmlza3MsIGNvbGxhcHNlID0gIiIpCgpgYGAKYGBge3J9Cm1ha2VfdGV4dF9hcnRfaGlzdG9ncmFtIDwtIGZ1bmN0aW9uKHgpewogIGlmKGNsYXNzKHgpICE9ICJudW1lcmljIil7CiAgICBwcmludCgiSW5wdXQgbXVzdCBiZSBudW1lcmljIHZlY3RvciIpCiAgfSBlbHNlewogICAgbG9vcF9udW1iZXIgPC0gMQogICAgd2hpbGUgKGxvb3BfbnVtYmVyIDw9IGxlbmd0aCh4KSl7CiAgICAgIGFzdGVyaXNrcyA8LSByZXAoIioiLCB0aW1lcyA9IHhbbG9vcF9udW1iZXJdKQogICAgICBjYXQobG9vcF9udW1iZXIsICIgfCAiLCBhc3Rlcmlza3MsIGZpbGwgPSBUUlVFLCBzZXAgPSAiIikKICAgICAgbG9vcF9udW1iZXIgPC0gbG9vcF9udW1iZXIgKyAxCiAgICB9CiAgfQp9Cm1ha2VfdGV4dF9hcnRfaGlzdG9ncmFtKGMoMSwgMiwgNCwgMTAsIDEsIDExLCAyKSkKYGBgCgp3cml0aW5nIGEgZ3Vlc3NpbmcgZ2FtZSB3aGVyZSB0aGUgdXNlciBoYXMgdG8gZ3Vlc3MgYSBzZWNyZXQgbnVtYmVyLiBBZnRlciBlYWNoIGd1ZXNzLCB0aGUgcHJvZ3JhbSB3aWxsIHRlbGwgdGhlIHVzZXIgd2hldGhlciB0aGVpciBudW1iZXIgd2FzIHRvbyBsYXJnZSBvciB0b28gc21hbGwuIEF0IHRoZSBlbmQsIHRoZSBudW1iZXIgb2YgdHJpZXMgdGhlIHVzZXIgbmVlZGVkIHdpbGwgYmUgcHJpbnRlZC4KYGBge3J9Cmd1ZXNzaW5nX2dhbWUgPC0gZnVuY3Rpb24oeCl7CiAgbnVtYmVyX29mX2d1ZXNzZXMgPC0gMQogIHNhbXBsZV9mcm9tIDwtIDE6MTAwMAogIG51bWJlcl90b19ndWVzcyA8LSBzYW1wbGUoc2FtcGxlX2Zyb20sIHNpemUgPSAxKQogIGlmICh4ICE9IG51bWJlcl90b19ndWVzcyl7CiAgICB3aGlsZSAoeCAhPSBudW1iZXJfdG9fZ3Vlc3MpewogICAgICBpZiAoeCA+IG51bWJlcl90b19ndWVzcyl7CiAgICAgIHByaW50KHBhc3RlKCJUb28gYmlnLiBZb3UndmUgaGFkIiwgbnVtYmVyX29mX2d1ZXNzZXMsICJndWVzc2VzLiIpKQogICAgICB9IGVsc2UgaWYgKHggPCBudW1iZXJfdG9fZ3Vlc3MpewogICAgICBwcmludChwYXN0ZSgiVG9vIHNtYWxsLiBZb3UndmUgaGFkIiwgbnVtYmVyX29mX2d1ZXNzZXMsICJndWVzc2VzLiIpKQogICAgICB9CiAgICAgIG51bWJlcl9vZl9ndWVzc2VzIDwtIG51bWJlcl9vZl9ndWVzc2VzICsgMQogICAgICB4IDwtIHJlYWRsaW5lKCJUcnkgYWdhaW4gPiAiKQogICAgfQogIH0KICBpZiAoeCA9PSBudW1iZXJfdG9fZ3Vlc3MpewogICAgcHJpbnQocGFzdGUoIkNvbmdyYXR1bGF0aW9ucyEgWW91IHRvb2siLCBudW1iZXJfb2ZfZ3Vlc3NlcywgImd1ZXNzZXMuIikpCiAgfQp9Cmd1ZXNzaW5nX2dhbWUoNzY2KQpgYGAKCgoKCgoKCgoKCgoKCgoK</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiUiBOb3RlYm9vayIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQoKMgp3cml0aW5nIGEgZnVuY3Rpb24gdGhhdCBtdWx0aXBsaWVzIGFsbCBudW1iZXJzIGJ5IDE1LCB0aGVuIGFkZHMgNApgYGB7cn0KbXVsdGlwbGllcl8xIDwtIGZ1bmN0aW9uKHgpewogIG11bHRpcGxpZWQgPC0geCAqIDE1CiAgYWRkZWQgPC0gbXVsdGlwbGllZCArIDQKICByZXR1cm4oYWRkZWQpCn0KbXVsdGlwbGllcl8xKGMoMSwgMiwgMykpCmBgYAoKd3JpdGluZyBhIGZ1bmN0aW9uIHRoYXQgd2lsbCByZXR1cm4gImJpcmQiIGlmIHRoZSBpbnB1dCBpcyBhICJnb29zZSIsICJwaWdlb24iLCBvciAiZHVjayIsIGFuZCB3aWxsIHJldHVybiAibm90IGEgYmlyZCIgZm9yIGFueXRoaW5nIGVsc2UKYGBge3J9CmlzX2JpcmQgPC0gZnVuY3Rpb24oeCl7CiAgaWYgKHggPT0gImdvb3NlIiB8IHggPT0gInBpZ2VvbiIgfCB4ID09ICJkdWNrIil7CiAgICByZXR1cm4ocGFzdGUoIkEiLCB4LCAiaXMgYSBiaXJkIikpCiAgfSBlbHNlIHsKICAgIHJldHVybihwYXN0ZSgiVGhhdCdzIG5vdCBhIGJpcmQiKSkKICB9Cn0KaXNfYmlyZChjKCJwaWdlb24iKSkKYGBgCgp3cml0aW5nIGEgZnVuY3Rpb24gd2hpY2ggd2lsbCBtdWx0aXBseSBhbGwgbnVtYmVycyBieSAxMC4gSWYgdGhlIGlucHV0IGlzIG5vdCBhIG51bWJlciwgdGhlIGZ1bmN0aW9uIHdpbGwgcmV0dXJuICJJbnZhbGlkIGlucHV0IgpgYGB7cn0KbXVsdGlwbHlfbnVtYmVyX2J5XzEwIDwtIGZ1bmN0aW9uKHgpewogIGlmIChpcy5udW1lcmljKHgpKXsKICAgIG11bHRpcGxpZWQgPSB4ICogMTAKICAgIHJldHVybihwYXN0ZShtdWx0aXBsaWVkKSkKICB9IGVsc2UgewogICAgcmV0dXJuKHBhc3RlKCJJbnZhbGlkIGlucHV0IikpCiAgfQp9Cm11bHRpcGx5X251bWJlcl9ieV8xMCgxMC4zKQpgYGAKCkknbSBnb2luZyB0byBjb2RlIHRoZSBuZXh0IHNlY3Rpb24gd2l0aG91dCB1c2luZyBpZiBzdGF0ZW1lbnRzIG9yIGxvb3BzLgpJIHdpbGwgcHJvdmlkZSB0aHJlZSBzb2x1dGlvbnMgdG8gZWFjaCBxdWVzdGlvbjogaWZlbHNlKCksIHJlY29kZSgpIGFuZCBjYXNld2hlbigpLiBJIHdpbGwgYWxzbyBkaXNjdXNzIHdoaWNoIGlzIHRoZSBlYXNpZXN0IGZvciBlYWNoIHF1ZXN0aW9uLgoKSSdtIGdvaW5nIHRvIGdvaW5nIHRvIHVzZSB0aGUgdmVjdG9yIGJlbG93IHRvIG1ha2UgYSBuZXcgdmVjdG9yIGVxdWFsIHRvICJCaWciIGV2ZXJ5IHRpbWUgdGhlIGVsZW1lbnQgb2Ygc2l6ZXMgaXMgZ3JlYXRlciB0aGFuIDEwLCBhbmQgZXF1YWwgdG8gIlNtYWxsIiBldmVyeSB0aW1lIHRoZSBlbGVtZW50IG9mIHNpemVzIGlzIGxlc3MgdGhhbiBvciBlcXVhbCB0byAxMApgYGB7cn0Kc2l6ZXMgPC0gYygxMywgMTUsIDEwLCA4LCAyMikKaWZlbHNlIChzaXplcyA8PSAxMCwgIlNtYWxsIiwgIkJpZyIpCmBgYApgYGB7cn0Kb25lX3RvX3RlbiA8LSAxOjEwCnRlbl90b19tYXggPC0gMTA6bWF4KHNpemVzKQpyZWNvZGUoc2l6ZXMsICI4IiA9ICJTbWFsbCIsICIxMCIgPSAiU21hbGwiLCAiMTMiID0gIkJpZyIsICIxNSIgPSAiQmlnIiwgIjIyIiA9ICJCaWciKQoKYGBgCmBgYHtyfQpjYXNlX3doZW4oCiAgc2l6ZXMgPD0gMTAgfiAiU21hbGwiLAogIHNpemVzID4gMTAgfiAiQmlnIgopCmBgYAppbiB0aGlzIGNhc2UsIGlmZWxzZSBvciBjYXNlX3doZW4gYXJlIHRoZSBlYXNpZXN0IHRvIHVzZS4gSXQncyByZWFsbHkgaGFyZCB0byB1c2UgcmVjb2RlLCBiZWNhdXNlIHlvdSBoYXZlIHRvIHNwZWNpZnkgd2hhdCB5b3UncmUgcmVwbGFjaW5nIGFuZCB3aGF0IHlvdSB3YW50IHRvIHJlcGxhY2UgaXQgd2l0aC4gSWYgc2l6ZXMgY2hhbmdlcywgeW91J2QgaGF2ZSB0byBjaGFuZ2UgeW91ciByZWNvZGUgdG9vLiBJIHRoaW5rIHRoYXQgaWZlbHNlIGlzIGVhc2llciB0aGFuIGNhc2Vfd2hlbi4gSnVzdCBzZWVtcyBtb3JlIHJlYWRhYmxlIHRvIG1lLCBidXQgb25lIGNvdWxkIG1ha2UgdGhlIHNhbWUgYXJndW1lbnQgd2l0aCBjYXNlX3doZW4KCmZvciB0aGUgZnJ1aXQgdmVjdG9yLCBJIHdpbGwgY29udmVydCBhcHBsZSB0byBhbHBhY2EsIGJhbmFuYSB0byBib25vYm8sIGFuZCBjaGVycnkgdG8gY2hpcG11bmsuCmBgYHtyfQpmcnVpdHMgPC0gYygiYXBwbGUiLCAiYXBwbGUiLCAiYmFuYW5hIiwgImNoZXJyeSIsICJjaGVycnkiKQpmcnVpdHMgPC0gaWZlbHNlKGZydWl0cyA9PSAiYXBwbGUiLCAiYWxwYWNhIiwgZnJ1aXRzKQpmcnVpdHMgPC0gaWZlbHNlKGZydWl0cyA9PSAiYmFuYW5hIiwgImJvbm9ibyIsIGZydWl0cykKaWZlbHNlKGZydWl0cyA9PSAiY2hlcnJ5IiwgImNoaXBtdW5rIiwgZnJ1aXRzKQpgYGAKYGBge3J9CmZydWl0cyA8LSBjKCJhcHBsZSIsICJhcHBsZSIsICJiYW5hbmEiLCAiY2hlcnJ5IiwgImNoZXJyeSIpCnJlY29kZSgKICBmcnVpdHMsIAogICJhcHBsZSIgPSAiYWxwYWNhIiwgCiAgImJhbmFuYSIgPSAiYm9ub2JvIiwgCiAgImNoZXJyeSIgPSAiY2hpcG11bmsiCikKYGBgCmBgYHtyfQpmcnVpdHMgPC0gYygiYXBwbGUiLCAiYXBwbGUiLCAiYmFuYW5hIiwgImNoZXJyeSIsICJjaGVycnkiKQpjYXNlX3doZW4oCiAgZnJ1aXRzID09ICJhcHBsZSIgfiAiYWxwYWNhIiwKICBmcnVpdHMgPT0gImJhbmFuYSIgfiAiYm9ub2JvIiwKICBmcnVpdHMgPT0gImNoZXJyeSIgfiAiY2hpcG11bmsiLAogIFRSVUUgfiBOQV9jaGFyYWN0ZXJfCikKYGBgCkluIHRoaXMgY2FzZSwgaXQncyBlYXNpZXIgdG8gdXNlIHJlY29kZSBvciBjYXNlX3doZW4gdG8gZG8gdGhlIHN1YnN0aXR1dGlvbnMuIElmIHlvdSB1c2UgaWZlbHNlLCB5b3UgaGF2ZSB0byB3cml0ZSB0aHJlZSBzZXBlcmF0ZSBpZmVsc2Ugc3RhdGVtZW50cyB0byBnZXQgaXQgdG8gZG8gd2hhdCB5b3Ugd2FudC4gUmVjb2RlIGlzIHRoZSBlYXNpZXN0LCBiZWNhdXNlIHlvdSBqdXN0IHRha2UgZWFjaCBlbGVtZW50IHR5cGUgZnJvbSB0aGUgdmVjdG9yIGFuZCBhc3NpZ24gaXQgYSBuZXcgdmFsdWUsIGFsbCBpbiBvbmUgcGxhY2UuIGNhc2Vfd2hlbiBpcyBzbGlnaHRseSB0cmlja2llciwgYmVjYXVzZSB5b3UgaGF2ZSB0byBoYXZlIGEgbG9naWNhbCBzdGF0ZW1lbnQsIGFuZCBhIGNhdGNoYWxsIGF0IHRoZSBlbmQgKHdoaWNoIGluIHRoaXMgY2FzZSBoYXMgdG8gYmUgYSBjaGFyYWN0ZXIpCgpoZXJlIEknbSBnb2luZyB0byB0YWtlIHR3byB2ZWN0b3JzIHdoaWNoIHNob3cgdGhlIGFnZXMgb2YgbWFycmlhZ2Ugb2YgZWFjaCBtZW1iZXIgb2YgYSBoZXRlcm9zZXh1YWwgY291cGxlLiBUaGUgZmlyc3QgZWxlbWVudHMgb2YgZWFjaCB2ZWN0b3IgY29ycmVlc3BvbmQgdG8gdGhlIGZpcnN0IGNvdXBsZSwgYW5kIHRoZSBzZWNvbmQgZWxlbWVudHMgdG8gdGhlIHNlY29uZCBjb3VwbGUsIGFuZCBzbyBvbi4gCkknbSBnb2luZyB0byBjcmVhdGUgYSBuZXcgdmVjdG9yIHdoaWNoIGlzIGVxdWFsIHRvIHdpZmUgb2xkZXIgd2hlbmV2ZXIgdGhlIHdpZmUncyBhZ2UgaXMgaGlnaGVyLCBhbmQgaHVzYmFuZCBvbGRlciB3aGVuIHRoZSBodXNiYW5kJ3MgYWdlIGlzIGhpZ2hlci4gQW5kIGZpbmFsbHksIHNtYWUgYWdlIHdoZW4gYm90aCBhcmUgdGhlIHNhbWUgYWdlLiAKYGBge3J9CndpZmVfYWdlIDwtIGMoMjlMLCAzMEwsIDM2TCwgMzFMLCAyMkwpCmh1c2JhbmRfYWdlIDwtIGMoMjhMLCAzNUwsIDMyTCwgMzFMLCAyOUwpCgpgYGAKYGBge3J9CnRvdGFsX2FnZSA8LSB3aWZlX2FnZSArIGh1c2JhbmRfYWdlCnRvdGFsX2FnZQp0b3RhbF9hZ2UgLSB3aWZlX2FnZSAqIDIKd2hvX29sZGVyIDwtIGMoIndobyIsICJpcyIsICJvbGRlciIpCndob19vbGRlciA8LSBpZmVsc2UodG90YWxfYWdlIC0gd2lmZV9hZ2UgKiAyIDwgMCwgIldpZmUgb2xkZXIiLCB3aG9fb2xkZXIpCndob19vbGRlciA8LSBpZmVsc2UodG90YWxfYWdlIC0gd2lmZV9hZ2UgICogMiA9PSAwLCAiU2FtZSBhZ2UiLCB3aG9fb2xkZXIpCndob19vbGRlciA8LSBpZmVsc2UodG90YWxfYWdlIC0gd2lmZV9hZ2UgKiAyPiAwLCAiSHVzYmFuZCBvbGRlciIsIHdob19vbGRlcikKd2hvX29sZGVyCmBgYApgYGB7cn0Kd2lmZV9hZ2UKaHVzYmFuZF9hZ2UKCndob19vbGRlciA8LSB0b3RhbF9hZ2UgLSB3aWZlX2FnZSAqIDIKd2hvX29sZGVyCnJlY29kZSh3aG9fb2xkZXIsCiAgICAgICAiLTEiID0gIldpZmUgb2xkZXIiLAogICAgICAgIjUiID0gIkh1c2JhbmQgb2xkZXIiLAogICAgICAgIi00IiA9ICJXaWZlIG9sZGVyIiwgCiAgICAgICAiMCIgPSAiU2FtZSBhZ2UiLCAKICAgICAgICI3IiA9ICJIdXNiYW5kIG9sZGVyIgopCmBgYApgYGB7cn0KY2FzZV93aGVuKAogIHdob19vbGRlciA+IDAgfiAiSHVzYmFuZCBvbGRlciIsCiAgd2hvX29sZGVyID09IDAgfiAiU2FtZSBhZ2UiLAogIHdob19vbGRlciA8IDAgfiAiV2lmZSBvZGVyIgopCmBgYApJbiB0aGlzIGNhc2UsIEkgbGlrZSBjYXNlX3doZW4gYmVzdC4gSXQgY2FuIGJlIGRvbmUgZmxleGlibHksIHNvIHRoYXQgaWYgZWl0aGVyIHZlY3RvciBjaGFuZ2VzLCBpdCB3aWxsIHN0aWxsIHdvcmssIGFuZCBjYW4gYWxzbyBiZSBkb25lIGluIG9uZSBzdGF0ZW1lbnQsIHJhdGhlciB0aGFuIDMgaW4gdGhlIGlmZWxzZSBjYXNlLiByZWNvZGUgaXMgcnViYmlzaCBoZXJlLiAKCkknbSBnb2luZyB0byBtYWtlIGEgbGlzdCwgdGhlbiB1c2Ugc29tZSBsb29wcyBvbiBpdC4gCmBgYHtyfQpteV9saXN0IDwtIGxpc3QoCiAgNCwgCiAgImFwcGxlIiwgCiAgMTAuNSwKICBjKCJpcyIsICJhbiIsICJhcHBsZSIpLAogIGMoIkkiLCAibGlrZSIsICJhcHBsZXMiKSwKICA4CikKYGBgCkknbSBnb2luZyB0byB1c2UgYSBmb3IgbG9vcCB0byBwcmludCBvdXQgZXZlciBlbGVtZW50IG9mIG15X2xpc3Qgd2hpY2ggaXMgb2YgdHlwZSBjaGFyYWN0ZXIKYGBge3J9CmZvciAoY2hhcmFjdGVyIGluIG15X2xpc3QpewogIGlmIChjbGFzcyhjaGFyYWN0ZXIpID09ICJjaGFyYWN0ZXIiKXsKICAgIHByaW50KGNoYXJhY3RlcikKICB9Cn0KYGBgCkknbSBub3cgZ29pbmcgdG8gZG8gdGhlIHNhbWUgdGhpbmcgd2l0aCBhIHdoaWxlIGxvb3AKYGBge3J9Cm15X2xpc3RbWzRdXVsxXQpgYGAKCmBgYHtyfQp4IDwtIDEKd2hpbGUgKHggPD0gbGVuZ3RoKG15X2xpc3QpKXsKICBpZihjbGFzcyhteV9saXN0W1t4XV0pID09ICJjaGFyYWN0ZXIiKXsKICAgIGNoYXJhY3RlciA8LSBteV9saXN0W1t4XV0KICAgIHByaW50KGNoYXJhY3RlcikKICB9CiAgeCA8LSB4ICsgMQp9CmBgYAoKSSdtIGdvaW5nIHRvIHdyaXRlIGFub3RoZXIgd2hpbGUgbG9vcCwgd2hlcmUgaWYgdGhlIGVsZW1lbnQgaGFzIGEgbGVuZ3RoKCkgPjEsIGl0IHdpbGwgcGFzdGUgYWxsIG9mIHRoZSBlbGVtZW50cyBpbiB0aGF0IHZlY3RvciBpbnRvIG9uZSBiaWcgY2hhcmFjdGVyIHZlY3Rvci4KYGBge3J9Cgpmb3VyIDwtIG15X2xpc3RbWzRdXQpwcmludChwYXN0ZShteV9saXN0W1s0XV1bMV0sIG15X2xpc3RbWzRdXVtdKSkKYGBgCgpgYGB7cn0KeSA8LSAxCndoaWxlICh5IDw9IGxlbmd0aChteV9saXN0KSl7CiAgaWYoY2xhc3MobXlfbGlzdFtbeV1dKSA9PSAiY2hhcmFjdGVyIil7CiAgICBpZiAobGVuZ3RoKG15X2xpc3RbW3ldXSkgPT0gMil7CiAgICAgIHByaW50KHBhc3RlKG15X2xpc3RbW3ldXVsxXSwgIG15X2xpc3RbW3ldXVsyXSkpCiAgICB9IGVsc2UgaWYgKGxlbmd0aChteV9saXN0W1t5XV0pID49IDMpewogICAgICBwcmludChwYXN0ZShteV9saXN0W1t5XV1bMV0sIG15X2xpc3RbW3ldXVsyXSwgbXlfbGlzdFtbeV1dWzNdKSkKICAgIH0gZWxzZSBpZiAobGVuZ3RoKG15X2xpc3RbW3ldXSkgPT0gNCl7CiAgICAgIHByaW50KHBhc3RlKG15X2xpc3RbW3ldXVsxXSwgbXlfbGlzdFtbeV1dWzJdLCBteV9saXN0W1t5XV1bM10sIG15X2xpc3RbW3ldXVs0XSkpCiAgICB9CiAgfQogIHkgPC0geSArIDEKfQpgYGAKCmV4dHJhIHN0dWZmCndyaXRpbmcgY29kZSB0aGF0IHByaW50cyBhIG1pbHRpcGxpY2F0aW8gdGFibGUgZm9yIG51bWJlcnMgdXAgdG8gMTIuIGkuZS4gdGhlcmUgd2lsbCBiZSAxMiByb3dzLCBhbmQgMTIgY29sdW1ucywgYW5kIGVhY2ggZWxlbWVudCBzaG91bGQgYmUgdGhlIHJvdyBudW1iZXIgbXVsdGlwbGllZCBieSB0aGUgY29sdW1uIG51bWJlci4KYGBge3J9Cm9uZV90b190d2VsdmUgPC0gMToxMgpvbmVfdG9fdHdlbHZlICsgb25lX3RvX3R3ZWx2ZQpteV9tYXRyaXggPC0gbWF0cml4KG9uZV90b190d2VsdmUsIG5yb3cgPSAxMiwgbmNvbCA9IDEyLCBieXJvdyA9IFRSVUUpCm15X3NxdWFyZWRfbWF0cml4IDwtIG15X21hdHJpeCAqIG9uZV90b190d2VsdmUKbXlfc3F1YXJlZF9tYXRyaXgKYGBgCgp3cml0aW5nIGEgZnVuY3Rpb24gdGhhdCB0YWtlcyBhIHZlY3RvciwgYW5kIGNyZWF0ZXMgYSB0ZXh0IGFydCBoaXN0b2dyYW0uCmBgYHtyfQojc29tZSB0ZXN0aW5nIHRvIGdldCBzb21lIHRob3VnaHRzIG91dC4gUGxlYXNlIGlnbm9yZQpteV92ZWN0b3IgPC0gYygxMCwgMiwgMywgNSkKCmFzdGVyaXNrIDwtIGMoIioiKQoKYXN0ZXJpc2tzIDwtIHJlcCgiKiIsIHRpbWVzID0gbXlfdmVjdG9yWzFdKQpwYXN0ZShhc3Rlcmlza3MsIGNvbGxhcHNlID0gIiIpCgpgYGAKYGBge3J9Cm1ha2VfdGV4dF9hcnRfaGlzdG9ncmFtIDwtIGZ1bmN0aW9uKHgpewogIGlmKGNsYXNzKHgpICE9ICJudW1lcmljIil7CiAgICBwcmludCgiSW5wdXQgbXVzdCBiZSBudW1lcmljIHZlY3RvciIpCiAgfSBlbHNlewogICAgbG9vcF9udW1iZXIgPC0gMQogICAgd2hpbGUgKGxvb3BfbnVtYmVyIDw9IGxlbmd0aCh4KSl7CiAgICAgIGFzdGVyaXNrcyA8LSByZXAoIioiLCB0aW1lcyA9IHhbbG9vcF9udW1iZXJdKQogICAgICBjYXQobG9vcF9udW1iZXIsICIgfCAiLCBhc3Rlcmlza3MsIGZpbGwgPSBUUlVFLCBzZXAgPSAiIikKICAgICAgbG9vcF9udW1iZXIgPC0gbG9vcF9udW1iZXIgKyAxCiAgICB9CiAgfQp9Cm1ha2VfdGV4dF9hcnRfaGlzdG9ncmFtKGMoMSwgMiwgNCwgMTAsIDEsIDExLCAyKSkKYGBgCgp3cml0aW5nIGEgZ3Vlc3NpbmcgZ2FtZSB3aGVyZSB0aGUgdXNlciBoYXMgdG8gZ3Vlc3MgYSBzZWNyZXQgbnVtYmVyLiBBZnRlciBlYWNoIGd1ZXNzLCB0aGUgcHJvZ3JhbSB3aWxsIHRlbGwgdGhlIHVzZXIgd2hldGhlciB0aGVpciBudW1iZXIgd2FzIHRvbyBsYXJnZSBvciB0b28gc21hbGwuIEF0IHRoZSBlbmQsIHRoZSBudW1iZXIgb2YgdHJpZXMgdGhlIHVzZXIgbmVlZGVkIHdpbGwgYmUgcHJpbnRlZC4KYGBge3J9Cmd1ZXNzaW5nX2dhbWUgPC0gZnVuY3Rpb24oeCl7CiAgbnVtYmVyX29mX2d1ZXNzZXMgPC0gMQogIHNhbXBsZV9mcm9tIDwtIDE6MTAwMAogIG51bWJlcl90b19ndWVzcyA8LSBzYW1wbGUoc2FtcGxlX2Zyb20sIHNpemUgPSAxKQogIGlmICh4ICE9IG51bWJlcl90b19ndWVzcyl7CiAgICB3aGlsZSAoeCAhPSBudW1iZXJfdG9fZ3Vlc3MpewogICAgICBpZiAoeCA+IG51bWJlcl90b19ndWVzcyl7CiAgICAgIHByaW50KHBhc3RlKCJUb28gYmlnLiBZb3UndmUgaGFkIiwgbnVtYmVyX29mX2d1ZXNzZXMsICJndWVzc2VzLiIpKQogICAgICB9IGVsc2UgaWYgKHggPCBudW1iZXJfdG9fZ3Vlc3MpewogICAgICBwcmludChwYXN0ZSgiVG9vIHNtYWxsLiBZb3UndmUgaGFkIiwgbnVtYmVyX29mX2d1ZXNzZXMsICJndWVzc2VzLiIpKQogICAgICB9CiAgICAgIG51bWJlcl9vZl9ndWVzc2VzIDwtIG51bWJlcl9vZl9ndWVzc2VzICsgMQogICAgICB4IDwtIHJlYWRsaW5lKCJUcnkgYWdhaW4gPiAiKQogICAgfQogIH0KICBpZiAoeCA9PSBudW1iZXJfdG9fZ3Vlc3MpewogICAgcHJpbnQocGFzdGUoIkNvbmdyYXR1bGF0aW9ucyEgWW91IHRvb2siLCBudW1iZXJfb2ZfZ3Vlc3NlcywgImd1ZXNzZXMuIikpCiAgfQp9Cmd1ZXNzaW5nX2dhbWUoMjY5KQpgYGAKCgoKCgoKCgoKCgoKCgoK</div>
 
 
 
