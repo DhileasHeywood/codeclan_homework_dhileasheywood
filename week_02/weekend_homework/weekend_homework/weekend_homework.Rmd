@@ -58,3 +58,33 @@ feedbacks_df <- dbGetQuery(db_connect,
                            "SELECT * FROM feedbacks")
 ```
 
+```{r}
+dbGetQuery(db_connect, 
+           "SELECT e.id, e.first_name, e.last_name, f.date
+           FROM employees AS e INNER JOIN feedbacks AS f
+           ON e.id = f.employee_id
+           ORDER BY f.date DESC")
+```
+
+```{r}
+dbGetQuery(db_connect, 
+           "SELECT COUNT(e.first_name), t.name AS team_name
+           FROM employees AS e INNER JOIN teams AS t
+           ON e.team_id = t.id
+           WHERE first_name LIKE '_'
+           GROUP BY t.name")
+```
+
+
+sentiment analysis
+```{r}
+
+```
+
+
+
+
+```{r}
+#dbDisconnect(db_connect)
+```
+
