@@ -1,0 +1,60 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+
+```{r}
+library(keyring)
+library(RPostgreSQL)
+
+keyring_unlock("local")
+username <- key_get(service = "postgresql_username", keyring = "local")
+password <- key_get(service = "postgresql_password", keyring = "local")
+keyring_lock("local")
+
+db_connect <- dbConnect(drv = PostgreSQL(max.con = 1), user = username, password = password, dbname = "acme_employees", host = "localhost")
+
+rm(username, password)
+```
+
+```{r}
+employees_df <- dbGetQuery(db_connect, 
+                           "SELECT *
+                           FROM employees")
+employees_df
+```
+
+```{r}
+dbGetQuery(db_connect, 
+           "SELECT *, CONCAT(first_name, ' ', last_name) AS full_name
+           FROM employees")
+```
+
+```{r}
+dbGetQuery(db_connect, 
+           "SELECT e.id, e.first_name, e.last_name, e.email, t.name AS team_name
+           FROM employees AS e INNER JOIN teams AS t
+           ON e.team_id = t.id")
+```
+
+```{r}
+dbGetQuery(db_connect, 
+           "SELECT COUNT(e.*), t.name AS team_name
+           FROM teams AS t LEFT JOIN employees AS e
+           ON t.id = e.team_id
+           GROUP BY t.name")
+```
+
+```{r}
+dbGetQuery(db_connect, 
+           "SELECT * 
+           FROM employees
+           WHERE email = '%@%' OR email IS NOT NULL")
+```
+
+```{r}
+feedbacks_df <- dbGetQuery(db_connect, 
+                           "SELECT * FROM feedbacks")
+```
+
