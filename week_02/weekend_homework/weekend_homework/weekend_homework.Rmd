@@ -78,7 +78,40 @@ dbGetQuery(db_connect,
 
 sentiment analysis
 ```{r}
+positive_words <- c("great", "good", "happy", "content", "fulfilled", "fulfilled", "positive", "positives", "cheerful", "nice", "ambition", "ambitions", "ambitious", "friendly", "progress", "joy", "fast", "achieve", "achieving", "achievements", "best", "better",  "unlimited", "pros", "competitive", "opportunity", "advancement", "friendly", "smart", "interesting", "challenging", "grow", "caring", "balance", "helpful")
 
+
+negative_words <- c("worse", "worsening", "worst", "slow", "sluggish", "impatient", "unfulfilled", "unfulfilling", "negative", "bad", "limited", "limit", "limitations", "cons", "frustrated", "frustrating", "frustration", "dull", "boring", "politics", "political", "ignore", "ignored", "ignoring", "sad", "depressed", "depressing", "nasty", "stress", "stresses", "stressed", "horrid", "horrible", "terrible", "deadline", "deadlines", "uncaring", "remote")
+```
+
+```{r}
+clean_message <- function(message){
+  lowered <- tolower(message)
+  punct <- gsub(pattern = ".", replacement = "", x = lowered, fixed = TRUE)
+  punct <- gsub(pattern = ",", replacement = "", x = punct, fixed = TRUE)
+  punct <- gsub(pattern = "!", replacement = "", x = punct, fixed = TRUE)
+  punct <- gsub(pattern = "'", replacement = "", x = punct, fixed = TRUE)
+  punct <- gsub(pattern = "?", replacement = "", x = punct, fixed = TRUE)
+  punct <- gsub(pattern = ":", replacement = "", x = punct, fixed = TRUE)
+  punct <- gsub(pattern = ";", replacement = "", x = punct, fixed = TRUE)
+  return(punct)
+}
+
+clean_message("Good company, competitive salaries, nice colleagues, good location, but the food in the canteen is just terrible!")
+
+#to do: start each comment at 0. for every positive word, increase its score by 1. for every negative word, decrease its score by 1. at the end, its score will be its positivity.
+
+sentiment_scoring <- function(comment){
+  for (words in comment){
+    score <- 0
+    
+    print(score)
+  }
+}
+```
+
+```{r}
+sentiment_scoring("good company competitive salaries nice colleagues good location but the food in the canteen is just terrible")
 ```
 
 
