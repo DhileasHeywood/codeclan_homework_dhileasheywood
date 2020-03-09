@@ -1,0 +1,72 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+```{r}
+library(tidyverse)
+```
+
+```{r}
+drinks_content <- read_csv("data/starbucks_drinkMenu_expanded.csv")
+```
+
+```{r}
+head(drinks_content)
+tail(drinks_content)
+```
+
+```{r}
+dim(drinks_content)
+```
+Calculating summary statistics to check the mean, the variance, and the normality of the Calories variable. 
+
+Question 3
+```{r}
+summary(drinks_content$Calories)
+```
+mean of the Calories variable is 193.9, and the median is 185.0. Considering the quartiles, this is not extremely far off. 
+```{r}
+var(drinks_content$Calories)
+```
+The variance of the Calories variable is 10580.86. This is *huge*.
+
+I'm not sure what the normality means, and google is not being helpful. 
+
+
+Checking if there are any outliers in the Calories variable by creating a boxplot.
+
+```{r}
+calories_boxplot <- boxplot(drinks_content$Calories)
+```
+There is one outlier in the Calories data.
+
+Getting the actual values of the outlier
+
+```{r}
+outliers <- boxplot(drinks_content$Calories, plot = FALSE)$out
+drinks_content[which(drinks_content$Calories %in% outliers), ]
+```
+
+I'm removing the outlier from the data for a few reasons. The first is that there is only one. It's more likely to be a true outlier if there is only one, rather than if there are lots, when it is more justified to interpret it as a trend. The second reason is that the difference between the outlier and the next highest value is more than 10% of the next highest value. Removing the outlier would significantly affect the variance. 
+
+```{r}
+drinks_content_clean <- drinks_content[-which(drinks_content$Calories %in% outliers), ]
+drinks_content_clean
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

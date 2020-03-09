@@ -43,14 +43,15 @@ dbGetQuery(db_connect,
            "SELECT COUNT(e.*), t.name AS team_name
            FROM teams AS t LEFT JOIN employees AS e
            ON t.id = e.team_id
-           GROUP BY t.name")
+           GROUP BY t.name
+           ORDER BY COUNT(e.*) DESC")
 ```
 
 ```{r}
 dbGetQuery(db_connect, 
            "SELECT * 
            FROM employees
-           WHERE email = '%@%' OR email IS NOT NULL")
+           WHERE email NOT LIKE '%@%' OR email IS NULL")
 ```
 
 ```{r}
@@ -87,13 +88,7 @@ negative_words <- c("worse", "worsening", "worst", "slow", "sluggish", "impatien
 ```{r}
 clean_message <- function(message){
   lowered <- tolower(message)
-  punct <- gsub(pattern = ".", replacement = "", x = lowered, fixed = TRUE)
-  punct <- gsub(pattern = ",", replacement = "", x = punct, fixed = TRUE)
-  punct <- gsub(pattern = "!", replacement = "", x = punct, fixed = TRUE)
-  punct <- gsub(pattern = "'", replacement = "", x = punct, fixed = TRUE)
-  punct <- gsub(pattern = "?", replacement = "", x = punct, fixed = TRUE)
-  punct <- gsub(pattern = ":", replacement = "", x = punct, fixed = TRUE)
-  punct <- gsub(pattern = ";", replacement = "", x = punct, fixed = TRUE)
+  punct <- gsub(pattern = "[^[:alnum:][:space:]]", replacement = "", x = lowered)
   return(punct)
 }
 
@@ -109,9 +104,25 @@ sentiment_scoring <- function(comment){
   }
 }
 ```
+```{r}
+score_message <- function(message, positive_words, negative_words){
+  message_words <- unlist(strsplit(message, split = " ", fixed = TRUE))
+  message_score <- 0
+  
+  for (word in positive_words){
+    message_score <- message_score + sum(message_words == word)
+  }
+  
+  for (word in negative_words){
+    message_score <- message_score - sum(message_words == word)
+  }
+  
+  return(message_score)
+}
+```
 
 ```{r}
-sentiment_scoring("good company competitive salaries nice colleagues good location but the food in the canteen is just terrible")
+score_message("good company competitive salaries nice colleagues good location but the food in the canteen is just terrible", positive_words, negative_words)
 ```
 
 
