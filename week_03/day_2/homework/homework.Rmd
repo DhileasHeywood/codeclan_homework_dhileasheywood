@@ -3,3 +3,25 @@ title: "R Notebook"
 output: html_notebook
 ---
 
+```{r}
+library(tidyverse)
+library(janitor)
+```
+
+```{r}
+women_in_gov <- read_csv("data/women_in_gov.csv", skip = 4)
+```
+
+```{r}
+women_in_gov <- clean_names(women_in_gov)
+```
+
+```{r}
+unique(women_in_gov$x1990)
+```
+all values in the columns are the same, so removing the columns. Also removing all years from 1960-1989 for the same reason 
+```{r}
+women_in_gov_recent <- women_in_gov %>% 
+  select(-(indicator_name:x1989))
+```
+
