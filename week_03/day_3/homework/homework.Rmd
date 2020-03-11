@@ -3,3 +3,81 @@ title: "R Notebook"
 output: html_notebook
 ---
 
+```{r}
+library(tidyverse)
+library(beepr)
+```
+
+```{r}
+code_clan_tweets <- read_csv("data/code_clan_tweets.csv")
+```
+
+```{r}
+dim(code_clan_tweets)
+names(code_clan_tweets)
+```
+```{r}
+boxplot(code_clan_tweets$favorite_count)
+```
+There are outliers, but it's likely that a few tweets got more attention than others. For that reason, I'm not going to exclude the results and will perform all analysis on the whole dataset. 
+
+```{r}
+code_clan_tweets %>% 
+  filter(is_quote == FALSE) %>% 
+  summarise(sum(favorite_count))
+```
+
+```{r}
+code_clan_tweets %>% 
+  filter(is_quote == FALSE) %>% 
+  group_by(source) %>% 
+  summarise(mean(favorite_count))
+```
+
+```{r}
+code_clan_tweets %>%
+  mutate(media_type = replace_na(media_type, "text")) %>% 
+  group_by(media_type) %>% 
+  summarise(sum(favorite_count))
+```
+
+```{r}
+code_clan_tweets_latin1 <- code_clan_tweets
+Encoding(code_clan_tweets_latin1$text) <- "latin1"
+
+code_clan_tweets_latin1 %>% 
+  mutate(tweet_length = nchar(text)) %>% 
+  summarise(mean(tweet_length))
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
