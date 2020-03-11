@@ -17,11 +17,54 @@ women_in_gov <- clean_names(women_in_gov)
 ```
 
 ```{r}
-unique(women_in_gov$x1990)
+unique(women_in_gov$x64)
 ```
-all values in the columns are the same, so removing the columns. Also removing all years from 1960-1989 for the same reason 
+all values in the columns are the same, so removing the columns.
 ```{r}
 women_in_gov_recent <- women_in_gov %>% 
-  select(-(indicator_name:x1989))
+  select(-c(indicator_name, indicator_code, x64))
 ```
+
+```{r}
+women_in_gov_long <- women_in_gov_recent %>% 
+  pivot_longer(cols = x1960:x2018, 
+               names_to = "year",
+               values_to = "prop_women"
+               )
+```
+
+```{r}
+sum(is.na(women_in_gov_long$prop_women))
+women_in_gov_long %>% 
+  group_by(prop_women) %>% 
+  summarise(women_count = n())
+```
+```{r}
+15576 - 10466
+```
+There are 5110 values in the prop_women column that are not NA. There are more NAs than not NAs. Most of these NAs are from before 1990. I don't want to start replacing them with a mean or a median because those are not representative of what was happening then. Well, they could be, but we have no way of knowing or checking. And the trend is going up from having had a look at the website. So I shall not be replacing any of the NAs. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
