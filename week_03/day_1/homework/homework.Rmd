@@ -90,6 +90,7 @@ drinks_grouped <- clean_drinks_content_classic_espresso %>%
   group_by(Beverage_prep) %>%
   summarise(mean_cal = mean(Calories)) %>%
   arrange(desc(mean_cal))
+drinks_grouped
   
 ```
 now doing the last ~4 parts in one pipe
@@ -113,13 +114,14 @@ The caffe mocha without whipped cream is the classic esspresso drink with the mo
 ```{r}
 above_average_calories <- drinks_grouped %>%
   filter(Calories > mean(Calories))
+above_average_calories
 ```
 
 
 Using 
 ```{r}
 drinks_distribution <- drinks_grouped %>%
-  filter(cume_dist(Calories) > 0.75)
+  filter(cume_dist(desc(Calories)) < 0.25)
 drinks_distribution
 ```
 
