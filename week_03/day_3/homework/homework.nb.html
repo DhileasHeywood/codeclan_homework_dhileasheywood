@@ -1906,8 +1906,60 @@ code_clan_tweets_latin1 %&gt;%
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY29kZV9jbGFuX2luZm8gPC0gcmVhZF9jc3YoXCJkYXRhL2NvZGVfY2xhbl9pbmZvLmNzdlwiKVxuYGBgIn0= -->
+<pre class="r"><code>code_clan_info &lt;- read_csv(&quot;data/code_clan_info.csv&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiUGFyc2VkIHdpdGggY29sdW1uIHNwZWNpZmljYXRpb246XG5jb2xzKFxuICB0d2VldF9pZCA9IFx1MDAxYlszMm1jb2xfZG91YmxlKClcdTAwMWJbMzltLFxuICBzdGF0dXNfdXJsID0gXHUwMDFiWzMxbWNvbF9jaGFyYWN0ZXIoKVx1MDAxYlszOW0sXG4gIG5hbWUgPSBcdTAwMWJbMzFtY29sX2NoYXJhY3RlcigpXHUwMDFiWzM5bSxcbiAgbG9jYXRpb24gPSBcdTAwMWJbMzFtY29sX2NoYXJhY3RlcigpXHUwMDFiWzM5bSxcbiAgZGVzY3JpcHRpb24gPSBcdTAwMWJbMzFtY29sX2NoYXJhY3RlcigpXHUwMDFiWzM5bSxcbiAgdXJsID0gXHUwMDFiWzMxbWNvbF9jaGFyYWN0ZXIoKVx1MDAxYlszOW0sXG4gIHByb3RlY3RlZCA9IFx1MDAxYlszM21jb2xfbG9naWNhbCgpXHUwMDFiWzM5bSxcbiAgZm9sbG93ZXJzX2NvdW50ID0gXHUwMDFiWzMybWNvbF9kb3VibGUoKVx1MDAxYlszOW0sXG4gIGZyaWVuZHNfY291bnQgPSBcdTAwMWJbMzJtY29sX2RvdWJsZSgpXHUwMDFiWzM5bSxcbiAgbGlzdGVkX2NvdW50ID0gXHUwMDFiWzMybWNvbF9kb3VibGUoKVx1MDAxYlszOW0sXG4gIHN0YXR1c2VzX2NvdW50ID0gXHUwMDFiWzMybWNvbF9kb3VibGUoKVx1MDAxYlszOW0sXG4gIGZhdm91cml0ZXNfY291bnQgPSBcdTAwMWJbMzJtY29sX2RvdWJsZSgpXHUwMDFiWzM5bSxcbiAgYWNjb3VudF9jcmVhdGVkX2F0ID0gXHUwMDFiWzMxbWNvbF9jaGFyYWN0ZXIoKVx1MDAxYlszOW0sXG4gIHZlcmlmaWVkID0gXHUwMDFiWzMzbWNvbF9sb2dpY2FsKClcdTAwMWJbMzltLFxuICBwcm9maWxlX3VybCA9IFx1MDAxYlszMW1jb2xfY2hhcmFjdGVyKClcdTAwMWJbMzltXG4pXG4ifQ== -->
+<pre><code>Parsed with column specification:
+cols(
+  tweet_id = [32mcol_double()[39m,
+  status_url = [31mcol_character()[39m,
+  name = [31mcol_character()[39m,
+  location = [31mcol_character()[39m,
+  description = [31mcol_character()[39m,
+  url = [31mcol_character()[39m,
+  protected = [33mcol_logical()[39m,
+  followers_count = [32mcol_double()[39m,
+  friends_count = [32mcol_double()[39m,
+  listed_count = [32mcol_double()[39m,
+  statuses_count = [32mcol_double()[39m,
+  favourites_count = [32mcol_double()[39m,
+  account_created_at = [31mcol_character()[39m,
+  verified = [33mcol_logical()[39m,
+  profile_url = [31mcol_character()[39m
+)</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>I’m doing a left join here because I want to include all of the tweets, and all of the matching status URLs, I don’t want to include a status URL for a tweet that isn’t there. I’m also awware that both tibbles have the same number of rows.</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY29kZV9jbGFuX3R3ZWV0c19zdGF0dXMgPC0gbGVmdF9qb2luKGNvZGVfY2xhbl90d2VldHMsIGNvZGVfY2xhbl9pbmZvLCBieSA9IFwidHdlZXRfaWRcIilcblxuY29kZV9jbGFuX3R3ZWV0c19zdGF0dXMgPC0gY29kZV9jbGFuX3R3ZWV0c19zdGF0dXMgJT4lIFxuICBzZWxlY3QodHdlZXRfaWQ6c3RhdHVzX3VybClcbmBgYCJ9 -->
+<pre class="r"><code>code_clan_tweets_status &lt;- left_join(code_clan_tweets, code_clan_info, by = &quot;tweet_id&quot;)
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiUiBOb3RlYm9vayIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQoKYGBge3J9CmxpYnJhcnkodGlkeXZlcnNlKQpsaWJyYXJ5KGJlZXByKQpgYGAKCmBgYHtyfQpjb2RlX2NsYW5fdHdlZXRzIDwtIHJlYWRfY3N2KCJkYXRhL2NvZGVfY2xhbl90d2VldHMuY3N2IikKYGBgCgpgYGB7cn0KZGltKGNvZGVfY2xhbl90d2VldHMpCm5hbWVzKGNvZGVfY2xhbl90d2VldHMpCmBgYApgYGB7cn0KYm94cGxvdChjb2RlX2NsYW5fdHdlZXRzJGZhdm9yaXRlX2NvdW50KQpgYGAKVGhlcmUgYXJlIG91dGxpZXJzLCBidXQgaXQncyBsaWtlbHkgdGhhdCBhIGZldyB0d2VldHMgZ290IG1vcmUgYXR0ZW50aW9uIHRoYW4gb3RoZXJzLiBGb3IgdGhhdCByZWFzb24sIEknbSBub3QgZ29pbmcgdG8gZXhjbHVkZSB0aGUgcmVzdWx0cyBhbmQgd2lsbCBwZXJmb3JtIGFsbCBhbmFseXNpcyBvbiB0aGUgd2hvbGUgZGF0YXNldC4gCgpgYGB7cn0KY29kZV9jbGFuX3R3ZWV0cyAlPiUgCiAgZmlsdGVyKGlzX3F1b3RlID09IEZBTFNFKSAlPiUgCiAgc3VtbWFyaXNlKHN1bShmYXZvcml0ZV9jb3VudCkpCmBgYAoKYGBge3J9CmNvZGVfY2xhbl90d2VldHMgJT4lIAogIGZpbHRlcihpc19xdW90ZSA9PSBGQUxTRSkgJT4lIAogIGdyb3VwX2J5KHNvdXJjZSkgJT4lIAogIHN1bW1hcmlzZShtZWFuKGZhdm9yaXRlX2NvdW50KSkKYGBgCgpgYGB7cn0KY29kZV9jbGFuX3R3ZWV0cyAlPiUKICBtdXRhdGUobWVkaWFfdHlwZSA9IHJlcGxhY2VfbmEobWVkaWFfdHlwZSwgInRleHQiKSkgJT4lIAogIGdyb3VwX2J5KG1lZGlhX3R5cGUpICU+JSAKICBzdW1tYXJpc2Uoc3VtKGZhdm9yaXRlX2NvdW50KSkKYGBgCgpgYGB7cn0KY29kZV9jbGFuX3R3ZWV0c19sYXRpbjEgPC0gY29kZV9jbGFuX3R3ZWV0cwpFbmNvZGluZyhjb2RlX2NsYW5fdHdlZXRzX2xhdGluMSR0ZXh0KSA8LSAibGF0aW4xIgoKY29kZV9jbGFuX3R3ZWV0c19sYXRpbjEgJT4lIAogIG11dGF0ZSh0d2VldF9sZW5ndGggPSBuY2hhcih0ZXh0KSkgJT4lIAogIHN1bW1hcmlzZShtZWFuKHR3ZWV0X2xlbmd0aCkpCmBgYAoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCg==</div>
+code_clan_tweets_status &lt;- code_clan_tweets_status %&gt;% 
+  select(tweet_id:status_url)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY29kZWNsYW5faGFzaHRhZ3MgPC0gY29kZV9jbGFuX3R3ZWV0c19zdGF0dXMgJT4lIFxuICBzZWxlY3QodHdlZXRfaWQsIGhhc2h0YWdzKSAlPiUgXG4gIG11dGF0ZShoYXNodGFncyA9IHN0cl90b19sb3dlcihoYXNodGFncykpICU+JSBcbiAgZmlsdGVyKCFpcy5uYShoYXNodGFncykpXG5gYGAifQ== -->
+<pre class="r"><code>codeclan_hashtags &lt;- code_clan_tweets_status %&gt;% 
+  select(tweet_id, hashtags) %&gt;% 
+  mutate(hashtags = str_to_lower(hashtags)) %&gt;% 
+  filter(!is.na(hashtags))</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiUiBOb3RlYm9vayIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQoKYGBge3J9CmxpYnJhcnkodGlkeXZlcnNlKQpsaWJyYXJ5KGJlZXByKQpgYGAKCmBgYHtyfQpjb2RlX2NsYW5fdHdlZXRzIDwtIHJlYWRfY3N2KCJkYXRhL2NvZGVfY2xhbl90d2VldHMuY3N2IikKYGBgCgpgYGB7cn0KZGltKGNvZGVfY2xhbl90d2VldHMpCm5hbWVzKGNvZGVfY2xhbl90d2VldHMpCmBgYApgYGB7cn0KYm94cGxvdChjb2RlX2NsYW5fdHdlZXRzJGZhdm9yaXRlX2NvdW50KQpgYGAKVGhlcmUgYXJlIG91dGxpZXJzLCBidXQgaXQncyBsaWtlbHkgdGhhdCBhIGZldyB0d2VldHMgZ290IG1vcmUgYXR0ZW50aW9uIHRoYW4gb3RoZXJzLiBGb3IgdGhhdCByZWFzb24sIEknbSBub3QgZ29pbmcgdG8gZXhjbHVkZSB0aGUgcmVzdWx0cyBhbmQgd2lsbCBwZXJmb3JtIGFsbCBhbmFseXNpcyBvbiB0aGUgd2hvbGUgZGF0YXNldC4gCgpgYGB7cn0KY29kZV9jbGFuX3R3ZWV0cyAlPiUgCiAgZmlsdGVyKGlzX3F1b3RlID09IEZBTFNFKSAlPiUgCiAgc3VtbWFyaXNlKHN1bShmYXZvcml0ZV9jb3VudCkpCmBgYAoKYGBge3J9CmNvZGVfY2xhbl90d2VldHMgJT4lIAogIGZpbHRlcihpc19xdW90ZSA9PSBGQUxTRSkgJT4lIAogIGdyb3VwX2J5KHNvdXJjZSkgJT4lIAogIHN1bW1hcmlzZShtZWFuKGZhdm9yaXRlX2NvdW50KSkKYGBgCgpgYGB7cn0KY29kZV9jbGFuX3R3ZWV0cyAlPiUKICBtdXRhdGUobWVkaWFfdHlwZSA9IHJlcGxhY2VfbmEobWVkaWFfdHlwZSwgInRleHQiKSkgJT4lIAogIGdyb3VwX2J5KG1lZGlhX3R5cGUpICU+JSAKICBzdW1tYXJpc2Uoc3VtKGZhdm9yaXRlX2NvdW50KSkKYGBgCgpgYGB7cn0KY29kZV9jbGFuX3R3ZWV0c19sYXRpbjEgPC0gY29kZV9jbGFuX3R3ZWV0cwpFbmNvZGluZyhjb2RlX2NsYW5fdHdlZXRzX2xhdGluMSR0ZXh0KSA8LSAibGF0aW4xIgoKY29kZV9jbGFuX3R3ZWV0c19sYXRpbjEgJT4lIAogIG11dGF0ZSh0d2VldF9sZW5ndGggPSBuY2hhcih0ZXh0KSkgJT4lIAogIHN1bW1hcmlzZShtZWFuKHR3ZWV0X2xlbmd0aCkpCmBgYAoKCmBgYHtyfQpjb2RlX2NsYW5faW5mbyA8LSByZWFkX2NzdigiZGF0YS9jb2RlX2NsYW5faW5mby5jc3YiKQpgYGAKSSdtIGRvaW5nIGEgbGVmdCBqb2luIGhlcmUgYmVjYXVzZSBJIHdhbnQgdG8gaW5jbHVkZSBhbGwgb2YgdGhlIHR3ZWV0cywgYW5kIGFsbCBvZiB0aGUgbWF0Y2hpbmcgc3RhdHVzIFVSTHMsIEkgZG9uJ3Qgd2FudCB0byBpbmNsdWRlIGEgc3RhdHVzIFVSTCBmb3IgYSB0d2VldCB0aGF0IGlzbid0IHRoZXJlLiBJJ20gYWxzbyBhd3dhcmUgdGhhdCBib3RoIHRpYmJsZXMgaGF2ZSB0aGUgc2FtZSBudW1iZXIgb2Ygcm93cy4gCmBgYHtyfQpjb2RlX2NsYW5fdHdlZXRzX3N0YXR1cyA8LSBsZWZ0X2pvaW4oY29kZV9jbGFuX3R3ZWV0cywgY29kZV9jbGFuX2luZm8sIGJ5ID0gInR3ZWV0X2lkIikKCmNvZGVfY2xhbl90d2VldHNfc3RhdHVzIDwtIGNvZGVfY2xhbl90d2VldHNfc3RhdHVzICU+JSAKICBzZWxlY3QodHdlZXRfaWQ6c3RhdHVzX3VybCkKYGBgCgpgYGB7cn0KY29kZWNsYW5faGFzaHRhZ3MgPC0gY29kZV9jbGFuX3R3ZWV0c19zdGF0dXMgJT4lIAogIHNlbGVjdCh0d2VldF9pZCwgaGFzaHRhZ3MpICU+JSAKICBtdXRhdGUoaGFzaHRhZ3MgPSBzdHJfdG9fbG93ZXIoaGFzaHRhZ3MpKSAlPiUgCiAgZmlsdGVyKCFpcy5uYShoYXNodGFncykpCmBgYAoKYGBge3J9CgpgYGAKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCg==</div>
 
 
 

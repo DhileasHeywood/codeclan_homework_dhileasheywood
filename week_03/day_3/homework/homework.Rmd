@@ -51,8 +51,27 @@ code_clan_tweets_latin1 %>%
 ```
 
 
+```{r}
+code_clan_info <- read_csv("data/code_clan_info.csv")
+```
+I'm doing a left join here because I want to include all of the tweets, and all of the matching status URLs, I don't want to include a status URL for a tweet that isn't there. I'm also awware that both tibbles have the same number of rows. 
+```{r}
+code_clan_tweets_status <- left_join(code_clan_tweets, code_clan_info, by = "tweet_id")
 
+code_clan_tweets_status <- code_clan_tweets_status %>% 
+  select(tweet_id:status_url)
+```
 
+```{r}
+codeclan_hashtags <- code_clan_tweets_status %>% 
+  select(tweet_id, hashtags) %>% 
+  mutate(hashtags = str_to_lower(hashtags)) %>% 
+  filter(!is.na(hashtags))
+```
+
+```{r}
+
+```
 
 
 
