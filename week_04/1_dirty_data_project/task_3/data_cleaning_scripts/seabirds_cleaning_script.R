@@ -2,7 +2,7 @@ library(tidyverse)
 library(readxl)
 library(janitor)
 
-# Reading in the raw data. We only need two of the sheets, so that's all I'm reading in.
+# Reading in the raw data. We only need two of the sheets, so that's all I'm reading in. Using sheet name in case order changes.
 seabirds_ship_data_raw <- read_excel(here::here("raw_data/seabirds.xls"), sheet = "Ship data by record ID", guess_max = 12310)
 seabirds_bird_data_raw <- read_excel(here::here("raw_data/seabirds.xls"), sheet = "Bird data by record ID", guess_max = 49019)
 

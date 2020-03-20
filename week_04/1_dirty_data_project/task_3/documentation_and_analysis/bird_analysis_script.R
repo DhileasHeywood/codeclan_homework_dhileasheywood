@@ -36,7 +36,7 @@ clean_birds %>%
   summarise(number_of_species = length(species_abbreviation))
 
 # How many penguins were seen?
-penguins <- clean_birds %>% 
+clean_birds %>% 
   filter(str_detect(common_name, pattern = "penguin")) %>% 
   filter(!is.na(count)) %>% 
   summarise(number_of_penguins_seen = sum(count))

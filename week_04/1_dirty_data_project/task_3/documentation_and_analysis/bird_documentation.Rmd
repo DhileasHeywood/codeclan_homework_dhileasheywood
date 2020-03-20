@@ -1,0 +1,117 @@
+---
+title: "Dirty Data Project, Task 3"
+output: html_document
+---
+```{r include=FALSE, results='hide'}
+library(tidyverse)
+```
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Cleaning
+
+After loading in the files, I started off by looking first at the data, then at what analysis we were going to do.
+There were a lot of columns that had ambiguous titles, but there was nothing in the analysis that was going to need them. I couldn't rename them to something more sensible, because I couldn't ask the people that collected the data, so on this occasion, I dropped those columns. 
+
+```{r eval=FALSE, echo=TRUE}
+seabirds_bird_data_dropped <- seabirds_bird_data_raw %>% 
+  select(`RECORD ID`:AGE, SEX, COUNT) %>% 
+  clean_names() %>% 
+  rename(
+    common_name = species_common_name_taxon_age_sex_plumage_phase,
+    scientific_name = species_scientific_name_taxon_age_sex_plumage_phase
+  ) %>% 
+  mutate(
+    common_name = str_to_lower(common_name),
+    scientific_name = str_to_lower(scientific_name)
+  )
+```
+
+Whilst I was at it, I also renamed the two columns with scientific and common names. They were too long and confusing. I also put them in lower case for ease of analysis. 
+
+I found these columns difficult, because there are multiple bits of information in them.
+
+* Species name (common or scientific)
+* Taxon
+* Age
+* Sex
+* Plumage Phase
+
+Obviously this isn't tidy data. But not all columns had all of the information in them, and there was no separator. I tried to use regex to separate them out, but that proved to be much too complicated! On the advice of the instructors, I abandoned that for now, although I might come back to that if I get much better at regex!
+
+On that note, I moved on to the ship data, and gave it much the same treatement. I dropped columns that weren't needed and I couldn't make sense of, and I cleaned the column names. 
+
+I then joined the two tibbles together to get all the data in the same place.
+
+### Missing Values
+
+On the subject of missing values, I actually decided to leave them alone. In a dataset like this, it's highly plausible that the missing data is not an error, it is something that wasn't possible to observe. Without speaking to those that collected the data, it seems as though it was collected from a ship. It is completely reasonable that you can see a bird, but not be able to identify it, so you record an unidentified seabird. It's still a valid data point, but it doesn't have all of the information that a bird that lands on the boat might. 
+
+## Analysis
+
+When it came to analysing the data, thankfully, we already had questions to follow!
+
+```{r}
+clean_birds <- read_csv(here::here("clean_data/seabirds_clean.csv"), guess_max = 49019)
+```
+
+First, we were asked which bird had the most individual sightings.
+
+```{r}
+clean_birds %>% 
+  group_by(species_abbreviation) %>% 
+  mutate(species_count = n()) %>% 
+  select(common_name, scientific_name, species_abbreviation, species_count) %>% 
+  arrange(desc(species_count)) %>% 
+  head(n = 1)
+```
+
+Which bird had the highest total count?
+```{r}
+clean_birds %>% 
+  group_by(species_abbreviation) %>% 
+  mutate(total_count = sum(count)) %>% 
+  select(common_name, scientific_name, species_abbreviation, total_count) %>% 
+  arrange(desc(total_count)) %>% 
+  head(n = 1)
+```
+
+Which bird had the highest total count above a latitude of -30?
+
+```{r}
+clean_birds %>% 
+  filter(lat > -30) %>% 
+  group_by(species_abbreviation) %>% 
+  mutate(total_count = sum(count)) %>% 
+  select(common_name, scientific_name, species_abbreviation, total_count) %>% 
+  arrange(desc(total_count)) %>% 
+  head(n = 1)
+```
+
+How many different types of birds were only ever seen in groups of 1?
+
+```{r}
+clean_birds %>% 
+  group_by(species_abbreviation) %>% 
+  filter(count == 1) %>% 
+  summarise(sightings_of_1 = n()) %>%
+  summarise(number_of_species = length(species_abbreviation))
+```
+
+How many penguins were seen?
+
+```{r}
+clean_birds %>% 
+  filter(str_detect(common_name, pattern = "penguin")) %>% 
+  filter(!is.na(count)) %>% 
+  summarise(number_of_penguins_seen = sum(count))
+```
+
+
+
+
+
+
+
