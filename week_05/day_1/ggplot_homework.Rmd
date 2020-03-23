@@ -1,0 +1,114 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+1. 
+```{r}
+library(tidyverse)
+library(CodeClanData)
+```
+
+```{r}
+dim(backpack)
+head(backpack)
+```
+
+2.
+```{r}
+backpack %>% 
+  ggplot() +
+  geom_boxplot(aes(y = backpack_weight)) +
+  labs(
+    y = "Backpack Weight", 
+    title = "Boxplot of Backpack Weights"
+  )
+```
+This boxplot shows that most of the backpacks have a weight between ~20 and ~2. There are three outliers, and 50% of the weights are between 7 and 14 weight units (these are unspecified in the data)
+
+3.
+```{r}
+backpack %>% 
+  ggplot() +
+  geom_boxplot(aes(x = sex, y = backpack_weight, colour = sex))
+```
+This boxplot, split by gender, shows that there is a greater variation in the males backpacks. The median and upper quartile are both greater for males than females, as well as the maximum value. The minimum and lower quartile, however, are the same. 
+
+4. 
+```{r}
+backpack %>% 
+  ggplot() +
+  geom_point(aes(x = body_weight, y = backpack_weight)) +
+  labs(
+    x = "Body Weight", 
+    y = "Backpack Weight", 
+    title = "Graph Showing Body Weight vs Backpack Weight"
+  )
+```
+There doesn't appear to be much relationship between body weight and backpack weight in this data set. At a stretch, you could maybe claim that there's a positive correlation, but there would be a LOT of outliers, and it's a VERY loose relationship.
+
+5. 
+```{r}
+backpack %>% 
+  ggplot() +
+  geom_point(aes(x = body_weight, y = backpack_weight, colour = sex, shape = sex)) +
+  labs(
+    x = "Body Weight", 
+    y = "Backpack Weight", 
+    title = "Graph Showing Body Weight vs Backpack Weight for Male and Female"
+  )
+```
+This plot shows clearly that males tend to weigh more than females, and whilst the difference isn't as clear, their backpacks do tend to weigh more. There doesn't appear to be any more of a correlation for males or females, however. 
+
+6. 
+```{r}
+backpack %>% 
+  ggplot() +
+  geom_bar(aes(x = back_problems, fill = sex))
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+```{r}
+```
+
