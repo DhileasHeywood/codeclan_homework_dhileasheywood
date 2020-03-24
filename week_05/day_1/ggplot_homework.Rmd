@@ -15,6 +15,7 @@ head(backpack)
 
 2.
 ```{r}
+# a histogram would have been better here. It gives a more detailed view, and you can fit a distribution curve over it too. 
 backpack %>% 
   ggplot() +
   geom_boxplot(aes(y = backpack_weight)) +
@@ -64,7 +65,7 @@ This plot shows clearly that males tend to weigh more than females, and whilst t
 backpack %>%
   mutate(back_problems = as.logical(back_problems)) %>% 
   ggplot() +
-  geom_bar(aes(x = back_problems, fill = sex)) +
+  geom_bar(aes(x = back_problems, fill = sex), position = "dodge") +
   labs(
     x = "Back Problems",
     y = "Number of Students",

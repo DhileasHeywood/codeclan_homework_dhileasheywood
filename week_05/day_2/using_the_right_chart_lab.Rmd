@@ -1,0 +1,155 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+Part 1: Comparison
+
+```{r}
+library(tidyverse)
+library(CodeClanData)
+```
+
+```{r}
+head(late_deliveries)
+names(late_deliveries)
+dim(late_deliveries)
+```
+
+```{r}
+ggplot(late_deliveries) +
+  aes(x = date, y = late_deliveries) +
+  geom_col(col = "white")
+```
+
+```{r}
+head(recovery_times)
+dim(recovery_times)
+names(recovery_times)
+```
+
+```{r}
+recovery_times %>% 
+  mutate(prognosis = factor(prognosis, levels = c("Excellent", "Good", "Average", "Poor"))) %>% 
+  ggplot() +
+  aes(x = prognosis, y = recovery, fill = treatment_group) +
+  geom_col(position = "dodge") +
+  scale_fill_hue(name = "Treatment Group", h = c(180, 360), c = 100, l = 60)
+```
+```{r}
+dim(fitness_levels)
+names(fitness_levels)
+head(fitness_levels)
+fitness_levels
+```
+```{r}
+#This is pretty but not particularly useful.
+fitness_levels %>% 
+  mutate(age = as.integer(age)) %>% 
+  ggplot() +
+  aes(x = fitness_score, fill = child) +
+  geom_histogram() 
+  
+```
+```{r}
+fitness_levels %>% 
+  mutate(age = as.integer(age)) %>% 
+  ggplot() +
+  aes(x = child, y = fitness_score) +
+  geom_col() +
+  facet_wrap(~ age, ncol = 3) +
+  labs(
+    x = "Child", 
+    y = "Fitness Score", 
+    title = "Fitness Score by Age", 
+    subtitle = "Histograms of the distribution of fitness for each children, facetted by age."
+  )
+
+```
+
+```{r}
+dim(blood_pressure)
+names(blood_pressure)
+head(blood_pressure)
+```
+```{r}
+ggplot(blood_pressure) +
+  aes(x = daily_saturated_fat_intake_mg, y = systolic_blood_pressure_mm_hg) +
+  geom_point() +
+  geom_smooth()
+```
+
+```{r}
+dim(car_use)
+names(car_use)
+head(car_use)
+```
+```{r}
+ggplot(car_use) +
+  aes(x = population, y = air_so2_concentration_ppm) +
+  geom_point() +
+  geom_smooth(colour = "black")
+```
+
+```{r}
+dim(d20_outcomes)
+names(d20_outcomes)
+```
+```{r}
+d20_outcomes %>% 
+  ggplot() +
+  aes(x = outcome) +
+  geom_histogram(col = "white", bins = 20) +
+  scale_x_continuous(breaks = 1:20)
+```
+
+```{r}
+head(d20x5_outcomes)
+```
+
+```{r}
+d20x5_outcomes %>% 
+  ggplot() +
+  aes(x = outcome) +
+  geom_histogram(col = "white", bins = 20) +
+  scale_x_continuous(breaks = c(10, 20, 30, 40, 50, 60, 70, 80, 90, 100))
+
+```
+
+
+```{r}
+dim(pension_surplus)
+names(pension_surplus)
+head(pension_surplus)
+```
+```{r}
+ggplot(pension_surplus) +
+  aes(x = item, y = balance) +
+  geom_col()
+```
+
+```{r}
+pension_liabilities
+```
+```{r}
+ggplot(pension_liabilities) +
+  aes(x = year, y = liability_millions, fill = liability_type) +
+  geom_col(position = "dodge")
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
