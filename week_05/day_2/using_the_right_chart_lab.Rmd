@@ -86,7 +86,7 @@ head(car_use)
 ```
 ```{r}
 ggplot(car_use) +
-  aes(x = population, y = air_so2_concentration_ppm) +
+  aes(x = population, y = air_so2_concentration_ppm, colour = car_use_percent) +
   geom_point() +
   geom_smooth(colour = "black")
 ```
@@ -123,6 +123,8 @@ names(pension_surplus)
 head(pension_surplus)
 ```
 ```{r}
+pension_surplus %>% 
+  mutate("balance_>_0" = balance > 0)
 ggplot(pension_surplus) +
   aes(x = item, y = balance) +
   geom_col()
