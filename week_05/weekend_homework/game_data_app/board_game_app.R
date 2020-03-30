@@ -40,7 +40,7 @@ ui <- fluidPage(
                 column(6, 
                        sliderInput(
                            "overview_year",
-                           tags$h3("Which years?"),
+                           tags$h3("Which years of game release?"),
                            min = 1800,
                            max = 2017, 
                            value = c(1950, 2017),
@@ -65,20 +65,29 @@ ui <- fluidPage(
         tabPanel("Rating",
                  
                 fluidRow(
-                    column(12,
-                           selectInput(
+                    column(6,
+                            selectInput(
                                "rating_graph",
-                               label = "Rating vs:", 
+                               label = "Title of graph", 
                                choices = c(
-                                    "Maximum play time" = "max_time",
-                                    "Minimum play time" = "min_time",
-                                    "Maximum number of players" = "max_players",
-                                    "Minimum number of players" = "min_players", 
-                                    "Number of votes received" = "num_votes"
+                                    "Rating vs Maximum play time" = "max_time",
+                                    "Rating vs Minimum play time" = "min_time",
+                                    "Rating vs Maximum number of players" = "max_players",
+                                    "Rating vs Minimum number of players" = "min_players", 
+                                    "Rating vs Number of votes received" = "num_votes"
                                ),
                                selected = "num_votes"
                            )
                         
+                        ),
+                    column(6,
+                            sliderInput(
+                                "rank_range",
+                                label = "Range of game rank", 
+                                min = 1,
+                                max = 4999,
+                                value = c(1, 500)
+                            )
                         )
                 
                     ),
