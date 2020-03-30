@@ -70,11 +70,11 @@ ui <- fluidPage(
                                "rating_graph",
                                label = "Rating vs:", 
                                choices = c(
-                                    "max_time",
-                                    "min_time",
-                                    "max_players",
-                                    "min_players", 
-                                    "num_votes"
+                                    "Maximum play time" = "max_time",
+                                    "Minimum play time" = "min_time",
+                                    "Maximum number of players" = "max_players",
+                                    "Minimum number of players" = "min_players", 
+                                    "Number of votes received" = "num_votes"
                                ),
                                selected = "num_votes"
                            )
@@ -95,7 +95,7 @@ ui <- fluidPage(
 
 
 # Define server logic required to draw many graphs
-server <- function(input, output) {
+server <- function(input, output){
     
     # I'm putting in a reactive data frame, so that I can filter the data using the sliders.
     filtered_overview_category <- reactive({
@@ -110,7 +110,7 @@ server <- function(input, output) {
     # hover over a bar, and see what the height of it is, and which category it relates to. 
     output$overview_category_plot <- renderPlotly({
         
-        plot_ly(data = filtered_overview_category(), x = ~category, y = ~category_count, type = "bar")
+        plot_ly(data = filtered_overview_category(), x = ~category, y = ~category_count, type = "bar", color = "#31434F", colors = "#31434F")
         
     })
     
@@ -128,13 +128,18 @@ server <- function(input, output) {
     # years. Again, I wanted allow users to be able to hover over bars to see their year and 
     # height.
     output$overview_year_plot <- renderPlotly({
-        plot_ly(data = filtered_overview_year(), x = ~year, y = ~year_count, type = "bar")
+        plot_ly(data = filtered_overview_year(), x = ~year, y = ~year_count, type = "bar", color = "#31434F", colors = "#31434F")
     })
     
+    
+    # I can't get this to work! I can't figure out why. It's supposed to show rank vs a few things
+    # to give the ficticious game designers an idea of what's popular in a game. Is there a trend 
+    # between play time or number of players and rank? Is there a trend between rank and the number
+    # of votes received? 
     output$rating_plot <- renderPlot({
-        browser()
         ggplot(board_game_data) +
-            geom_point(aes(x = input$rating_graph, y = rank, colour = geek_rating)) +
+            aes(x = input$rating_graph, y = rank, colour = geek_rating) +
+            geom_point() +
             scale_y_reverse() 
     })
     

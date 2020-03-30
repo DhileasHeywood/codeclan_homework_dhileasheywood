@@ -1,0 +1,27 @@
+---
+title: "board_game_app_documentation"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Board Game Data Shiny App
+
+We were told that we didn't have to use the dataset specified in the homework, so I decided to have a look on Kaggle. I found this board game dataset, which was really interesting. I am a big fan of board games, and (used to) regularly go to a local board game cafe to play.
+
+### The Data
+
+The data is taken from BoardGameGeek.com, an American website that sells and ranks board game data. They ask customers to vote for games that they've played, and then rank the games according to the votes. They also input data for the minimum and maximum number of players,the minimum and maximum estimated play time, the year the game was released, and the categories and mechanics of the games. 
+
+I had to do a bit of cleaning to get the data in a helpful format, but overall it was already in a pretty tidy state, so thank you to Board Game Geek!!
+
+### The App
+
+I decided to set up a scenario for myself to give a clearer idea of what I was going to do. After a bit of messing around with the data, I pretended that I was working for a board game design company that wanted to look at successful games to see whether there was any correlation between different variables and the game's rank, so that they could create a new popular game.
+
+I've managed to get a bit of the way through what I wanted to make, but I'm having some technical issues at the moment. I intend to keep going with the app until it's what I was designing it to be!
+
+
+
