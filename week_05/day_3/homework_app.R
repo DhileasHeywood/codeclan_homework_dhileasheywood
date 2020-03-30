@@ -38,14 +38,20 @@ ui <- fluidPage(
                     radioButtons(
                         "season_2",
                         tags$h4(tags$i("Which season?")),
-                        choices = "some choices here"
+                        choices = c("Summer", "Winter")
+                    ),
+                    selectInput(
+                        "country",
+                        tags$h4(tags$i("Which country?")),
+                        choices = "some choices"
                     )
-                )
-            ),
-            mainPanel(
-                "some text"
-            )
+                ),
             
+               mainPanel = (
+                   "Some text"
+               ) 
+           
+             )
         )
     )
 )   
