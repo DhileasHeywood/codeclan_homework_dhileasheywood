@@ -1,0 +1,134 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+```{r}
+library(prob)
+library(gtools)
+library(tidyverse)
+```
+
+1.
+p(d6 <5) = 2/3
+
+2. 
+216
+
+3. 
+i. 
+```{r}
+roll_4 <- rolldie(4) 
+
+total_5_6_7 <- roll_4 %>% 
+  mutate(sum = X1 + X2 + X3 + X4) %>% 
+  filter(sum == 5 | sum == 6 | sum == 7)
+```
+
+ii.
+```{r}
+p_total_5_6_7 <- nrow(total_5_6_7) / nrow(roll_4)
+p_total_5_6_7
+```
+
+iii.
+in answering iii, we assume first, that the question is meant to ask about part ii.
+secondly, we assume that the outcomes of the subsequent rolls don't depend on the first roll.
+
+4. 
+```{r}
+people <- 1:5
+
+order_of_people <- as_tibble(permutations(n = 5,
+                                          r = 5, 
+                                          v = people,
+                                          repeats.allowed = FALSE))
+
+
+probability_ordered_left_to_right <- 1/nrow(order_of_people)
+```
+
+5. 
+i. 
+```{r}
+1 / nrow(rolldie(6))
+```
+ii.
+```{r}
+numbers <- 1:6
+nrow(as_tibble(permutations(n = 6, r = 6, v = numbers, repeats.allowed = FALSE))) / nrow(rolldie(6))
+```
+
+6. 
+0.5
+
+7. 
+i.
+```{r}
+patients <- c("Alice", "Bob", "Carmen", "Dinesh", "Ella", "Fergus", "Gianna", "Henry")
+nrow(as_tibble(permutations(n = length(patients), r = 5, v = patients, repeats.allowed = FALSE)))
+```
+ii.
+```{r}
+as_tibble(permutations(n = length(patients), r = 5, v = patients, repeats.allowed = FALSE)) %>% 
+  filter(isin(., c("Gianna", "Dinesh"), ordered = FALSE))
+
+2400/6720
+```
+iii.
+```{r}
+as_tibble(permutations(n = length(patients), r = 5, v = patients, repeats.allowed = FALSE)) %>% 
+  filter(isin(., c("Gianna", "Dinesh"), ordered = TRUE))
+1200/6720
+```
+iv.
+```{r}
+nrow(as_tibble(permutations(n = length(patients), r = 5, v = patients, repeats.allowed = FALSE)) %>% 
+  filter((V1 == "Carmen" & V2 == "Henry") | (V1 == "Henry" & V2 == "Carmen")))
+
+```
+
+8.
+```{r}
+students <- 1:8
+nrow(as_tibble(combinations(n = 8, r = 5, v = students, repeats.allowed = FALSE)))
+as_tibble(permutations(n = 8, r = 5, v = students, repeats.allowed = FALSE))
+```
+
+9. 
+```{r}
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

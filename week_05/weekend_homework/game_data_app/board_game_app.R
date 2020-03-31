@@ -80,6 +80,8 @@ ui <- fluidPage(
                            )
                         
                         ),
+                    
+                    # This is a new idea, haven't had time to try and implement it yet.
                     column(6,
                             sliderInput(
                                 "rank_range",
@@ -141,14 +143,19 @@ server <- function(input, output){
     })
     
     
-    # I can't get this to work! I can't figure out why. It's supposed to show rank vs a few things
-    # to give the ficticious game designers an idea of what's popular in a game. Is there a trend 
-    # between play time or number of players and rank? Is there a trend between rank and the number
-    # of votes received? 
+    filtered_rank <- reactive({
+        board_game_data %>% 
+            filter(rank >= input$rank_range[1], rank <= input$rank_range[2])
+    })
+    
+    # This plot shows rank vs a few things to give the ficticious game designers an idea of what's 
+    # popular in a game. Is there a trend between play time or number of players and rank? Is there 
+    # a trend between rank and the number of votes received? 
     output$rating_plot <- renderPlot({
-        ggplot(board_game_data) +
-            aes(x = input$rating_graph, y = rank, colour = geek_rating) +
+        ggplot(filtered_rank()) +
+            aes_string(x = input$rating_graph, y = "rank", colour = "geek_rating") +
             geom_point() +
+            geom_smooth() +
             scale_y_reverse() 
     })
     
