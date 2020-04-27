@@ -1,0 +1,94 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+loading libraries
+```{r}
+library(tidyverse)
+library(modelr)
+library(ggfortify)
+```
+
+
+
+loading in the data
+```{r}
+project <- read_csv("project_management.csv")
+
+```
+
+
+```{r}
+project %>% 
+  ggplot(aes(x = estimated_length, y = actual_length)) +
+  geom_point() +
+  geom_text(label = project$X1, hjust = -0.5)
+```
+
+outliers eyeballed from this graph:
+influential: 5
+non-influential: maybe 18, maybe 24
+
+```{r}
+
+proj_model <- lm(formula = actual_length ~ estimated_length, data = project)
+
+```
+
+
+
+```{r}
+autoplot(proj_model, which = 5)
+```
+
+There aren't any Cook's distance lines in this plot. Plotting a Cook's Distance plot to check which outliers are influential
+
+```{r}
+autoplot(proj_model, which = 4)
+```
+
+clearly 5 is a massively influential outlier. 18 and 31 are influential outliers too, but not much. 
+
+
+obtaining the intercept and regression coefficient of estimated_length for a model fitted to data ommiting point 24 (non influential outlier)
+```{r}
+model_non_influential_data <- project %>% 
+  filter(X1 != 24)
+
+
+model_non_influential <- lm(formula = actual_length ~ estimated_length, data = model_non_influential_data)
+```
+
+now plotting the data points, and both regressions obtained so far. 
+
+```{r}
+project %>% 
+  add_predictions(proj_model) %>%
+  mutate(pred_all = pred) %>% 
+  add_predictions(model_non_influential) %>% 
+  ggplot(aes(x = estimated_length)) +
+  geom_point(aes(y = actual_length)) +
+  geom_line(aes(y = pred_all), colour = "red") +
+  geom_line(aes(y = pred), colour = "blue")
+```
+
+the intercept and regression coefficient of the two models are not that different at all. I'd stand by the point that point 24 is non influential.
+
+```{r}
+project %>% 
+  add_predictions(model_non_influential) %>% 
+  ggplot(aes(x = estimated_length)) +
+  geom_point(aes(y = actual_length)) +
+  geom_line(aes(y = pred), colour = "blue")
+```
+
+```{r}
+autoplot(proj_model)
+```
+
+thte Residuals vs Fitted plot os mostly centred around 0. It has a slight downward slope towards the right. It's mostly pretty alright, but pointg number 5 is an obvious outlier, and potentially a problem. Point 18 is also an outlier, that might be influential.
+
+the normal q-q plot shows that the residuals are mostly normally distributed, with the exceptions of 5 (it's always 5 causing problems), and 18.
+
+the Scale-Location plot is also okay, because it's not showing a trend in either direction.
