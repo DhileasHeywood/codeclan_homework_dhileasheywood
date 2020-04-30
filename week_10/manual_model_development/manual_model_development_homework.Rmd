@@ -1,0 +1,48 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+Here is a set of data on housing sale prices for the last few years in King County, near Seattle, between May 2014, and May 2015. 
+
+First I'm going to tidy the data in a suitable way, so that it's ready for regression. 
+
+```{r}
+library(tidyverse)
+library(GGally)
+```
+
+
+```{r}
+houses <- read_csv("data/kc_house_data.csv")
+
+# selecting - id, because ID will be strongly correlated with price, for obvious reasons. Also removing date (unimportant), sqft_living15 (not interested in square footage of the nearest 15 houses), sqft_lot15, and zipcode (as long and lat will provide a better understanding of location)
+
+houses <- houses %>% 
+  select(-id, -date, -sqft_living15, -sqft_lot15, -zipcode)
+```
+```{r}
+unique(houses$condition)
+unique(houses$grade)
+```
+
+ converting yr_renovated and waterfront to logical variable for sake of simplicity.
+ Converting condition to dummy variables. 
+ 
+```{r}
+houses_clean <- houses %>% 
+  #mutate(renovated = ifelse(yr_renovated == 0, yr_renovated == 0, yr_renovated == 1), waterfront = as.logical(waterfront)) %>% 
+  mutate(condition_1 = ifelse(houses$condition == 1, 1, 0),
+         condition_2 = ifelse(houses$condition == 2, 1, 0), 
+         condition_3 = ifelse(houses$condition == 3, 1, 0),
+         condition_4 = ifelse(houses$condition == 4, 1, 0)) %>% 
+  select(-condition) %>% 
+  mutate(grade = cut(x = houses$grade, breaks = c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13))) %>% 
+  fastDummies::dummy_cols(select_columns = "grade", remove_first_dummy = TRUE)
+  
+```
+
+```{r}
+unique(houses_clean$`grade_(10,11]`)
+```
+
