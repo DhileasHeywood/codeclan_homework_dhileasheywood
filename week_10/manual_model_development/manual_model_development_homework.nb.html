@@ -1753,9 +1753,28 @@ summary {
 <p>First I’m going to tidy the data in a suitable way, so that it’s ready for regression.</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShHR2FsbHkpXG5cbmBgYCJ9 -->
-<pre class="r"><code>library(GGally)
-</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeSh0aWR5dmVyc2UpXG5gYGAifQ== -->
+<pre class="r"><code>library(tidyverse)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiUmVnaXN0ZXJlZCBTMyBtZXRob2Qgb3ZlcndyaXR0ZW4gYnkgJ2RwbHlyJzpcbiAgbWV0aG9kICAgICAgICAgICBmcm9tXG4gIHByaW50LnJvd3dpc2VfZGYgICAgIFxuUmVnaXN0ZXJlZCBTMyBtZXRob2RzIG92ZXJ3cml0dGVuIGJ5ICdkYnBseXInOlxuICBtZXRob2QgICAgICAgICBmcm9tXG4gIHByaW50LnRibF9sYXp5ICAgICBcbiAgcHJpbnQudGJsX3NxbCAgICAgIFxuXHUwMDFiWzM3bS0tIFx1MDAxYlsxbUF0dGFjaGluZyBwYWNrYWdlc1x1MDAxYlsyMm0gLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tIHRpZHl2ZXJzZSAxLjMuMCAtLVx1MDAxYlszOW1cblx1MDAxYlszN21cdTAwMWJbMzJtdlx1MDAxYlszN20gXHUwMDFiWzM0bWdncGxvdDJcdTAwMWJbMzdtIDMuMy4wICAgICBcdTAwMWJbMzJtdlx1MDAxYlszN20gXHUwMDFiWzM0bXB1cnJyICBcdTAwMWJbMzdtIDAuMy4zXG5cdTAwMWJbMzJtdlx1MDAxYlszN20gXHUwMDFiWzM0bXRpYmJsZSBcdTAwMWJbMzdtIDMuMC4wICAgICBcdTAwMWJbMzJtdlx1MDAxYlszN20gXHUwMDFiWzM0bWRwbHlyICBcdTAwMWJbMzdtIDAuOC41XG5cdTAwMWJbMzJtdlx1MDAxYlszN20gXHUwMDFiWzM0bXRpZHlyICBcdTAwMWJbMzdtIDEuMC4yICAgICBcdTAwMWJbMzJtdlx1MDAxYlszN20gXHUwMDFiWzM0bXN0cmluZ3JcdTAwMWJbMzdtIDEuNC4wXG5cdTAwMWJbMzJtdlx1MDAxYlszN20gXHUwMDFiWzM0bXJlYWRyICBcdTAwMWJbMzdtIDEuMy4xICAgICBcdTAwMWJbMzJtdlx1MDAxYlszN20gXHUwMDFiWzM0bWZvcmNhdHNcdTAwMWJbMzdtIDAuNS4wXHUwMDFiWzM5bVxuXHUwMDFiWzM3bS0tIFx1MDAxYlsxbUNvbmZsaWN0c1x1MDAxYlsyMm0gLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tIHRpZHl2ZXJzZV9jb25mbGljdHMoKSAtLVxuXHUwMDFiWzMxbXhcdTAwMWJbMzdtIFx1MDAxYlszNG1kcGx5clx1MDAxYlszN206Olx1MDAxYlszMm1maWx0ZXIoKVx1MDAxYlszN20gbWFza3MgXHUwMDFiWzM0bXN0YXRzXHUwMDFiWzM3bTo6ZmlsdGVyKClcblx1MDAxYlszMW14XHUwMDFiWzM3bSBcdTAwMWJbMzRtZHBseXJcdTAwMWJbMzdtOjpcdTAwMWJbMzJtbGFnKClcdTAwMWJbMzdtICAgIG1hc2tzIFx1MDAxYlszNG1zdGF0c1x1MDAxYlszN206OmxhZygpXHUwMDFiWzM5bVxuIn0= -->
+<pre><code>Registered S3 method overwritten by &#39;dplyr&#39;:
+  method           from
+  print.rowwise_df     
+Registered S3 methods overwritten by &#39;dbplyr&#39;:
+  method         from
+  print.tbl_lazy     
+  print.tbl_sql      
+[37m-- [1mAttaching packages[22m --------------------------------------- tidyverse 1.3.0 --[39m
+[37m[32mv[37m [34mggplot2[37m 3.3.0     [32mv[37m [34mpurrr  [37m 0.3.3
+[32mv[37m [34mtibble [37m 3.0.0     [32mv[37m [34mdplyr  [37m 0.8.5
+[32mv[37m [34mtidyr  [37m 1.0.2     [32mv[37m [34mstringr[37m 1.4.0
+[32mv[37m [34mreadr  [37m 1.3.1     [32mv[37m [34mforcats[37m 0.5.0[39m
+[37m-- [1mConflicts[22m ------------------------------------------ tidyverse_conflicts() --
+[31mx[37m [34mdplyr[37m::[32mfilter()[37m masks [34mstats[37m::filter()
+[31mx[37m [34mdplyr[37m::[32mlag()[37m    masks [34mstats[37m::lag()[39m</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShHR2FsbHkpXG5gYGAifQ== -->
+<pre class="r"><code>library(GGally)</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-output-begin eyJkYXRhIjoiUmVnaXN0ZXJlZCBTMyBtZXRob2Qgb3ZlcndyaXR0ZW4gYnkgJ0dHYWxseSc6XG4gIG1ldGhvZCBmcm9tICAgXG4gICsuZ2cgICBnZ3Bsb3QyXG5cbkF0dGFjaGluZyBwYWNrYWdlOiDjpLzjuLFHR2FsbHnjpLzjuLJcblxuVGhlIGZvbGxvd2luZyBvYmplY3QgaXMgbWFza2VkIGZyb20g46S847ixcGFja2FnZTpkcGx5cuOkvOO4sjpcblxuICAgIG5hc2FcbiJ9 -->
 <pre><code>Registered S3 method overwritten by &#39;GGally&#39;:
@@ -1772,21 +1791,34 @@ The following object is masked from 㤼㸱package:dplyr㤼㸲:
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaG91c2VzIDwtIGhvdXNlcyAlPiUgXG4gIHNlbGVjdCgtZGF0ZSwgLXNxZnRfbGl2aW5nMTUsIC1zcWZ0X2xvdDE1LCAtemlwY29kZSkpXG5cbmBgYCJ9 -->
-<pre class="r"><code>houses &lt;- houses %&gt;% 
-  select(-date, -sqft_living15, -sqft_lot15, -zipcode))
-</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaG91c2VzIDwtIHJlYWRfY3N2KFwiZGF0YS9rY19ob3VzZV9kYXRhLmNzdlwiKVxuYGBgIn0= -->
+<pre class="r"><code>houses &lt;- read_csv(&quot;data/kc_house_data.csv&quot;)</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiRXJyb3I6IHVuZXhwZWN0ZWQgJyknIGluOlxuXCJob3VzZXMgPC0gaG91c2VzICU+JSBcbiAgc2VsZWN0KC1kYXRlLCAtc3FmdF9saXZpbmcxNSwgLXNxZnRfbG90MTUsIC16aXBjb2RlKSlcIlxuIn0= -->
-<pre><code>Error: unexpected &#39;)&#39; in:
-&quot;houses &lt;- houses %&gt;% 
-  select(-date, -sqft_living15, -sqft_lot15, -zipcode))&quot;</code></pre>
+<!-- rnb-output-begin eyJkYXRhIjoiUGFyc2VkIHdpdGggY29sdW1uIHNwZWNpZmljYXRpb246XG5jb2xzKFxuICAuZGVmYXVsdCA9IGNvbF9kb3VibGUoKSxcbiAgaWQgPSBcdTAwMWJbMzFtY29sX2NoYXJhY3RlcigpXHUwMDFiWzM5bSxcbiAgZGF0ZSA9IFx1MDAxYlszNG1jb2xfZGF0ZXRpbWUoZm9ybWF0ID0gXCJcIilcdTAwMWJbMzltXG4pXG5TZWUgc3BlYyguLi4pIGZvciBmdWxsIGNvbHVtbiBzcGVjaWZpY2F0aW9ucy5cbiJ9 -->
+<pre><code>Parsed with column specification:
+cols(
+  .default = col_double(),
+  id = [31mcol_character()[39m,
+  date = [34mcol_datetime(format = &quot;&quot;)[39m
+)
+See spec(...) for full column specifications.</code></pre>
 <!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBzZWxlY3RpbmcgLSBpZCwgYmVjYXVzZSBJRCB3aWxsIGJlIHN0cm9uZ2x5IGNvcnJlbGF0ZWQgd2l0aCBwcmljZSwgZm9yIG9idmlvdXMgcmVhc29ucy4gQWxzbyByZW1vdmluZyBkYXRlICh1bmltcG9ydGFudCksIHNxZnRfbGl2aW5nMTUgKG5vdCBpbnRlcmVzdGVkIGluIHNxdWFyZSBmb290YWdlIG9mIHRoZSBuZWFyZXN0IDE1IGhvdXNlcyksIHNxZnRfbG90MTUsIGFuZCB6aXBjb2RlIChhcyBsb25nIGFuZCBsYXQgd2lsbCBwcm92aWRlIGEgYmV0dGVyIHVuZGVyc3RhbmRpbmcgb2YgbG9jYXRpb24pXG5cbmhvdXNlcyA8LSBob3VzZXMgJT4lIFxuICBzZWxlY3QoLWlkLCAtZGF0ZSwgLXNxZnRfbGl2aW5nMTUsIC1zcWZ0X2xvdDE1LCAtemlwY29kZSlcbmBgYCJ9 -->
+<pre class="r"><code># selecting - id, because ID will be strongly correlated with price, for obvious reasons. Also removing date (unimportant), sqft_living15 (not interested in square footage of the nearest 15 houses), sqft_lot15, and zipcode (as long and lat will provide a better understanding of location)
+
+houses &lt;- houses %&gt;% 
+  select(-id, -date, -sqft_living15, -sqft_lot15, -zipcode)</code></pre>
+<!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudW5pcXVlKGhvdXNlcyRncmFkZSlcblxuYGBgIn0= -->
-<pre class="r"><code>unique(houses$grade)
-</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudW5pcXVlKGhvdXNlcyRjb25kaXRpb24pXG5gYGAifQ== -->
+<pre class="r"><code>unique(houses$condition)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDMgNSA0IDEgMlxuIn0= -->
+<pre><code>[1] 3 5 4 1 2</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudW5pcXVlKGhvdXNlcyRncmFkZSlcbmBgYCJ9 -->
+<pre class="r"><code>unique(houses$grade)</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-output-begin eyJkYXRhIjoiIFsxXSAgNyAgNiAgOCAxMSAgOSAgNSAxMCAxMiAgNCAgMyAxMyAgMVxuIn0= -->
 <pre><code> [1]  7  6  8 11  9  5 10 12  4  3 13  1</code></pre>
@@ -1796,7 +1828,7 @@ The following object is masked from 㤼㸱package:dplyr㤼㸲:
 <p>converting yr_renovated and waterfront to logical variable for sake of simplicity. Converting condition to dummy variables.</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaG91c2VzX2NsZWFuIDwtIGhvdXNlcyAlPiUgXG4gICNtdXRhdGUocmVub3ZhdGVkID0gaWZlbHNlKHlyX3Jlbm92YXRlZCA9PSAwLCB5cl9yZW5vdmF0ZWQgPT0gMCwgeXJfcmVub3ZhdGVkID09IDEpLCB3YXRlcmZyb250ID0gYXMubG9naWNhbCh3YXRlcmZyb250KSkgJT4lIFxuICBtdXRhdGUoY29uZGl0aW9uXzEgPSBpZmVsc2UoaG91c2VzJGNvbmRpdGlvbiA9PSAxLCAxLCAwKSxcbiAgICAgICAgIGNvbmRpdGlvbl8yID0gaWZlbHNlKGhvdXNlcyRjb25kaXRpb24gPT0gMiwgMSwgMCksIFxuICAgICAgICAgY29uZGl0aW9uXzMgPSBpZmVsc2UoaG91c2VzJGNvbmRpdGlvbiA9PSAzLCAxLCAwKSxcbiAgICAgICAgIGNvbmRpdGlvbl80ID0gaWZlbHNlKGhvdXNlcyRjb25kaXRpb24gPT0gNCwgMSwgMCkpICU+JSBcbiAgc2VsZWN0KC1jb25kaXRpb24pICU+JSBcbiAgbXV0YXRlKGdyYWRlID0gY3V0KHggPSBob3VzZXMkZ3JhZGUsIGJyZWFrcyA9IGMoMSwgMiwgMywgNCwgNSwgNiwgNywgOCwgOSwgMTAsIDExLCAxMiwgMTMpKSkgJT4lIFxuICBmYXN0RHVtbWllczo6ZHVtbXlfY29scyhzZWxlY3RfY29sdW1ucyA9IFwiZ3JhZGVcIiwgcmVtb3ZlX2ZpcnN0X2R1bW15ID0gVFJVRSlcblxuYGBgIn0= -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaG91c2VzX2NsZWFuIDwtIGhvdXNlcyAlPiUgXG4gICNtdXRhdGUocmVub3ZhdGVkID0gaWZlbHNlKHlyX3Jlbm92YXRlZCA9PSAwLCB5cl9yZW5vdmF0ZWQgPT0gMCwgeXJfcmVub3ZhdGVkID09IDEpLCB3YXRlcmZyb250ID0gYXMubG9naWNhbCh3YXRlcmZyb250KSkgJT4lIFxuICBtdXRhdGUoY29uZGl0aW9uXzEgPSBpZmVsc2UoaG91c2VzJGNvbmRpdGlvbiA9PSAxLCAxLCAwKSxcbiAgICAgICAgIGNvbmRpdGlvbl8yID0gaWZlbHNlKGhvdXNlcyRjb25kaXRpb24gPT0gMiwgMSwgMCksIFxuICAgICAgICAgY29uZGl0aW9uXzMgPSBpZmVsc2UoaG91c2VzJGNvbmRpdGlvbiA9PSAzLCAxLCAwKSxcbiAgICAgICAgIGNvbmRpdGlvbl80ID0gaWZlbHNlKGhvdXNlcyRjb25kaXRpb24gPT0gNCwgMSwgMCkpICU+JSBcbiAgc2VsZWN0KC1jb25kaXRpb24pICU+JSBcbiAgbXV0YXRlKGdyYWRlXzEgPSBpZmVsc2UoZ3JhZGUgPT0gMSwgMSwgMCksXG4gICAgICAgICBncmFkZV8yID0gaWZlbHNlKGdyYWRlID09IDIsIDEsIDApLFxuICAgICAgICAgZ3JhZGVfMyA9IGlmZWxzZShncmFkZSA9PSAzLCAxLCAwKSxcbiAgICAgICAgIGdyYWRlXzQgPSBpZmVsc2UoZ3JhZGUgPT0gNCwgMSwgMCksXG4gICAgICAgICBncmFkZV81ID0gaWZlbHNlKGdyYWRlID09IDUsIDEsIDApLFxuICAgICAgICAgZ3JhZGVfNiA9IGlmZWxzZShncmFkZSA9PSA2LCAxLCAwKSxcbiAgICAgICAgIGdyYWRlXzcgPSBpZmVsc2UoZ3JhZGUgPT0gNywgMSwgMCksXG4gICAgICAgICBncmFkZV84ID0gaWZlbHNlKGdyYWRlID09IDgsIDEsIDApLFxuICAgICAgICAgZ3JhZGVfOSA9IGlmZWxzZShncmFkZSA9PSA5LCAxLCAwKSxcbiAgICAgICAgIGdyYWRlXzEwID0gaWZlbHNlKGdyYWRlID09IDEwLCAxLCAwKSxcbiAgICAgICAgIGdyYWRlXzExID0gaWZlbHNlKGdyYWRlID09IDExLCAxLCAwKSxcbiAgICAgICAgIGdyYWRlXzEyID0gaWZlbHNlKGdyYWRlID09IDEyLCAxLCAwKSxcbiAgICAgICAgIGdyYWRlXzEzID0gaWZlbHNlKGdyYWRlID09IDEzLCAxLCAwKSlcbiAgXG5gYGAifQ== -->
 <pre class="r"><code>houses_clean &lt;- houses %&gt;% 
   #mutate(renovated = ifelse(yr_renovated == 0, yr_renovated == 0, yr_renovated == 1), waterfront = as.logical(waterfront)) %&gt;% 
   mutate(condition_1 = ifelse(houses$condition == 1, 1, 0),
@@ -1804,31 +1836,63 @@ The following object is masked from 㤼㸱package:dplyr㤼㸲:
          condition_3 = ifelse(houses$condition == 3, 1, 0),
          condition_4 = ifelse(houses$condition == 4, 1, 0)) %&gt;% 
   select(-condition) %&gt;% 
-  mutate(grade = cut(x = houses$grade, breaks = c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13))) %&gt;% 
-  fastDummies::dummy_cols(select_columns = &quot;grade&quot;, remove_first_dummy = TRUE)
+  mutate(grade_1 = ifelse(grade == 1, 1, 0),
+         grade_2 = ifelse(grade == 2, 1, 0),
+         grade_3 = ifelse(grade == 3, 1, 0),
+         grade_4 = ifelse(grade == 4, 1, 0),
+         grade_5 = ifelse(grade == 5, 1, 0),
+         grade_6 = ifelse(grade == 6, 1, 0),
+         grade_7 = ifelse(grade == 7, 1, 0),
+         grade_8 = ifelse(grade == 8, 1, 0),
+         grade_9 = ifelse(grade == 9, 1, 0),
+         grade_10 = ifelse(grade == 10, 1, 0),
+         grade_11 = ifelse(grade == 11, 1, 0),
+         grade_12 = ifelse(grade == 12, 1, 0),
+         grade_13 = ifelse(grade == 13, 1, 0))
+  </code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>checking for aliased variables, then removing variables that lead to an alias</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYWxpYXMocHJpY2UgfiAuLCBkYXRhID0gaG91c2VzX2NsZWFuKVxuXG5gYGAifQ== -->
+<pre class="r"><code>alias(price ~ ., data = houses_clean)
 </code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiUmVnaXN0ZXJlZCBTMyBtZXRob2Qgb3ZlcndyaXR0ZW4gYnkgJ2RhdGEudGFibGUnOlxuICBtZXRob2QgICAgICAgICAgIGZyb21cbiAgcHJpbnQuZGF0YS50YWJsZSAgICAgXG4ifQ== -->
-<pre><code>Registered S3 method overwritten by &#39;data.table&#39;:
-  method           from
-  print.data.table     </code></pre>
+<!-- rnb-output-begin eyJkYXRhIjoiTW9kZWwgOlxucHJpY2UgfiBiZWRyb29tcyArIGJhdGhyb29tcyArIHNxZnRfbGl2aW5nICsgc3FmdF9sb3QgKyBmbG9vcnMgKyBcbiAgICB3YXRlcmZyb250ICsgdmlldyArIHNxZnRfYWJvdmUgKyB5cl9idWlsdCArIHlyX3Jlbm92YXRlZCArIFxuICAgIGxhdCArIGxvbmcgKyBjb25kaXRpb25fMSArIGNvbmRpdGlvbl8yICsgY29uZGl0aW9uXzMgKyBjb25kaXRpb25fNCArIFxuICAgIGdyYWRlXzEgKyBncmFkZV8yICsgZ3JhZGVfMyArIGdyYWRlXzQgKyBncmFkZV81ICsgZ3JhZGVfNiArIFxuICAgIGdyYWRlXzcgKyBncmFkZV84ICsgZ3JhZGVfOSArIGdyYWRlXzEwICsgZ3JhZGVfMTEgKyBncmFkZV8xMlxuXG5Db21wbGV0ZSA6XG4gICAgICAgIChJbnRlcmNlcHQpIGJlZHJvb21zIGJhdGhyb29tcyBzcWZ0X2xpdmluZyBzcWZ0X2xvdCBmbG9vcnMgd2F0ZXJmcm9udCB2aWV3IHNxZnRfYWJvdmUgeXJfYnVpbHQgeXJfcmVub3ZhdGVkIGxhdCBsb25nIGNvbmRpdGlvbl8xIGNvbmRpdGlvbl8yXG5ncmFkZV8yIDAgICAgICAgICAgIDAgICAgICAgIDAgICAgICAgICAwICAgICAgICAgICAwICAgICAgICAwICAgICAgMCAgICAgICAgICAwICAgIDAgICAgICAgICAgMCAgICAgICAgMCAgICAgICAgICAgIDAgICAwICAgIDAgICAgICAgICAgIDAgICAgICAgICAgXG4gICAgICAgIGNvbmRpdGlvbl8zIGNvbmRpdGlvbl80IGdyYWRlXzEgZ3JhZGVfMyBncmFkZV80IGdyYWRlXzUgZ3JhZGVfNiBncmFkZV83IGdyYWRlXzggZ3JhZGVfOSBncmFkZV8xMCBncmFkZV8xMSBncmFkZV8xMlxuZ3JhZGVfMiAwICAgICAgICAgICAwICAgICAgICAgICAwICAgICAgIDAgICAgICAgMCAgICAgICAwICAgICAgIDAgICAgICAgMCAgICAgICAwICAgICAgIDAgICAgICAgMCAgICAgICAgMCAgICAgICAgMCAgICAgICBcbiJ9 -->
+<pre><code>Model :
+price ~ bedrooms + bathrooms + sqft_living + sqft_lot + floors + 
+    waterfront + view + sqft_above + yr_built + yr_renovated + 
+    lat + long + condition_1 + condition_2 + condition_3 + condition_4 + 
+    grade_1 + grade_2 + grade_3 + grade_4 + grade_5 + grade_6 + 
+    grade_7 + grade_8 + grade_9 + grade_10 + grade_11 + grade_12
+
+Complete :
+        (Intercept) bedrooms bathrooms sqft_living sqft_lot floors waterfront view sqft_above yr_built yr_renovated lat long condition_1 condition_2
+grade_2 0           0        0         0           0        0      0          0    0          0        0            0   0    0           0          
+        condition_3 condition_4 grade_1 grade_3 grade_4 grade_5 grade_6 grade_7 grade_8 grade_9 grade_10 grade_11 grade_12
+grade_2 0           0           0       0       0       0       0       0       0       0       0        0        0       </code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
+<p>From this, it looks like sqft_basement is strongly correlated with sqft_living and sqft_above. For this reason, I’ll remove it from the data.</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudW5pcXVlKGhvdXNlc19jbGVhbiRgZ3JhZGVfKDEwLDExXWApXG5cbmBgYCJ9 -->
-<pre class="r"><code>unique(houses_clean$`grade_(10,11]`)
-</code></pre>
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>I’m now going to systematically build a regression model containing up to four main effects. I’ll test the regression diagnostics as I go.</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaG91c2VzX251bWVyaWMgPC0gaG91c2VzX2NsZWFuICU+JSBcbiAgXG5gYGAifQ== -->
+<pre class="r"><code>houses_numeric &lt;- houses_clean %&gt;% 
+  </code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdICAwICAxIE5BXG4ifQ== -->
-<pre><code>[1]  0  1 NA</code></pre>
-<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 
-<div id="rmd-source-code">LS0tDQp0aXRsZTogIlIgTm90ZWJvb2siDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCi0tLQ0KDQpIZXJlIGlzIGEgc2V0IG9mIGRhdGEgb24gaG91c2luZyBzYWxlIHByaWNlcyBmb3IgdGhlIGxhc3QgZmV3IHllYXJzIGluIEtpbmcgQ291bnR5LCBuZWFyIFNlYXR0bGUsIGJldHdlZW4gTWF5IDIwMTQsIGFuZCBNYXkgMjAxNS4gDQoNCkZpcnN0IEknbSBnb2luZyB0byB0aWR5IHRoZSBkYXRhIGluIGEgc3VpdGFibGUgd2F5LCBzbyB0aGF0IGl0J3MgcmVhZHkgZm9yIHJlZ3Jlc3Npb24uIA0KDQpgYGB7cn0NCmxpYnJhcnkodGlkeXZlcnNlKQ0KbGlicmFyeShHR2FsbHkpDQpgYGANCg0KDQpgYGB7cn0NCmhvdXNlcyA8LSByZWFkX2NzdigiZGF0YS9rY19ob3VzZV9kYXRhLmNzdiIpDQoNCiMgc2VsZWN0aW5nIC0gaWQsIGJlY2F1c2UgSUQgd2lsbCBiZSBzdHJvbmdseSBjb3JyZWxhdGVkIHdpdGggcHJpY2UsIGZvciBvYnZpb3VzIHJlYXNvbnMuIEFsc28gcmVtb3ZpbmcgZGF0ZSAodW5pbXBvcnRhbnQpLCBzcWZ0X2xpdmluZzE1IChub3QgaW50ZXJlc3RlZCBpbiBzcXVhcmUgZm9vdGFnZSBvZiB0aGUgbmVhcmVzdCAxNSBob3VzZXMpLCBzcWZ0X2xvdDE1LCBhbmQgemlwY29kZSAoYXMgbG9uZyBhbmQgbGF0IHdpbGwgcHJvdmlkZSBhIGJldHRlciB1bmRlcnN0YW5kaW5nIG9mIGxvY2F0aW9uKQ0KDQpob3VzZXMgPC0gaG91c2VzICU+JSANCiAgc2VsZWN0KC1pZCwgLWRhdGUsIC1zcWZ0X2xpdmluZzE1LCAtc3FmdF9sb3QxNSwgLXppcGNvZGUpDQpgYGANCmBgYHtyfQ0KdW5pcXVlKGhvdXNlcyRjb25kaXRpb24pDQp1bmlxdWUoaG91c2VzJGdyYWRlKQ0KYGBgDQoNCiBjb252ZXJ0aW5nIHlyX3Jlbm92YXRlZCBhbmQgd2F0ZXJmcm9udCB0byBsb2dpY2FsIHZhcmlhYmxlIGZvciBzYWtlIG9mIHNpbXBsaWNpdHkuDQogQ29udmVydGluZyBjb25kaXRpb24gdG8gZHVtbXkgdmFyaWFibGVzLiANCiANCmBgYHtyfQ0KaG91c2VzX2NsZWFuIDwtIGhvdXNlcyAlPiUgDQogICNtdXRhdGUocmVub3ZhdGVkID0gaWZlbHNlKHlyX3Jlbm92YXRlZCA9PSAwLCB5cl9yZW5vdmF0ZWQgPT0gMCwgeXJfcmVub3ZhdGVkID09IDEpLCB3YXRlcmZyb250ID0gYXMubG9naWNhbCh3YXRlcmZyb250KSkgJT4lIA0KICBtdXRhdGUoY29uZGl0aW9uXzEgPSBpZmVsc2UoaG91c2VzJGNvbmRpdGlvbiA9PSAxLCAxLCAwKSwNCiAgICAgICAgIGNvbmRpdGlvbl8yID0gaWZlbHNlKGhvdXNlcyRjb25kaXRpb24gPT0gMiwgMSwgMCksIA0KICAgICAgICAgY29uZGl0aW9uXzMgPSBpZmVsc2UoaG91c2VzJGNvbmRpdGlvbiA9PSAzLCAxLCAwKSwNCiAgICAgICAgIGNvbmRpdGlvbl80ID0gaWZlbHNlKGhvdXNlcyRjb25kaXRpb24gPT0gNCwgMSwgMCkpICU+JSANCiAgc2VsZWN0KC1jb25kaXRpb24pICU+JSANCiAgbXV0YXRlKGdyYWRlID0gY3V0KHggPSBob3VzZXMkZ3JhZGUsIGJyZWFrcyA9IGMoMSwgMiwgMywgNCwgNSwgNiwgNywgOCwgOSwgMTAsIDExLCAxMiwgMTMpKSkgJT4lIA0KICBmYXN0RHVtbWllczo6ZHVtbXlfY29scyhzZWxlY3RfY29sdW1ucyA9ICJncmFkZSIsIHJlbW92ZV9maXJzdF9kdW1teSA9IFRSVUUpDQogIA0KYGBgDQoNCmBgYHtyfQ0KdW5pcXVlKGhvdXNlc19jbGVhbiRgZ3JhZGVfKDEwLDExXWApDQpgYGANCg0K</div>
+<div id="rmd-source-code">LS0tDQp0aXRsZTogIlIgTm90ZWJvb2siDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCi0tLQ0KDQpIZXJlIGlzIGEgc2V0IG9mIGRhdGEgb24gaG91c2luZyBzYWxlIHByaWNlcyBmb3IgdGhlIGxhc3QgZmV3IHllYXJzIGluIEtpbmcgQ291bnR5LCBuZWFyIFNlYXR0bGUsIGJldHdlZW4gTWF5IDIwMTQsIGFuZCBNYXkgMjAxNS4gDQoNCkZpcnN0IEknbSBnb2luZyB0byB0aWR5IHRoZSBkYXRhIGluIGEgc3VpdGFibGUgd2F5LCBzbyB0aGF0IGl0J3MgcmVhZHkgZm9yIHJlZ3Jlc3Npb24uIA0KDQpgYGB7cn0NCmxpYnJhcnkodGlkeXZlcnNlKQ0KbGlicmFyeShHR2FsbHkpDQpgYGANCg0KDQpgYGB7cn0NCmhvdXNlcyA8LSByZWFkX2NzdigiZGF0YS9rY19ob3VzZV9kYXRhLmNzdiIpDQoNCiMgc2VsZWN0aW5nIC0gaWQsIGJlY2F1c2UgSUQgd2lsbCBiZSBzdHJvbmdseSBjb3JyZWxhdGVkIHdpdGggcHJpY2UsIGZvciBvYnZpb3VzIHJlYXNvbnMuIEFsc28gcmVtb3ZpbmcgZGF0ZSAodW5pbXBvcnRhbnQpLCBzcWZ0X2xpdmluZzE1IChub3QgaW50ZXJlc3RlZCBpbiBzcXVhcmUgZm9vdGFnZSBvZiB0aGUgbmVhcmVzdCAxNSBob3VzZXMpLCBzcWZ0X2xvdDE1LCBhbmQgemlwY29kZSAoYXMgbG9uZyBhbmQgbGF0IHdpbGwgcHJvdmlkZSBhIGJldHRlciB1bmRlcnN0YW5kaW5nIG9mIGxvY2F0aW9uKQ0KDQpob3VzZXMgPC0gaG91c2VzICU+JSANCiAgc2VsZWN0KC1pZCwgLWRhdGUsIC1zcWZ0X2xpdmluZzE1LCAtc3FmdF9sb3QxNSwgLXppcGNvZGUpDQpgYGANCmBgYHtyfQ0KdW5pcXVlKGhvdXNlcyRjb25kaXRpb24pDQp1bmlxdWUoaG91c2VzJGdyYWRlKQ0KYGBgDQoNCiBjb252ZXJ0aW5nIHlyX3Jlbm92YXRlZCBhbmQgd2F0ZXJmcm9udCB0byBsb2dpY2FsIHZhcmlhYmxlIGZvciBzYWtlIG9mIHNpbXBsaWNpdHkuDQogQ29udmVydGluZyBjb25kaXRpb24gdG8gZHVtbXkgdmFyaWFibGVzLiANCiANCmBgYHtyfQ0KaG91c2VzX2NsZWFuIDwtIGhvdXNlcyAlPiUgDQogICNtdXRhdGUocmVub3ZhdGVkID0gaWZlbHNlKHlyX3Jlbm92YXRlZCA9PSAwLCB5cl9yZW5vdmF0ZWQgPT0gMCwgeXJfcmVub3ZhdGVkID09IDEpLCB3YXRlcmZyb250ID0gYXMubG9naWNhbCh3YXRlcmZyb250KSkgJT4lIA0KICBtdXRhdGUoY29uZGl0aW9uXzEgPSBpZmVsc2UoaG91c2VzJGNvbmRpdGlvbiA9PSAxLCAxLCAwKSwNCiAgICAgICAgIGNvbmRpdGlvbl8yID0gaWZlbHNlKGhvdXNlcyRjb25kaXRpb24gPT0gMiwgMSwgMCksIA0KICAgICAgICAgY29uZGl0aW9uXzMgPSBpZmVsc2UoaG91c2VzJGNvbmRpdGlvbiA9PSAzLCAxLCAwKSwNCiAgICAgICAgIGNvbmRpdGlvbl80ID0gaWZlbHNlKGhvdXNlcyRjb25kaXRpb24gPT0gNCwgMSwgMCkpICU+JSANCiAgc2VsZWN0KC1jb25kaXRpb24pICU+JSANCiAgbXV0YXRlKGdyYWRlXzEgPSBpZmVsc2UoZ3JhZGUgPT0gMSwgMSwgMCksDQogICAgICAgICBncmFkZV8yID0gaWZlbHNlKGdyYWRlID09IDIsIDEsIDApLA0KICAgICAgICAgZ3JhZGVfMyA9IGlmZWxzZShncmFkZSA9PSAzLCAxLCAwKSwNCiAgICAgICAgIGdyYWRlXzQgPSBpZmVsc2UoZ3JhZGUgPT0gNCwgMSwgMCksDQogICAgICAgICBncmFkZV81ID0gaWZlbHNlKGdyYWRlID09IDUsIDEsIDApLA0KICAgICAgICAgZ3JhZGVfNiA9IGlmZWxzZShncmFkZSA9PSA2LCAxLCAwKSwNCiAgICAgICAgIGdyYWRlXzcgPSBpZmVsc2UoZ3JhZGUgPT0gNywgMSwgMCksDQogICAgICAgICBncmFkZV84ID0gaWZlbHNlKGdyYWRlID09IDgsIDEsIDApLA0KICAgICAgICAgZ3JhZGVfOSA9IGlmZWxzZShncmFkZSA9PSA5LCAxLCAwKSwNCiAgICAgICAgIGdyYWRlXzEwID0gaWZlbHNlKGdyYWRlID09IDEwLCAxLCAwKSwNCiAgICAgICAgIGdyYWRlXzExID0gaWZlbHNlKGdyYWRlID09IDExLCAxLCAwKSwNCiAgICAgICAgIGdyYWRlXzEyID0gaWZlbHNlKGdyYWRlID09IDEyLCAxLCAwKSkgJT4lIA0KICBzZWxlY3QoLWdyYWRlKQ0KICANCmBgYA0KDQoNCmNoZWNraW5nIGZvciBhbGlhc2VkIHZhcmlhYmxlcywgdGhlbiByZW1vdmluZyB2YXJpYWJsZXMgdGhhdCBsZWFkIHRvIGFuIGFsaWFzDQpgYGB7cn0NCmFsaWFzKHByaWNlIH4gLiwgZGF0YSA9IGhvdXNlc19jbGVhbikNCmBgYA0KRnJvbSB0aGlzLCBpdCBsb29rcyBsaWtlIHNxZnRfYmFzZW1lbnQgaXMgc3Ryb25nbHkgY29ycmVsYXRlZCB3aXRoIHNxZnRfbGl2aW5nIGFuZCBzcWZ0X2Fib3ZlLiBGb3IgdGhpcyByZWFzb24sIEknbGwgcmVtb3ZlIGl0IGZyb20gdGhlIGRhdGEuIA0KDQpgYGB7cn0NCmhvdXNlc19jbGVhbiA8LSBob3VzZXNfY2xlYW4gJT4lIA0KICBzZWxlY3QoLXNxZnRfYmFzZW1lbnQpDQpgYGANCg0KSSdtIG5vdyBnb2luZyB0byBzeXN0ZW1hdGljYWxseSBidWlsZCBhIHJlZ3Jlc3Npb24gbW9kZWwgY29udGFpbmluZyB1cCB0byBmb3VyIG1haW4gZWZmZWN0cy4gSSdsbCB0ZXN0IHRoZSByZWdyZXNzaW9uIGRpYWdub3N0aWNzIGFzIEkgZ28uIA0KDQpgYGB7cn0NCmhvdXNlc19udW1lcmljIDwtIGhvdXNlc19jbGVhbiAlPiUgDQogIA0KYGBgDQoNCg==</div>
 
 
 
