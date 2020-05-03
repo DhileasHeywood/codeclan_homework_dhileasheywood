@@ -1,0 +1,77 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+```{r}
+library(tidyverse)
+```
+
+1. to understand how children are doing in their final school exams. Using the variables: Postcode, gender, reading level, score in maths test, date of birth and family income, one is likely overfitting the model.
+
+
+2. One should use the AIC score of 33,559, since it is lower. 
+
+3. One should use the model with the r-squared of =.44, and adjusted r-squared of 0.43, as the adjusted r-squared is higher in this case. 
+
+4. No. I don't think it's overfitting. If the model were overfitted, you'd expect the test data to have a higher root mean square error, as the model wouldn't be predicting the test data well. 
+
+5. k-fold cross validation splits the data up into k number of folds. The most commonly chosen number is 10. One would then make a model k times, each time, holding out one of the folds as the test set, and train the data on the k-1 folds. Once the process is finished, one can average the error across all of the test folds, giving an accurate measure of the model's performance. 
+
+6. A validation set is another subset of your data that is removed, like a test set and a training set. It should only be used to give a final estimate of the expected performance of the model you've chosen, and should only be used once you've finished selecting the model. It's usually used if you're comparing several types of models, and is needed because it's easy to over-fit the test set.
+
+7. Backwards selection works by starting with a model that uses all of the availabel predictors. Every round, each predictor is removed systematically, and whichever removal reduces r-squared the least, that predictor is removed from the model. This is repeated until all preedictors have been removed. A list of models is returned, varying by predictor number. 
+
+8. In best subset selection, all possible combinations of predictors for the best model of that size are searched. Obviously, this is much more computationally expensive, and the effort increases exponentially with the number of predictors. 
+
+9. DOCUMENTATION. The minimum that should be recorded is:
+  * The business context of the model
+  * Model design decisions and rationale including choice of algorithm, build population and target variable
+  * Modelling decisions including a full audit trail of variable choices, including any and all exclusions. 
+  * Final model explainability
+  * Model validation on a recent dataset
+  * Implementation instructions including any restrictions. 
+
+
+10. You could use the Population Stability Index (PSI). 
+
+  
+11. “Population Stability Index (PSI) compares the distribution of a scoring variable (predicted probability) in scoring data set to a training data set that was used to develop the model. The idea is to check how the current scoring is compared to the predicted probability from training data set" - https://www.listendata.com/2015/05/population-stability-index.html
+  This will give a single number that is easy to interpret. 
+  
+12. You'd need to consider changing your model with a PSI of 0.1 - 0.2. Above 0.2, your model is probably no longer appropriate.
+
+13. (I'm not 100% sure I understood this question)
+  
+  Some common problems that can occur when implementing a model are 
+    * The model doesn't make sense
+    * There are disallowed variables (usually due to regulation)
+    * The model is reliant on too few variables
+    * The model might not work on production data. (The dataset might not be identical, or the production population might not be the same.)
+    * The model might not be valid for all situations
+    * It might be difficult to actually implement in production. 
+
+
+14. If the deteriation in accuracy doesn't take you by surprise, you should already have in place solutions to recalibrate the model. If it does take you by surprise, it usually means that there has been a fundamental change in the population, or that there is a system implementation issue. The root cause will need to be investigated before a new model can be developed or putin into production. 
+
+
+15. It's not unlikely that there will be many models with similar predictors, that will be used for different purposes. Having a unique model identifier will make it easy to find the model that you are looking for, and to find what it does. 
+
+16. You're not the only person who's going to use the model. It's important to document your rationale and approach, so that if there are any problems with the model in the future, it's possible to fix them quickly, and without your help. Additionally, if your model is undocumented and difficult to understand, it's likely that it'll be scrapped, because it's easier to use something that everyone understands, even if it doesn't work as well.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

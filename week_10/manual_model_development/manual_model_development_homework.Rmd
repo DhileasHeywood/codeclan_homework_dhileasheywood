@@ -10,6 +10,7 @@ First I'm going to tidy the data in a suitable way, so that it's ready for regre
 ```{r}
 library(tidyverse)
 library(GGally)
+library(modelr)
 ```
 
 
@@ -31,14 +32,14 @@ unique(houses$grade)
  
 ```{r}
 houses_clean <- houses %>% 
-  #mutate(renovated = ifelse(yr_renovated == 0, yr_renovated == 0, yr_renovated == 1), waterfront = as.logical(waterfront)) %>% 
-  mutate(condition_1 = ifelse(houses$condition == 1, 1, 0),
+  mutate(renovated = as.logical(yr_renovated),
+         waterfront= as.logical(waterfront),
+         condition_1 = ifelse(houses$condition == 1, 1, 0),
          condition_2 = ifelse(houses$condition == 2, 1, 0), 
          condition_3 = ifelse(houses$condition == 3, 1, 0),
          condition_4 = ifelse(houses$condition == 4, 1, 0)) %>% 
-  select(-condition) %>% 
+  select(-condition, -yr_renovated) %>% 
   mutate(grade_1 = ifelse(grade == 1, 1, 0),
-         grade_2 = ifelse(grade == 2, 1, 0),
          grade_3 = ifelse(grade == 3, 1, 0),
          grade_4 = ifelse(grade == 4, 1, 0),
          grade_5 = ifelse(grade == 5, 1, 0),
@@ -69,6 +70,128 @@ I'm now going to systematically build a regression model containing up to four m
 
 ```{r}
 houses_numeric <- houses_clean %>% 
-  
+  select(price:floors, view:long)
+
+houses_logical <- houses_clean %>% 
+  select(price, waterfront, renovated:grade_12)
+```
+
+```{r fig.height=7.5, fig.width=10}
+ggpairs(houses_numeric)
+
+
+beepr::beep(9)
+```
+This first plot shows that Price has the highest correlation with sqft_living at 0.702, followed by sqft_above at 0.606. 
+
+
+```{r fig.height=11.25, fig.width=15}
+ggpairs(houses_logical)
+
+beepr::beep(9)
+```
+
+On this graph, the highest correlation with price is with grade_11 at 0.357, although it also appears there's some sort of correlation between waterfront and price.
+
+Based on these graphs, I'm going to choose to make my first model with price~sqft_living, followed by price~sqft_above. 
+
+
+```{r}
+mod1a <- lm(price ~ sqft_living, data = houses_clean)
+mod1b <- lm(price ~ sqft_above, data = houses_clean)
+
+summary(mod1a)
+summary(mod1b)
+```
+
+In both of these models, the p values for the coefficients and intercepts are <2e-16, which is very small. The r2 value for mod1a is 0.4929, the r2 value for mod1b is 0.3667. mod1a is quite a lot higher, so we're going to take mod1a going forward. 
+
+```{r}
+par(mfrow = c(2, 2))
+plot(mod1a)
+```
+
+```{r}
+par(mfrow = c(2, 2))
+plot(mod1b)
+```
+
+
+```{r fig.height=20, fig.width=27, warning=FALSE, message=FALSE}
+price_remaining_resid <- houses_clean %>% 
+  add_residuals(mod1a) %>% 
+  select(-price, -sqft_living)
+
+price_remaining_resid %>% 
+  ggpairs()
+
+beepr::beep(8)
+```
+
+based on this graph, I'm going to choose lat, view, and waterfront as my next models. 
+
+```{r}
+mod2a <- lm(price ~ sqft_living + view, data = houses_clean)
+mod2b <- lm(price ~ sqft_living + lat, data = houses_clean)
+mod2c <- lm(price ~ sqft_living + waterfront, data = houses_clean)
+
+summary(mod2a)
+summary(mod2b)
+summary(mod2c)
+```
+From these models, mod2b has the highest r2 value at 0.566. It also has a p value of 2e-16 for both coefficientsa and the y intercept, which 2a and 2c don't. In addition, it also has the highest adjusted r2 value. I'll be using mod2b from here on. 
+
+```{r}
+par(mfrow = c(2, 2))
+plot(mod2a)
+```
+
+
+```{r}
+par(mfrow = c(2, 2))
+plot(mod2b)
+```
+
+```{r}
+par(mfrow = c(2, 2))
+plot(mod2c)
+```
+
+
+```{r}
+price_remaining_resid <- houses_clean %>% 
+  add_residuals(mod1a) %>% 
+  select(-price, -sqft_living, -lat)
+
+houses_numeric_resid <- price_remaining_resid %>% 
+  select(bedrooms:floors, view:long, resid)
+
+houses_logical_resid <- price_remaining_resid %>% 
+  select(waterfront, renovated:grade_12, resid)
+
+houses_numeric_resid %>% 
+  ggpairs()
+
+
+beepr::beep(8)
+```
+
+```{r fig.height=20, fig.width=27, warning=FALSE, message=FALSE}
+
+houses_logical_resid %>% 
+  ggpairs()
+
+beepr::beep(8)
+```
+
+based on these two graphs, I'm going to run 3 different model 3s. mod3a view, mod3b yr_built, mod3c waterfront. 
+
+```{r}
+mod3a <- lm(price ~ sqft_living + lat + view, data = houses_clean)
+mod3b <- lm(price ~ sqft_living + lat + yr_built, data = houses_clean)
+mod3c <- lm(price ~ sqft_living + lat + waterfront, data = houses_clean)
+
+summary(mod2a)
+summary(mod2b)
 ```
 
