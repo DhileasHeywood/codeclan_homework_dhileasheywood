@@ -57,10 +57,7 @@ This is obviously a very *very* simplified version, but it does explain the basi
 
 
 
-
-
-
-
+All images are sourced from Michael Nielson's book (very good), which can be found at this [link](http://neuralnetworksanddeeplearning.com/index.html)
 
 
 
