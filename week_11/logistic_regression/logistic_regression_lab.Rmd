@@ -1,0 +1,245 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+```{r}
+library(readxl)
+library(janitor)
+library(GGally)
+library(beepr)
+library(tidyverse)
+library(pROC)
+library(modelr)
+library(caret)
+library(broom)
+```
+
+
+ALPHA VALUE TO REJECT NULL HYPOTHESES = 0.05
+
+```{r}
+telecoms_churn <- read_excel("telecomms_churn.xlsx")
+
+glimpse(telecoms_churn)
+```
+```{r}
+unique(telecoms_churn$Contract)
+unique(telecoms_churn$SeniorCitizen)
+unique(telecoms_churn$InternetService)
+```
+
+
+1.
+```{r}
+telecoms_clean <- telecoms_churn %>% 
+  clean_names() %>% 
+  mutate(churn = ifelse(churn == "No", FALSE, TRUE),
+         partner = ifelse(partner == "No", FALSE, TRUE),
+         dependents = ifelse(dependents == "No", FALSE, TRUE),
+         phone_service = ifelse(phone_service == "No", FALSE, TRUE),
+         senior_citizen = ifelse(senior_citizen == 0, FALSE, TRUE)) %>% 
+  select(-customer_id) %>% 
+  mutate(contract = as.factor(contract),
+         internet_service = as.factor(internet_service))
+  
+  
+
+```
+
+```{r fig.height=12, fig.width=15, message=FALSE, warning=FALSE}
+ggpairs(telecoms_clean)
+beep(1)
+```
+
+3. 
+Creating three seperate single predictor logistic regression models. 
+The three most promising predictors in the ggpairs graph were senior_citizen, tenure, and phone service.
+```{r}
+telecom_mod1a <- glm(churn ~ senior_citizen, 
+                     data = telecoms_clean,
+                     family = binomial(link = "logit"))
+
+telecom_mod1b <- glm(churn ~ tenure,
+                     data = telecoms_clean,
+                     family = binomial(link = "logit"))
+
+telecom_mod1c <- glm(churn ~ phone_service,
+                     data = telecoms_clean, 
+                     family = binomial(link = "logit"))
+```
+
+checking to see whether the coefficients of the models are statistically significant. 
+
+```{r}
+summary(telecom_mod1a)
+```
+p value of coefficient is <2e-16. This is lower than alpha, and we can reject the null hypothesis. Coefficient is statistically significant. 
+
+```{r}
+summary(telecom_mod1b)
+```
+p value of coefficient is <2e-16. This is lower than alpha, and we can reject the null hypothesis. Coefficient is statistically significant.
+
+```{r}
+summary(telecom_mod1c)
+```
+p value of coefficient is 0.316. This is higher than alpha, and we can't reject the null hypothesis. Coefficient is not statistically significant.
+
+Making another single predictor model using contract
+```{r}
+telecom_mod1d <- glm(churn ~ contract,
+                     data = telecoms_clean, 
+                     family = binomial(link = "logit"))
+summary(telecom_mod1d)
+```
+p values of coefficients are both <2e-16. This is lower than alpha, and we can reject the null hypothesis. Coefficients are statistically significant.
+
+
+4. 
+
+plotting a ROC curve for each of the classifiers. Going to put them all on same axes. 
+
+```{r}
+telecom_1a_pred <- telecoms_clean %>% 
+  add_predictions(telecom_mod1a, type = "response")
+
+roc_object1a <- telecom_1a_pred %>% 
+  roc(response = churn, predictor = pred)
+
+
+telecom_1b_pred <- telecoms_clean %>% 
+  add_predictions(telecom_mod1b, type = "response")
+
+roc_object1b <- telecom_1b_pred %>% 
+  roc(response = churn, predictor = pred)
+
+
+telecom_1d_pred <- telecoms_clean %>% 
+  add_predictions(telecom_mod1d, type = "response")
+
+roc_object1d <- telecom_1d_pred %>% 
+  roc(response = churn, predictor = pred)
+
+
+
+roc_curve <- ggroc(data = list("1a" = roc_object1a, "1b" = roc_object1b, "1d" = roc_object1d), legacy.axes = TRUE) +
+  coord_fixed()
+roc_curve
+```
+
+Eugh.... 1a is baaad... 1b and 1d are eh
+
+Let's look at AUC values
+```{r}
+auc_1a <- auc(roc_object1a)
+auc_1b <- auc(roc_object1b)
+auc_1d <- auc(roc_object1d)
+
+auc_1a
+auc_1b
+auc_1d
+```
+The AUC value is highest for mod1b, but mod1d is pretty similar. mod1a is barely better than random. 
+
+5. 
+Performing cross validation to check how representative the AUC values calculated above will be for unseen data. 
+```{r}
+#making the churn and senior_citizen columns factors, so that they're compatibe with caret package. 
+telecoms_cleaner <- telecoms_clean %>% 
+  mutate(churn = as_factor(ifelse(churn, "t", "f"))) %>% 
+  mutate(senior_citizen = as_factor(ifelse(senior_citizen, "t", "f")))
+
+train_control <- trainControl(method = "repeatedcv", 
+                              number = 10,
+                              repeats = 100, 
+                              savePredictions = TRUE,
+                              classProbs = TRUE,
+                              summaryFunction = twoClassSummary)
+
+model1a <- train(churn ~ senior_citizen, 
+                 data = telecoms_cleaner,
+                 trControl = train_control,
+                 method = "glm",
+                 family = binomial(link = "logit"))
+
+model1b <- train(churn ~ tenure, 
+                 data = telecoms_cleaner,
+                 trControl = train_control,
+                 method = "glm",
+                 family = binomial(link = "logit"))
+
+model1d <- train(churn ~ contract, 
+                 data = telecoms_cleaner,
+                 trControl = train_control,
+                 method = "glm",
+                 family = binomial(link = "logit"))
+```
+```{r}
+summary(model1a)
+model1a$results
+```
+AUC value (labelled as ROC) is 0.563. Barely better than a random guess
+
+```{r}
+summary(model1b)
+model1b$results
+```
+AUC value is 0.740
+
+```{r}
+summary(model1d)
+model1d$results
+```
+
+AUC value is 0.739. Barely, but just lower than model1b. 
+
+6.
+Taking model1b, and interpreting the fitted coefficient of contract. 
+
+```{r}
+odds_at_32 <- tibble(tenure = 32) %>% 
+  add_predictions(telecom_mod1b, type = "response") %>% 
+  mutate(odds = pred / (1 - pred)) %>% 
+  select(odds)
+odds_at_32
+```
+with a tenure of 32 years, the odds of a customer churning are about 1 to 3.  
+
+lets see what the odds factor is for a change of -20 years, and a tenure of 12 years
+```{r}
+b_tenure <- tidy(telecom_mod1b) %>% 
+  filter(term != "(Intercept)") %>% 
+  select(estimate)
+
+odds_factor <- exp(b_tenure * -20)
+```
+That's an odds factor of 2.17
+```{r}
+odds_at_12 <- odds_factor * odds_at_32
+```
+That's an odds of about 2 to 3. Which means that a customer is twice as likely to churn if they've had a tenure of 12 years. 
+
+```{r}
+unique(telecoms_clean$contract)
+```
+
+
+Now, looking at model1d, which was the best model. 
+```{r}
+b_contract_1year <- tidy(telecom_mod1d) %>% 
+  filter(term == "contractOne year") %>% 
+  select(estimate)
+
+odds_ratio_1_year <- exp(b_contract_1year)
+
+b_contract_2year <- tidy(telecom_mod1d) %>% 
+  filter(term == "contractTwo year") %>% 
+  select(estimate)
+
+odds_ratio_2_year <- exp(b_contract_2year)
+
+odds_ratio_1_year
+odds_ratio_2_year
+```
+
