@@ -206,18 +206,16 @@ odds_at_32
 ```
 with a tenure of 32 years, the odds of a customer churning are about 1 to 3.  
 
-lets see what the odds factor is for a change of -20 years, and a tenure of 12 years
+lets see what the odds factor is for a change of 1 year. 
 ```{r}
 b_tenure <- tidy(telecom_mod1b) %>% 
   filter(term != "(Intercept)") %>% 
   select(estimate)
 
-odds_factor <- exp(b_tenure * -20)
+odds_factor <- exp(b_tenure * 1)
+odds_factor
 ```
-That's an odds factor of 2.17
-```{r}
-odds_at_12 <- odds_factor * odds_at_32
-```
+
 That's an odds of about 2 to 3. Which means that a customer is twice as likely to churn if they've had a tenure of 12 years. 
 
 ```{r}

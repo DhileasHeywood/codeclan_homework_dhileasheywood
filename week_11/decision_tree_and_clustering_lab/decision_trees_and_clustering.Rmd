@@ -1,0 +1,54 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+```{r}
+library(tidyverse)
+library(rpart)
+library(rpart.plot)
+```
+
+
+```{r}
+avocado <- read_csv("data/avocado.csv") %>% 
+  janitor::clean_names()
+```
+
+```{r}
+glimpse(avocado)
+```
+
+```{r}
+
+clean_avocado <- avocado %>% 
+  mutate_if(is_character, as_factor) %>% 
+  mutate(year = as_factor(year)) %>% 
+  select(-x1, -date) %>% 
+  na.omit()
+
+```
+
+splitting the data intp a training and testing set. 
+
+```{r}
+n_avocado <- nrow(clean_avocado)
+
+test_index <- sample(1:n_avocado, size = n_avocado * 0.2)
+
+avocado_test <- slice(clean_avocado, test_index)
+
+avocado_train <- slice(clean_avocado, -test_index)
+```
+
+
+```{r}
+avocado_test %>% 
+  janitor::tabyl(type)
+```
+
+```{r}
+avocado_train %>% 
+  janitor::tabyl(type)
+```
+
