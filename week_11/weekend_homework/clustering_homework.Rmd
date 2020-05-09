@@ -1,0 +1,137 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+
+```{r}
+library(tidyverse)
+library(cluster)
+library(factoextra)
+library(dendextend)
+library(broom)
+```
+
+```{r}
+mall_customers <- read_csv("mall_customers.csv") %>% 
+  janitor::clean_names() %>% 
+  view()
+```
+
+```{r}
+mall_customers %>% 
+  ggplot(aes(x = age, y = spending_score_1_100)) + 
+  geom_point()
+```
+It looks as though there are two groups in this plot. There are people between 20 and 40 with a spending score between ~37 and 100, and those between 30 and 70 with a spending score between 0 and 60. 
+
+```{r}
+mall_customers %>% 
+  ggplot(aes(x = gender, y = spending_score_1_100)) +
+  geom_col()
+```
+
+There's a clear difference between spending score and gender. 
+
+```{r}
+mall_customers %>% 
+  ggplot(aes(x = annual_income_k, y = spending_score_1_100)) +
+  geom_point()
+```
+
+This looks as though it's split up into 4 or 5 clusters. Hard to say, but there are some definite distinct groups.
+
+
+Performing a k-means clustering to find whether there are any meaningful clusters, so that they can be targeted in a marketing campaign, based on their spending score and annual income. 
+
+Performing a few analysis techniques to determine the number of clusters. 
+
+elbow method:
+
+```{r}
+mall_customers_scale <- mall_customers %>% 
+  select(-customer_id, -gender) %>% 
+  mutate_if(is.numeric, scale)
+```
+
+
+```{r}
+fviz_nbclust(mall_customers_scale, kmeans, method = "wss")
+```
+The elbow method thinks 2 or 4 clusters. 
+
+Sillhouette coefficient: 
+
+```{r}
+fviz_nbclust(mall_customers_scale, kmeans, method = "silhouette")
+```
+
+The Silhouette coefficient method sugests 8 clusters. 
+
+```{r}
+fviz_nbclust(mall_customers_scale, kmeans, method = "gap_stat")
+```
+and the Gap statistic method suggests using 6 clusters. 
+
+Based on this, I'm going to try 5 and 6 clusters, and see what happens. 5, because that's the number that it looked like it ought to have when I observed the data visually. 6, because the gap statistic method suggested it, and it's the closest to what the data looked like. 
+
+```{r}
+max_k <- 20
+
+k_clusters <- tibble(k = 2:max_k) %>% 
+  mutate(kclust = map(k, ~ kmeans(mall_customers_scale, .x, nstart = 25)),
+         tidied = map(kclust, tidy),
+         glanced = map(kclust, glance),
+         augmented = map(kclust, augment, mall_customers_scale))
+
+
+```
+
+```{r}
+clusterings %>% 
+  unnest(cols = c(augmented)) %>% 
+  filter(k <= 8) %>% 
+  ggplot(aes(x = annual_income_k, y = spending_score_1_100)) +
+  geom_point(aes(colour = .cluster)) +
+  facet_wrap(~ k)
+```
+It looks like there's something going on with 6. Going to do another visualisation just to see
+
+```{r}
+clusters_6 <- kmeans(mall_customers_scale, centers = 6, nstart = 25)
+augmented <- clusters_6 %>% 
+  augment(mall_customers)
+
+augmented %>% 
+  ggplot(aes(x = age, y = spending_score_1_100)) +
+  geom_point(aes(colour = .cluster))
+
+augmented %>% 
+  ggplot(aes(x = annual_income_k, y = spending_score_1_100)) +
+  geom_point(aes(colour = .cluster)) 
+```
+
+If we look at clusters 1 and 5, You can see a clear separation from the other groups. If you look at the graph above, group 1 and 5 are on top of each other. This explains that. 
+
+
+The clustering seems like a really good fit for this data. It's clear that There are 6 distinct groups.
+
+Looking at the graph of annual income against spending score, there are 5 distinct groups, with two of the clusters, 2 and 6, on top of each other. Then, looking at the graph of age against spending score, there's 4 distinct groups. ONe of people aged between 20 and 40 with a high spending score, made up of clusters 1 and 3 (which are separate on the other graph), there's one cluster of people aged between 20 and 70, with a low spending score, below 37, made up of clusters 4 and 5 (which are also separate on the other graph). The other two groups are more distinct.  
+Everyone in these groups has a spending score closer to the median, but they're either aged between 18 and 40, or between 45 an 70. There's no overlap. These are the two clusters which appear to be on top of each other in the annual income vs spending score graph. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
