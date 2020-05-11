@@ -1,0 +1,60 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+```{r}
+library(dplyr)
+library(tidyr)
+library(tidytext)
+library(ggwordcloud)
+library(janeaustenr)
+```
+Finding the most common words in Pride & Prejudice and Sense & Sensibility
+
+```{r}
+pride_and_sense <- austen %>% 
+  filter(book == "Pride & Prejudice" | book == "Sense & Sensibility") %>% 
+  unnest_tokens(word, text) %>% 
+  count(word, book) %>% 
+  arrange(desc(n))
+
+pride_and_sense
+
+```
+
+```{r}
+pride_and_sense_no_stop <- austen %>% 
+  filter(book == "Pride & Prejudice" | book == "Sense & Sensibility") %>% 
+  unnest_tokens(word, text) %>% 
+  anti_join(stop_words) %>% 
+  count(word, book) %>% 
+  arrange(desc(n))
+
+pride_and_sense_no_stop
+```
+
+```{r}
+pride_and_sense_sentiment <- austen %>% 
+  filter(book == "Pride & Prejudice" | book == "Sense & Sensibility") %>% 
+  unnest_tokens(word, text) %>% 
+  left_join(get_sentiments("bing")) %>% 
+  count(word, book, sentiment) %>% 
+  filter(!is.na(sentiment)) %>% 
+  arrange(desc(n))
+
+pride_and_sense_sentiment
+```
+
+```{r}
+pride_and_sense_sentiment_afinn <- austen %>% 
+  filter(book == "Pride & Prejudice" | book == "Sense & Sensibility") %>% 
+  unnest_tokens(word, text) %>% 
+  left_join(get_sentiments("afinn")) %>% 
+  count(word, book, value) %>% 
+  filter(!is.na(value)) %>% 
+  arrange(desc(n))
+
+pride_and_sense_sentiment_afinn
+```
+
